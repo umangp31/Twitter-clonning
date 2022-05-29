@@ -1,4 +1,37 @@
 .Sidebar_Container {
     flex: 0.30;
-    background-color: black;
+    background-color: white;
+    padding-left: 11%;
+}
+
+.Sidebar_Container .logo {
+    margin-top: 2%;
+    height: 30px;
+    width: 30px;
+}
+
+.Sidebar_Container .link-wrapper {
+    list-style: none;
+}
+
+.Sidebar_Container .link-wrapper li{
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.Sidebar_Container li svg{
+    margin-right: 15px;
+}
+
+.Sidebar_Container .twt-btn button{
+    background-color: #1d9bf0;
+    padding: 18px 90px;
+    border: none;
+    color: white;
+    border-radius: 28px;
+    margin-left: -10px;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 20px;
 }
