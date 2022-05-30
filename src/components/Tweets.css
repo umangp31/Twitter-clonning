@@ -1,0 +1,94 @@
+.Tweet_Container {
+    background-color: transparent;
+    max-height: max-content;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin: 1px 0;
+    color: aliceblue;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.Tweet_UserAvatar {
+    /* outline: 1px solid green; */
+    max-width: max-content;
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.Tweet_Main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* outline: 1px solid snow; */
+}
+
+.Tweet_UserAvatar img {
+    max-width: 40px;
+    border-radius: 50%;
+}
+
+.Tweet_UserInfo {
+    display: flex;
+    min-width: 100%;
+    min-height: 4vh;
+    align-items: center;
+    /* padding: 2px; */
+    max-width: max-content;
+    /* outline: 1px solid red; */
+}
+
+.Tweet_Name {
+    margin-left: 2%;
+    color: white;
+    font-size: 15px;
+}
+
+.Tweet_UserName {
+    color: gray;
+    font-weight: 300;
+    margin: 0 2%;
+
+}
+
+.Tweet_ElacepedTimeFromTweet {
+    color: lightgray;
+    font-weight: 300;
+}
+
+.Tweet_TweetCOntent {
+    /* outline: 1px solid snow; */
+    padding: 0 2%;
+}
+
+.Tweet_TweetOptions {
+    margin-top: 3%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* outline: 1px solid snow; */
+
+}
+
+.Tweet_TweetOption {
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.Tweet_TweetOption i {
+    margin: 0 10px ;
+    max-width: 15px;
+    color: gray;
+}
+.Tweet_TweetReplys,.Tweet_TweetRetweets,.Tweet_TweetLikes,.Tweet_ShareTweet{
+    color: gray;
+    font-size: 13px;
+}

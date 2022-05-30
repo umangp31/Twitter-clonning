@@ -1,17 +1,21 @@
 .Yourtweet_Container {
     background-color: black;
     border-bottom: 1px solid var(--border-color);
-    min-height: 25vh;
+    height: max-content;
     color: aliceblue;
     padding: 0 15px;
 }
 
 .Yourtweet_Header {
+    position: fixed;
+    top: 0;
     min-height: 5vh;
+    width: 32%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    backdrop-filter: blur(10px);
 }
 
 .Yourtweet_HomeText {
@@ -25,6 +29,7 @@
 
 .Write_Tweet {
     /* outline: 1px solid red; */
+    margin-top: 8vh;
     display: flex;
     flex-direction: row;
 }
@@ -34,6 +39,13 @@
     width: 50px;
     border-radius: 50%;
     background-color: gray;
+}
+
+.YourTweet_Avatar img {
+    border-radius: 50%;
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
 }
 
 .YourTweet_TweetText {
@@ -84,6 +96,7 @@
     color: rgb(120, 86, 255);
     transition: all 0.1s ease-in-out;
 }
+
 .YourTweet_TweetAttachment i:hover {
     box-shadow: 0px 0px 0px 10px rgba(120, 86, 255, 0.1);
     border-radius: 50%;
@@ -101,5 +114,8 @@
     border: none;
     background-color: rgb(120, 86, 255);
     border-radius: 20px;
+}
 
+.YourTweet_PostTweetButton:disabled {
+    background-color: rgba(120, 86, 255,0.8)
 }

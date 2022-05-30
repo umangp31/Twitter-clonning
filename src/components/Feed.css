@@ -1,7 +1,8 @@
-.Feed_Container{
+.Feed_Container {
+    position: static;
     flex: 0.39;
-    background-color:black;
+    background-color: black;
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
-    
+    overflow-y: scroll !important ;
 }

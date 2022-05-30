@@ -1,8 +1,9 @@
 // import { AutoAwesome } from ''
-import React from 'react';
+import React, { useState } from 'react';
 import "./YourTweet.css";
 
 const YourTweet = () => {
+    const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();
         const TewwtReplyAccess = document.getElementsByClassName("YourTweet_TweetReplyAcces")[0];
@@ -24,9 +25,13 @@ const YourTweet = () => {
                 </div>
             </div>
             <div className="Write_Tweet">
-                <div className="YourTweet_Avatar"></div>
+                <div className="YourTweet_Avatar">
+                    <img src="https://avatar.oxro.io/avatar.svg?name=SAHIL" alt='' />
+                </div>
                 <div className='YourTweet_Form'>
                     <input type="text" className='YourTweet_TweetText'
+                        value={Tweettext}
+                        onChange={(e) => setTweettext(e.target.value)}
                         placeholder="Whats's Happening"
                         onFocus={showReplyAccess}
                     />
@@ -47,8 +52,9 @@ const YourTweet = () => {
                     <i class="fa-regular fa-image"></i>
                 </div>
                 <button
-                    disabled="true"
+                    disabled={!Tweettext}
                     className='YourTweet_PostTweetButton'
+                    onClick={()=>alert(Tweettext)}
                 >Tweet</button>
             </div>
         </div>
