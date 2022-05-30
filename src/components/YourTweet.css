@@ -1,0 +1,105 @@
+.Yourtweet_Container {
+    background-color: black;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 25vh;
+    color: aliceblue;
+    padding: 0 15px;
+}
+
+.Yourtweet_Header {
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.Yourtweet_HomeText {
+    font-size: 20px;
+    font-weight: 650;
+}
+
+.Yourtweet_Header svg {
+    height: 3vh;
+}
+
+.Write_Tweet {
+    /* outline: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+}
+
+.YourTweet_Avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.YourTweet_TweetText {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: gray;
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.YourTweet_Form {
+    /* outline: 1px solid snow; */
+    height: 10.vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0;
+    align-items: flex-start;
+}
+
+.YourTweet_TweetReplyAcces {
+    display: none;
+    /* margin: 0 15px; */
+    font-weight: 600;
+    color: rgb(120, 86, 255);
+    width: max-content;
+    margin-top: 3rem;
+    padding: 4px 15px;
+    border-radius: 15px;
+}
+
+.YourTweet_TweetReplyAcces:hover {
+    background-color: rgba(120, 86, 255, 0.1);
+}
+
+.YourTweet_TweetAttachment {
+    /* outline: 1px solid red; */
+    padding: 10px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-top: 1px solid var(--border-color); */
+}
+
+.YourTweet_TweetAttachment i {
+    margin: 0 10px;
+    color: rgb(120, 86, 255);
+    transition: all 0.1s ease-in-out;
+}
+.YourTweet_TweetAttachment i:hover {
+    box-shadow: 0px 0px 0px 10px rgba(120, 86, 255, 0.1);
+    border-radius: 50%;
+    /* filter: drop-shadow(1px ,1px,rgba(120, 86, 255, 0.1)); */
+}
+
+.YourTweet_PostTweetButton {
+    outline: 1px solid red;
+    width: max-content;
+    padding: 7px 12px;
+    outline: none;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 550;
+    border: none;
+    background-color: rgb(120, 86, 255);
+    border-radius: 20px;
+
+}

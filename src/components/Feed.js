@@ -1,8 +1,13 @@
 import React from 'react'
 import "./Feed.css"
+import YourTweet from './YourTweet'
 const Feed = () => {
     return (
-        <div className='Feed_Container'>Feed</div>
+        <div className='Feed_Container'>
+
+            <YourTweet />
+
+        </div>
     )
 }
 
