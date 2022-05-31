@@ -54,7 +54,7 @@ const YourTweet = () => {
                 <button
                     disabled={!Tweettext}
                     className='YourTweet_PostTweetButton'
-                    onClick={()=>alert(Tweettext)}
+                    onClick={() => alert(Tweettext)}
                 >Tweet</button>
             </div>
         </div>

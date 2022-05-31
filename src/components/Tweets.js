@@ -20,9 +20,9 @@ const Tweets = () => {
             </div>
             <div className='Tweet_Main'>
                 <div className='Tweet_UserInfo'>
-                    <h4 className='Tweet_Name'>Vivek Suthar</h4>
-                    <h4 className='Tweet_UserName'>@somewhatsahil •</h4>
-                    <h4 className='Tweet_ElacepedTimeFromTweet'> 12m</h4>
+                    <h4 className='Tweet_Name'>Elon Musk</h4>
+                    <h4 className='Tweet_UserName'>@themfmusk •</h4>
+                    <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
                 </div>
                 <div className='Tweet_TweetCOntent'>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem id optio nam asperiores est dignissimos, nostrum sequi architecto libero sed sapiente molestias blanditiis. Minus recusandae perspiciatis, iusto rem accusamus non.
