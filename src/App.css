@@ -5,9 +5,17 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 :root {
   --border-color: rgba(35, 33, 33);
+}
+::-webkit-scrollbar{
+  width: 0px;
+}
+::-webkit-scrollbar-track{
+  width: 0px;
+  background-color: transparent;
 }

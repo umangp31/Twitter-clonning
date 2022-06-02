@@ -1,9 +1,16 @@
 .Sidebar_Container {
     flex: 0.265;
+<<<<<<< HEAD
     /* background-color: black; */
     flex: 0.18;
     background-color: white;
+=======
+    background-color: black;
+    flex: 0.25;
+    /* background-color: white; */
+>>>>>>> 1f9dd6a558a316b6fe12239ce7e50774ce3fb97e
     padding-left: 11%;
+    color: aliceblue;
 }
 
 .Sidebar_Container .logo {
@@ -16,17 +23,18 @@
     list-style: none;
 }
 
-.Sidebar_Container .link-wrapper li{
+.Sidebar_Container .link-wrapper li {
     display: flex;
     margin-top: 30px;
     align-items: center;
 }
 
-.Sidebar_Container li svg{
+.Sidebar_Container li svg {
     margin-right: 15px;
+    color: aliceblue;
 }
 
-.Sidebar_Container .twt-btn button{
+.Sidebar_Container .twt-btn button {
     background-color: #1d9bf0;
     padding: 18px 90px;
     border: none;
