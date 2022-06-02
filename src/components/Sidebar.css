@@ -1,9 +1,7 @@
 .Sidebar_Container {
-<<<<<<< HEAD
     flex: 0.265;
-    background-color: black;
-=======
-    flex: 0.30;
+    /* background-color: black; */
+    flex: 0.18;
     background-color: white;
     padding-left: 11%;
 }
@@ -38,5 +36,4 @@
     font-size: 15px;
     font-weight: bolder;
     margin-top: 20px;
->>>>>>> 1a2c3426920a49308071ad2b8a1749bcdd684a10
 }
