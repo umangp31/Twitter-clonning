@@ -1,0 +1,13 @@
+.Profilebar-Container .profile-pic{
+    
+}
+
+.Profilebar-Container {
+    margin-top: 20px;
+}
+
+.Profilebar-Container img{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
