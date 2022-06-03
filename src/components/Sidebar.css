@@ -1,14 +1,8 @@
 .Sidebar_Container {
     flex: 0.265;
-<<<<<<< HEAD
-    /* background-color: black; */
-    flex: 0.18;
-    background-color: white;
-=======
     background-color: black;
     flex: 0.25;
     /* background-color: white; */
->>>>>>> 1f9dd6a558a316b6fe12239ce7e50774ce3fb97e
     padding-left: 11%;
     color: aliceblue;
 }

@@ -1,13 +1,11 @@
-<<<<<<< HEAD
 .Feed_Container{
     flex: 0.40;
     background-color:black;
-=======
+}
 .Feed_Container {
     position: static;
     flex: 0.39;
     background-color: black;
->>>>>>> 1f9dd6a558a316b6fe12239ce7e50774ce3fb97e
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     overflow-y: scroll !important ;
