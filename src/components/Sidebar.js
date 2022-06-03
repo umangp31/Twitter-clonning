@@ -1,7 +1,7 @@
 import React from 'react'
 import Profilebar from './Profilebar'
 import "./Sidebar.css"
-function Sidebar() {
+function Sidebar({user}) {
     return (
         <div className='Sidebar_Container'>
             <div className='logo'>
@@ -22,7 +22,7 @@ function Sidebar() {
             <div className="twt-btn">
                 <button><span>Tweet</span> </button>
             </div>
-            <Profilebar />
+            <Profilebar user={user}/>
         </div>
     )
 }

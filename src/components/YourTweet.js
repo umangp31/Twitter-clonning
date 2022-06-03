@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "./YourTweet.css";
 
-const YourTweet = () => {
+const YourTweet = ({ user }) => {
     const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();
@@ -26,7 +26,7 @@ const YourTweet = () => {
             </div>
             <div className="Write_Tweet">
                 <div className="YourTweet_Avatar">
-                    <img src="https://avatar.oxro.io/avatar.svg?name=SAHIL" alt='' />
+                    <img src={user.photoURL} alt='' />
                 </div>
                 <div className='YourTweet_Form'>
                     <input type="text" className='YourTweet_TweetText'
@@ -36,7 +36,6 @@ const YourTweet = () => {
                         onFocus={showReplyAccess}
                     />
                     <div className="YourTweet_TweetReplyAcces">
-
                         <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
                     </div>
                 </div>
