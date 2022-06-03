@@ -1,14 +1,11 @@
 .Sidebar_Container {
     flex: 0.265;
-<<<<<<< HEAD
     /* background-color: black; */
-    flex: 0.18;
+    flex: 0.215;
     background-color: white;
-=======
     background-color: black;
-    flex: 0.25;
+    /* flex: 0.25; */
     /* background-color: white; */
->>>>>>> 1f9dd6a558a316b6fe12239ce7e50774ce3fb97e
     padding-left: 11%;
     color: aliceblue;
 }
@@ -25,13 +22,21 @@
 
 .Sidebar_Container .link-wrapper li {
     display: flex;
-    margin-top: 30px;
+    margin-top: 10px;
     align-items: center;
+    max-width: max-content;
+    padding: 10px 9px;
+    transition: all 0.15s ease-in-out;
 }
 
 .Sidebar_Container li svg {
     margin-right: 15px;
     color: aliceblue;
+}
+
+.Sidebar_Container .menu .link-wrapper li:hover {
+    background-color: var(--border-color);
+    border-radius: 50px;
 }
 
 .Sidebar_Container .twt-btn button {
@@ -44,4 +49,28 @@
     font-size: 15px;
     font-weight: bolder;
     margin-top: 20px;
+}
+
+@media (max-width:988px) {
+    .Sidebar_Container {
+        flex: 0.1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5%;
+    }
+    .menu{
+        margin-left: 10px;
+    }
+    .link-wrapper li h3 {
+        display: none;
+    }
+
+    .twt-btn button {
+        padding:15px !important;
+    }
+
+    .twt-btn button span {
+        display: none;
+    }
 }

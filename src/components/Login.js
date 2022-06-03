@@ -43,7 +43,6 @@ export default function Login({ setIsloggedin }) {
                     <div className="login_subBox3">
                         <h4>Already have an account?</h4>
                         <button className="login_already login_btn">Sign in</button>
-
                     </div>
                 </div>
             </div>

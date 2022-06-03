@@ -1,13 +1,16 @@
-import React from 'react'
-import Feed from './Feed'
+import React, { useEffect } from 'react'
 import "./Home.css"
 import RightBar from './RightBar'
 import Sidebar from './Sidebar'
 const Home = () => {
+    useEffect(()=>{
+        document.title="Home / Twitter"
+    },[])
     return (
         <>
             <div className='Home_Container'>
                 <Sidebar />
+                {/* <Messages/> */}
                 <Feed />
                 <RightBar />
             </div>

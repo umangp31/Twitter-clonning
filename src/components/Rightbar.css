@@ -1,4 +1,5 @@
 .Rightbar_Container{
     flex: 0.43;
     background-color: black;
+    outline: 1px solid green;
 }

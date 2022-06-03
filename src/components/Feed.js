@@ -7,6 +7,12 @@ const Feed = () => {
         <div className='Feed_Container'>
             <YourTweet />
             <Tweets />
+            <Tweets />
+            <Tweets />
+            <Tweets />
+            <Tweets />
+            <Tweets />
+            <Tweets />
         </div>
     )
 }
