@@ -1,0 +1,7 @@
+.Messages_Container{
+    position: static;
+    flex: 0.45;
+    background-color: black;
+    outline: 1px solid red;
+    color: aliceblue;
+}

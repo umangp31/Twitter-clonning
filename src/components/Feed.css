@@ -1,8 +1,17 @@
+.Feed_Container{
+    flex: 0.85;
+    background-color:black;
+}
 .Feed_Container {
     position: static;
-    flex: 0.39;
+    flex: 0.50;
     background-color: black;
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
     overflow-y: scroll !important ;
+}
+@media (max-width:988px) {
+.Feed_Container{
+    flex:3;
+}
 }
