@@ -1,8 +1,11 @@
 // import { AutoAwesome } from ''
 import React, { useState } from 'react';
+import { useStateValue } from './StateProvider';
 import "./YourTweet.css";
 
-const YourTweet = ({ user }) => {
+const YourTweet = () => {
+    const [{user}, dispatch] = useStateValue();
+    console.log(user.photoURL);
     const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();

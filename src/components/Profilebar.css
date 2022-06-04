@@ -4,11 +4,16 @@
 
 .Profilebar-Container {
  position: absolute;
- bottom: 0;
+ display: flex;
+ bottom: 20px;
 }
 
 .Profilebar-Container img{
     height: 40px;
     width: 40px;
     border-radius: 20px;
+}
+
+.Profilebar-Container .text-area {
+    margin-left: 12px;
 }
