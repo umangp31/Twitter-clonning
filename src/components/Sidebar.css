@@ -1,8 +1,11 @@
 .Sidebar_Container {
     flex: 0.265;
+<<<<<<< HEAD
+=======
     /* background-color: black; */
     flex: 0.215;
     background-color: white;
+>>>>>>> e065609c8770e1412f582783691ae58958746fd2
     background-color: black;
     /* flex: 0.25; */
     /* background-color: white; */
@@ -11,7 +14,6 @@
 }
 
 .Sidebar_Container .logo {
-    margin-top: 2%;
     height: 30px;
     width: 30px;
 }
