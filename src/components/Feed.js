@@ -2,11 +2,11 @@ import React from 'react'
 import "./Feed.css"
 import Tweets from './Tweets'
 import YourTweet from './YourTweet'
-const Feed = ({user}) => {
+const Feed = () => {
     return (
         <div className='Feed_Container'>
-            <YourTweet user={user} />
-            <Tweets user={user}/>
+            <YourTweet/>
+            <Tweets/>
         </div>
     )
 }

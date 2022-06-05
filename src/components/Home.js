@@ -5,15 +5,16 @@ import RightBar from './RightBar'
 import Sidebar from './Sidebar'
 import Messages from './Messages'
 const Home = ({user}) => {
+const Home = () => {
     useEffect(()=>{
         document.title="Home / Twitter"
     },[])
     return (
         <>
             <div className='Home_Container'>
-                <Sidebar user={user}/>
+                <Sidebar/>
                 {/* <Messages/> */}
-                <Feed user={user}/>
+                <Feed/>
                 <RightBar />
             </div>
         </>
