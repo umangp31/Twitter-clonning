@@ -4,7 +4,6 @@ import "./Home.css"
 import RightBar from './RightBar'
 import Sidebar from './Sidebar'
 import Messages from './Messages'
-const Home = ({user}) => {
 const Home = () => {
     useEffect(()=>{
         document.title="Home / Twitter"
