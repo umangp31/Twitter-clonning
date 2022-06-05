@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useStateValue } from './StateProvider';
 import "./Tweets.css";
-const Tweets = ({user}) => {
+const Tweets = () => {
+    const [{user}, dispatch] = useStateValue();
     const [TwettLikes, setTwettLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
     const handleTweetLikes = () => {
@@ -20,7 +22,7 @@ const Tweets = ({user}) => {
             </div>
             <div className='Tweet_Main'>
                 <div className='Tweet_UserInfo'>
-                    <h4 className='Tweet_Name'>{user.displayName}</h4>
+                    <h4 className='Tweet_Name'>{user?.displayName}</h4>
                     <h4 className='Tweet_UserName'>@themfmusk •</h4>
                     <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
                 </div>
