@@ -17,3 +17,10 @@
 .Profilebar-Container .text-area {
     margin-left: 12px;
 }
+@media (max-width:988px) {
+    .text-area{
+        position: absolute;
+        bottom: 0;
+        display: none;
+    }
+}

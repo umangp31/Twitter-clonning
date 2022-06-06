@@ -14,17 +14,20 @@
 .rightbar_box{
     min-width: 25vw;
     max-width: 25vw;
-    /* background-color: #16181c; */
+    background-color:black;
 }
 
 .rightbar_searchbar{
     flex: 0.063;
+    position: sticky;
+    top:-5px;
+    padding:5px 0;
     /* outline: 1px solid red; */
 }
 
 .search_twitter:focus{
     /* border-color: var(--twitter_blue); */
-    border: 1px solid var(--twitter_blue);
+    border: 2px solid var(--twitter_blue);
 }
 
 .search_twitter{
@@ -41,13 +44,14 @@
 }
 
 .rightbar_whats_happening{
-    flex: 0.85;
+    /* flex:0.85; */
     /* outline: 1px solid red; */
     display: flex;
     flex-direction: column;
     margin: 12px 0;
     background-color: #16181c;
     border-radius: 20px;    
+    height: max-content;
 }
 
 .whats_happening_content{
@@ -68,6 +72,7 @@
 .whats_happening_feed{
     padding-left: 15px;
     min-height:90px ;
+    transition: all 0.2s ease-in-out;
     /* outline: 1px solid red; */
 }
 
@@ -77,7 +82,8 @@
     color: grey;
 }
 .whats_happening_feed:hover{
-    background-color: var(--border-color);
+    /* background-color: var(--border-color); */
+    background-color:  #1b1d20;
 
 }
 

@@ -6,7 +6,13 @@ const Feed = () => {
     return (
         <div className='Feed_Container'>
             <YourTweet/>
-            <Tweets/>
+            <Tweets replyCount='0'/>
+            <Tweets replyCount='0'/>
+            <Tweets replyCount='0'/>
+            <Tweets replyCount='0'/>
+            <Tweets replyCount='0'/>
+            <Tweets replyCount='1'/>
+            <Tweets replyCount='0'/>
         </div>
     )
 }
