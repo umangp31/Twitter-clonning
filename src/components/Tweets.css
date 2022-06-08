@@ -3,7 +3,6 @@
     max-height: max-content;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    margin: 1px 0;
     color: aliceblue;
     padding: 15px;
     display: flex;
@@ -27,6 +26,10 @@
     flex-direction: column;
     flex: 1;
     /* outline: 1px solid snow; */
+}
+
+.like:hover {
+    fill: #f91880;
 }
 
 .Tweet_UserAvatar img {
@@ -80,15 +83,26 @@
 .Tweet_TweetOption {
     /* outline: 1px solid red; */
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.Tweet_TweetOption i {
-    margin: 0 10px ;
-    max-width: 15px;
-    color: gray;
+.Tweet_TweetOption svg {
+    /* max-width:15px; */
+    margin: 0 0.4rem;
+    min-height: 1.1rem;
+    /* max-height: 18px; */
 }
-.Tweet_TweetReplys,.Tweet_TweetRetweets,.Tweet_TweetLikes,.Tweet_ShareTweet{
+
+.Tweet_TweetReplys, .Tweet_TweetRetweets, .Tweet_TweetLikes, .Tweet_ShareTweet {
     color: gray;
     font-size: 13px;
+}
+
+.Tweet_ThreadLine {
+    background-color: var(--border-color);
+    min-width: 2px;
+    border-radius: 5px;
+    flex: 1;
+    margin: 2px 0;
 }

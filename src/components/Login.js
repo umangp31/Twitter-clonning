@@ -64,6 +64,11 @@ export default function Login() {
                                             <span className="btn_content">Sign up with Apple</span>
                                         </button>
                                     </div>
+                                    <div className='login_divider'>
+                                        <span></span>
+                                        Or
+                                        <span></span>
+                                    </div>
                                     <div className='login_conditions'>
                                         <button className="login_email login_btn">
                                             <span className="btn_content">Sign up with phone or email</span>
