@@ -1,14 +1,20 @@
-.Profilebar-Container .profile-pic{
-    
-}
-
 .Profilebar-Container {
- position: absolute;
- display: flex;
- bottom: 20px;
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    min-width: 12%;
+    padding: 8px 10px;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+    /* outline: 1px solid red; */
 }
 
-.Profilebar-Container img{
+.Profilebar-Container:hover {
+    background-color: var(--border-color);
+
+}
+
+.Profilebar-Container img {
     height: 40px;
     width: 40px;
     border-radius: 20px;
@@ -16,11 +22,97 @@
 
 .Profilebar-Container .text-area {
     margin-left: 12px;
+    /* outline: 1px solid gainsboro; */
+    min-width: max-content;
 }
+
+.text-area p {
+    color: gray;
+    font-weight: 300;
+}
+
+.profilebar_options {
+    min-width: max-content;
+    /* outline: 1px solid red; */
+    margin: 0 20%;
+    display: flex;
+    align-items: center;
+}
+
+svg {
+    /* background-color: antiquewhite; */
+    color: aliceblue;
+    min-width: 15px;
+    min-height: 15px;
+    margin: 0 15px;
+}
+
+.modal {
+    /* bottom: 60%; */
+
+}
+
+.modalsvg {
+    /* background-color: aliceblue; */
+    margin-top: 0;
+    justify-content: flex-start;
+}
+
+.profilebar_modal {
+    position: absolute;
+    background-color: aliceblue;
+    min-width: 18vw;
+    bottom: 10%;
+    padding: 5px 15px;
+    margin-left: -1%;
+    border-radius: 15px;
+    background-color: black;
+    border: 2px solid var(--border-color);
+    box-shadow: 0px 0px 10px 2px var(--border-color);
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+
+.profilebar_modal h3 {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.profilebar_modal .line {
+    width: 100%;
+}
+
+.Profilebar-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* outline: 1px solid red; */
+    min-width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.Profilebar-container .profile-pic img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.Profilebar-container .text-area {
+    margin: 0 5px;
+}
+
 @media (max-width:988px) {
-    .text-area{
+    .text-area {
         position: absolute;
         bottom: 0;
+        display: none;
+    }
+    .MoreSVG{
         display: none;
     }
 }
