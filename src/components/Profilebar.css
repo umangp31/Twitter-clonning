@@ -105,6 +105,15 @@ svg {
 .Profilebar-container .text-area {
     margin: 0 5px;
 }
+@media (max-width:1250px) {
+    .Profilebar-Container{
+        max-width: max-content;
+        padding: 4px 6px;
+    }
+    .text-area h4,p{
+        font-size: 13px;
+    }
+}
 
 @media (max-width:988px) {
     .text-area {
