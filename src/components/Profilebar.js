@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import auth from "./firebase";
 import './Profilebar.css';
-import { useStateValue } from './StateProvider';
 function Profilebar() {
-  const [{ user }, dispatch] = useStateValue();
+  // const [{ user }, dispatch] = useStateValue();
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const USERNAME = user.displayName;
+  // const USERNAME = user.displayName;
+  const AVATAR = "https://avatar.oxro.io/avatar.svg?name=VIVEK";
+  const USERNAME="MRMUSK";
   const handleLogout = (e) => {
     console.log("ho");
     e.preventDefault();
@@ -15,10 +16,10 @@ function Profilebar() {
     <>
       <div className='Profilebar-Container'>
         <div className='profile-pic' onClick={handleLogout}>
-          <img src={user.photoURL} alt="" />
+          <img src={AVATAR} alt="" />
         </div>
         <div className='text-area'>
-          <h4>{user.displayName}</h4>
+          <h4>{USERNAME}</h4>
           <p>{"@the" + USERNAME.split(" ").join("").toLowerCase()}</p>
         </div>
         {/* <div className='profilebar_options'> */}
@@ -30,10 +31,10 @@ function Profilebar() {
           <div className='profilebar_modal'>
             <div className='Profilebar-container modal'>
               <div className='profile-pic' onClick={handleLogout}>
-                <img src={user.photoURL} alt="" />
+                <img src={AVATAR} alt="" />
               </div>
               <div className='text-area'>
-                <h4>{user.displayName}</h4>
+                <h4>MRMUSK</h4>
                 <p>{"@the" + USERNAME.split(" ").join("").toLowerCase()}</p>
               </div>
             </div>

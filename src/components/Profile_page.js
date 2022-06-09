@@ -11,7 +11,6 @@ const Profile_page = () => {
           <h3 className="title_user_name">Umang Patel</h3>
           <h6 className="title_no_of_tweets">7 Tweets</h6>
         </div>
-
         <div className="profile_page_profile">
           <div className="profile_bg_image"></div>
           <div className="profile_user_info">
@@ -21,7 +20,7 @@ const Profile_page = () => {
                 alt=""
               />
             </div>
-              <button className="edit_profile">Edit Profile</button>
+            <button className="edit_profile">Edit Profile</button>
           </div>
 
           <div className="profile_bio"></div>

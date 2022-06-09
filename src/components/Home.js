@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react'
-import Feed from "./Feed"
 import "./Home.css"
+import Profile_Page from "./Profile_page"
 import RightBar from './RightBar'
 import Sidebar from './Sidebar'
-import Messages from './Messages'
-import Profile_page from './Profile_page'
-
 const Home = () => {
     useEffect(()=>{
         document.title="Home / Twitter"
@@ -16,7 +13,7 @@ const Home = () => {
                 <Sidebar/>
                 {/* <Messages/> */}
                 {/* <Feed/> */}
-                <Profile_page/>
+                <Profile_Page/>
                 <RightBar />
             </div>
         </>

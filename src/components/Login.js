@@ -1,45 +1,28 @@
 import React, { useState } from 'react';
 import Applelogo from "../Assests/apple_logo.svg";
 import Googlelogo from "../Assests/google_logo.svg";
-import auth, { Googleprovider } from './firebase';
 import Home from './Home';
 import "./login.css";
-//This is Wrong importing 
-// import actionTypes  from './reducer';
-// right import is  like this 
-// I SPEND ALMOST .2 HOUR FInding what is issue AND I GOT THAT Dumb Import i am doing 😂
-import { actionTypes } from './reducer';
-import { useStateValue } from './StateProvider';
 export default function Login() {
-    const [{ }, dispatch] = useStateValue();
+    // const [{ }, dispatch] = useStateValue();
     const [isLoggedIn, setIsLoggedIn] = useState(false)
-    // const signIn = () => {
-    //     auth.signInWithPopup(Googleprovider).then(user => setUser(user))
-    // }
-    // auth.onAuthStateChanged(authuser => {
-    //     if (authuser) {
-    //         setUser(authuser)
-    //         setIsLoggedIn(true)
-    //     }
-    //     else{
-    //         setIsLoggedIn(false)
-    //     }
-    // }
+
 
     const signIn = () => {
-        auth.signInWithPopup(Googleprovider).then(result =>
-            dispatch({
-                type: actionTypes.SET_USER,
-                user: result.user,
-            })
-        )
-        .then(()=>setIsLoggedIn(true))
-            .catch(error => alert(error.message));
+        // auth.signInWithPopup(Googleprovider).then(result =>
+        //     dispatch({
+        //         type: actionTypes.SET_USER,
+        //         user: result.user,
+        //     })
+        // )
+        // .then(()=>setIsLoggedIn(true))
+        //     .catch(error => alert(error.message));
+        setIsLoggedIn(true)
     };
     return (
         <>
             {
-                !isLoggedIn ? (
+                isLoggedIn ? (
                     <>
                         <div className='login_container'>
                             <div className="login_img">

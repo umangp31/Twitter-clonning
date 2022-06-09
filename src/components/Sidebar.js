@@ -22,7 +22,7 @@ function Sidebar({user}) {
                 <button><span>Tweet</span> </button>
             </div>
             </div>
-            <Profilebar user={user}/>
+            <Profilebar/>
         </div>
     )
 }

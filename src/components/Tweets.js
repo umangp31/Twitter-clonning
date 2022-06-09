@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useStateValue } from './StateProvider';
 import "./Tweets.css";
 const Tweets = ({ replyCount }) => {
-    const [{ user }, dispatch] = useStateValue();
-    const USERNAME = user.displayName;
+    // const [{ user }, dispatch] = useStateValue();
+    const USERNAME = "BILLBHAI";
     const [TwettLikes, setTwettLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
     const handleTweetLikes = (e) => {
@@ -20,17 +19,17 @@ const Tweets = ({ replyCount }) => {
         }
     }
     console.log();
-    const AVATAR = "https://avatar.oxro.io/avatar.svg?name=VIVEK";
+    // const AVATAR = https://avatar.oxro.io/avatar.svg?name=VIVEK";
     return (
         <div className='Tweet_Container' >
             <div className='Tweet_UserAvatar'>
-                <img src={user.photoURL} alt='' />
+                <img src="https://avatar.oxro.io/avatar.svg?name=VIVEK" alt='' />
                 <span className={replyCount > 0 ? "Tweet_ThreadLine" : ""}></span>
             </div>
             <div className='Tweet_Main'>
                 <div className='Tweet_UserInfo'>
-                    <h4 className='Tweet_Name'>{user?.displayName}</h4>
-                    <h4 className='Tweet_UserName'>{"@the" + USERNAME.split(" ").join("").toLowerCase()} •</h4>
+                    <h4 className='Tweet_Name'>{USERNAME}</h4>
+                    <h4 className='Tweet_UserName'>{"@the" + USERNAME?.split(" ").join("").toLowerCase()} •</h4>
                     <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
                 </div>
                 <div className='Tweet_TweetCOntent'>
