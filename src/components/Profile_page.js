@@ -16,30 +16,44 @@ const Profile_page = () => {
 
         <div className="profile_page_profile">
           <div className="profile_bg_image"></div>
-          <div className="profile_user_info">
-            <div className="profile_user_img">
-              <img
-                src="https://cdn.lorem.space/images/face/.cache/150x150/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
-                alt=""
-              />
-            </div>
-            {/* <div className="profile_user_edit"> */}
+          <div className="profile_page_profile_body">
+            <div className="profile_user_info">
+              <div className="profile_user_img">
+                <img
+                  src="https://cdn.lorem.space/images/face/.cache/150x150/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              {/* <div className="profile_user_edit"> */}
               <button className="edit_profile">Edit Profile</button>
-            {/* </div> */}
-          </div>
+              {/* </div> */}
+            </div>
 
-          <div className="profile_bio">
-            <h3 className="profile_bio_name">Unknown</h3>
-            <h6 className="profile_user_name">@Unknown</h6>
-            <h6 className="profile_joining">Joined On 31 MAY 2020</h6>
-            <h6 className="profile_following">77 Following</h6>
-            <h6 className="profile_followers">770 Followers</h6>
-          </div>
-        </div>
+            <div className="profile_bio">
+              <h3 className="profile_bio_name">Laxhmi Cheat Fund</h3>
+              <h6 className="profile_user_name">@Anuradha</h6>
+              <h6 className="profile_joining">Joined On 1 April 2020</h6>
+            </div>
+            <div className="profile_follow">
+              <h6 className="profile_following">5M Following</h6>
+              <h6 className="profile_followers">1 Followers</h6>
+            </div>
+            <div className="profile_page_contents">
+              <h6 className="profile_page_contents_title">Tweets</h6>
+              <h6 className="profile_page_contents_title">Tweets & replies</h6>
+              <h6 className="profile_page_contents_title">Media</h6>
+              <h6 className="profile_page_contents_title">Likes</h6>
+            </div>
 
-        <div className="profile_page_contents">tweets like media</div>
-        <div className="profile_page_feed_tweets">
-          <Tweets></Tweets>
+            <div className="profile_page_feed_tweets">
+              <Tweets></Tweets>
+              <Tweets></Tweets>
+              <Tweets></Tweets>
+              <Tweets></Tweets>
+              <Tweets></Tweets>
+              <Tweets></Tweets>
+            </div>
+          </div>
         </div>
       </div>
     </div>
