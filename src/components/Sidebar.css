@@ -31,6 +31,12 @@
     transition: all 0.15s ease-in-out;
 }
 
+.Sidebar_Container li a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
 .Sidebar_Container li svg {
     margin-right: 15px;
     color: aliceblue;
