@@ -27,7 +27,7 @@ function Profilebar() {
         {/* </div> */}
       </div>
       {
-        !!isModalOpen ? (
+        isModalOpen ? (
           <div className='profilebar_modal'>
             <div className='Profilebar-container modal'>
               <div className='profile-pic' onClick={handleLogout}>
