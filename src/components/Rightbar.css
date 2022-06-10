@@ -20,7 +20,6 @@
 .rightbar_searchbar{
     flex: 0.063;
     position: sticky;
-    top:-5px;
     padding:5px 0;
     /* outline: 1px solid red; */
 }
