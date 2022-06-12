@@ -8,9 +8,6 @@
     padding:3px 35px;
     overflow: scroll;
 }
-
-
-
 .rightbar_box{
     min-width: 25vw;
     max-width: 25vw;
@@ -101,4 +98,9 @@
     border-radius: 20px;
     background-color: #16181c;
     max-height:10vh;
+}
+@media (max-width:988px) {
+    .rightbar_Container{
+        display: none;
+    }
 }
