@@ -136,6 +136,12 @@
 
 }
 
+.profile_bio_text {
+  line-height: 1.7;
+  font-size: 17px;
+  font-weight: 350;
+}
+
 .profile_follow {
   /* background-color: red; */
   /* position: relative; */
@@ -148,9 +154,26 @@
 }
 
 .profile_followers {
+  color: grey;
+  font-weight: 400;
   padding-left: 20px;
 }
 
+.profile_following {
+  color: grey;
+  font-weight: 400;
+}
+
+.profile_user_name {
+  color: gray;
+  font-weight: 400;
+}
+
+.profile_following_count, .profile_followers_count {
+  margin: 0 2px;
+  color: aliceblue;
+  font-weight: 700;
+}
 
 .profile_page_contents {
   margin-top: 10px;
@@ -168,6 +191,7 @@
   padding: 20px;
   flex: 0.25;
   font-size: 14px;
+  transition: all 0.2s ease-in-out;
 }
 
 .profile_page_feed_tweets {
@@ -184,4 +208,10 @@
 
 .profile_page_contents_title:hover {
   background-color: var(--border-color);
+}
+
+@media (max-width:988px) {
+  .profile_page {
+    flex: 0.83;
+  }
 }
