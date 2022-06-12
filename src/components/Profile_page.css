@@ -121,10 +121,18 @@
 
 .profile_bg_image {
   /* flex: 1; */
-  min-height: 25vh;
-  max-height: 25vh;
+  height: 25vh;
+  /* min-height: 25vh; */
+  /* max-height: 25vh; */
+  /* object-fit: contain; */
   /* outline: 1px solid grey; */
-  background-color: grey;
+}
+
+.profile_bg_image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* object-fit: contain; */
 }
 
 .profile_bio {
