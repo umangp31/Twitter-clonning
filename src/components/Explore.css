@@ -1,0 +1,97 @@
+.Explore_Container {
+    flex: 0.53;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-left: 1px solid var(--border-color);
+    color: white;
+    /* padding: 3px 10px; */
+    overflow: scroll;
+}
+
+.explore_header {
+    position: sticky;
+    top: -1%;
+    border-bottom: 2px solid var(--border-color);
+    /* outline: 1px solid red; */
+
+
+}
+
+.explore_box {
+    /* outline: 1px solid red; */
+    min-width: 35vw;
+    max-width: 25vw;
+    background-color: black;
+}
+
+.explore_searchbar {
+    position: sticky;
+    top: -1%;
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid var(--border-color) ; */
+}
+
+.IconButton {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.IconButton svg {
+    min-width: 22px;
+    min-height: 22px;
+    fill: aliceblue;
+}
+
+.explore_search_twitter {
+    flex: 1;
+    background-color: #16181c;
+    border-radius: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: grey;
+    padding-inline: 1rem;
+}
+
+.explore_search_twitter:focus {
+    border: 2px solid var(--twitter_blue);
+}
+
+.explore_tabs {
+    /* border: 2px solid var(--twitter_blue); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.explore_tab_options {
+    flex: 0.2;
+    min-height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    color: gray;
+}
+
+.explore_tab_options:hover {
+    background-color: var(--border-color);
+}
+
+.active_tab {
+    color: aliceblue;
+}
+
+.active_line {
+    width: 60%;
+    min-height: 4px;
+    border-radius: 5px;
+    background-color: var(--twitter_blue);
+}
