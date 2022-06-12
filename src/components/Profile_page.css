@@ -26,15 +26,11 @@
   background-color: transparent;
   backdrop-filter: blur(20px);
   z-index: 2;
-  /* position: fixed; */
-  background-color: var(--border-color);
   flex-direction: column;
   justify-content: space-around;
-  /* background-color: var(--border-color); */
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  /* box-sizing: border-box;  */
 }
 
 .iconbutton {
