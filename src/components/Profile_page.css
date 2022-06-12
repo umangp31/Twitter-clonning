@@ -8,6 +8,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .profile_page_container {
@@ -21,7 +22,7 @@
   padding: 8px 8px;
   display: flex;
   /* position: fixed; */
-  /* background-color: var(--border-color); */
+  background-color: var(--border-color);
   flex-direction: column;
   justify-content: space-around;
   /* box-sizing: border-box;  */
