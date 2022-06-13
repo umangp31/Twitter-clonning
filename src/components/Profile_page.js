@@ -7,12 +7,18 @@ const Profile_page = () => {
     document.title = "Bill Gates (@thebillbhai)"
 
   }, [])
+<<<<<<< HEAD
   const [editclicked,setEditClicked] = useState(false);
+=======
+  const handleBack = () => {
+    window.history.back()
+  }
+>>>>>>> 66279fd879277b37f015a308b5ab5383eb824f61
   return (
     <div className="profile_page">
       <div className="profile_page_container">
         <div className="profile_page_title">
-          <div className="iconbutton">
+          <div className="iconbutton" onClick={handleBack}>
             <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03" style={{ color: "rgb(239, 243, 244);" }}><g><path d="M20 11H7.414l4.293-4.293c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0l-6 6c-.39.39-.39 1.023 0 1.414l6 6c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L7.414 13H20c.553 0 1-.447 1-1s-.447-1-1-1z"></path></g></svg></div>
           {/* <img src="" alt="" className="title_back" /> */}
           {/* <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03" style="color: rgb(239, 243, 244);"><g><path d="M20 11H7.414l4.293-4.293c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0l-6 6c-.39.39-.39 1.023 0 1.414l6 6c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L7.414 13H20c.553 0 1-.447 1-1s-.447-1-1-1z"></path></g></svg> */}
@@ -31,7 +37,7 @@ const Profile_page = () => {
             <div className="profile_user_info">
               <div className="profile_user_img">
                 <img
-                  src="https://cdn.lorem.space/images/face/.cache/150x150/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  src="https://pbs.twimg.com/profile_images/1529956155937759233/Nyn1HZWF_400x400.jpg"
                   alt=""
                 />
               </div>
