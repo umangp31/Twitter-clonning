@@ -7,13 +7,10 @@ const Profile_page = () => {
     document.title = "Bill Gates (@thebillbhai)"
 
   }, [])
-<<<<<<< HEAD
   const [editclicked,setEditClicked] = useState(false);
-=======
   const handleBack = () => {
     window.history.back()
   }
->>>>>>> 66279fd879277b37f015a308b5ab5383eb824f61
   return (
     <div className="profile_page">
       <div className="profile_page_container">
