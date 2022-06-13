@@ -225,6 +225,7 @@
 
 .profile_page_feed_tweets {
   /* outline: 1px solid red; */
+  /* flex: 0.37; */
   scroll-behavior: smooth;
 }
 
@@ -235,6 +236,96 @@
 
 .profile_page_contents_title:hover {
   background-color: var(--border-color);
+}
+
+.edit-profile-modal {
+  position: absolute;
+  background-color: white;
+  width: 40vw;
+  top: 5%;
+  left: 30%;
+  z-index: 2;
+  color: black;
+  border-radius: 15px;
+  max-height: 90vh;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical !important; 
+}
+
+.edit-profile-header {
+  display: flex;
+  align-items: center;
+  position: static;
+
+  /* justify-content: space-around; */
+}
+
+.edit-profile-header .side-header {
+  display: flex;
+  width: 35vw;
+  justify-content: space-between;
+  padding: 10px 0;
+  /* width: 30vw; */
+}
+
+.edit-profile-header svg{
+  height: 2%;
+  width: 3%;
+  
+}
+
+.edit-profile-header button{
+  background-color: black;
+  color: white;
+  height: 4vh;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.edit-profile-modal .profile_bg_image {
+  padding: 0 1px;
+}
+
+.edit-profile-modal .profile_user_img {
+  border: none;
+  top: -8vh;
+  /* border-radius: 10px; */
+  height: 18vh;
+  width: 8vw;
+  border: 6px solid white;
+}
+
+.edit-profile-modal .profile_user_img img {
+  height: 100%;
+  width: 100%;
+}
+
+/* .edit-profile-modal .edit-profile-body label{
+  /* position: absolute; */
+  /* display: block;
+  margin: 0 15px;
+} */ 
+
+.edit-profile-modal .edit-profile-body input {
+  margin: 0 15px;
+  height: 7vh;
+  width: 37vw;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 0.1px solid black;
+}
+
+.edit-profile-modal .edit-profile-body .special {
+  height: 13vh;
+}
+
+.edit-profile-body input::placeholder {
+  font-weight: 600;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  font-size: 17px;
 }
 
 @media (max-width:988px) {
