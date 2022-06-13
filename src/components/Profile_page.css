@@ -33,6 +33,21 @@
   align-items: center;
 }
 
+.heder_user_info {
+  padding: 0 4%;
+}
+
+.title_no_of_tweets {
+  color: grey;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.title_user_name {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 .iconbutton {
   display: flex;
   flex-direction: column;
@@ -124,7 +139,7 @@
   /* outline: 1px solid grey; */
 }
 
-.profile_bg_image img{
+.profile_bg_image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -148,6 +163,12 @@
   line-height: 1.7;
   font-size: 17px;
   font-weight: 350;
+}
+
+.profile_joining {
+  color: gray;
+  font-weight: 400;
+  font-style: 14px;
 }
 
 .profile_follow {
@@ -204,8 +225,6 @@
 
 .profile_page_feed_tweets {
   /* outline: 1px solid red; */
-  /* flex: 0.37; */
-
   scroll-behavior: smooth;
 }
 
@@ -221,5 +240,17 @@
 @media (max-width:988px) {
   .profile_page {
     flex: 0.83;
+  }
+}
+
+@media (max-width:688px) {
+  .profile_page {
+    flex: 1;
+  }
+
+  .profile_page_contents_title {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
   }
 }

@@ -60,9 +60,10 @@
 }
 
 @media (max-width:1250px) {
-    .Sidebar_Container{
+    .Sidebar_Container {
         padding-right: 5px;
     }
+
     .Sidebar_Container .link-wrapper li {
         margin-top: 5px;
         padding: 5px 4px;
@@ -99,5 +100,56 @@
 
     .twt-btn button span {
         display: none;
+    }
+}
+
+@media (max-width:600px) {
+
+    .Sidebar_Container {
+        position: fixed;
+        height: 5vh;
+        width: 100vw;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        /* align-items: center; */
+        border-top: 1px solid var(--border-color);
+        background-color: transparent;
+        backdrop-filter: blur(8px);
+        z-index: 5;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .Sidebar_Container .link-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .Sidebar_Container .link-wrapper:nth-child(6), .link-wrapper:last-child {
+        display: none;
+    }
+
+    .menu {
+        flex: 1;
+        flex-direction: row;
+    }
+
+    .Sidebar_Container .link-wrapper li {
+        padding: 2px 5px;
+        margin: 2px 5px;
+    }
+
+    .twt-btn {
+        display: none;
+    }
+
+    .Sidebar_Container li svg {
+        max-width: 25px;
+        min-height: 20px;
     }
 }

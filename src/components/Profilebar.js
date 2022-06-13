@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import auth from "./firebase";
 import './Profilebar.css';
 function Profilebar() {
@@ -14,7 +14,7 @@ function Profilebar() {
   }
   return (
     <>
-      <div className='Profilebar-Container'>
+      <div className='Profilebar-Container mobile'>
         <div className='profile-pic' onClick={handleLogout}>
           <img src={AVATAR} alt="" />
         </div>

@@ -1,17 +1,36 @@
-.Feed_Container{
+.Feed_Container {
     flex: 0.85;
-    background-color:black;
+    background-color: black;
 }
+
 .Feed_Container {
     position: static;
     flex: 0.50;
     background-color: black;
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
-    overflow-y: scroll !important ;
+    overflow-y: scroll !important;
 }
+
+.Yourtweet_Header {
+    position: sticky;
+    top: 0;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 9px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    /* background-color: aliceblue; */
+}
+
 @media (max-width:988px) {
-.Feed_Container{
-    flex:3;
+    .Feed_Container {
+        flex: 3;
+    }
 }
+@media (max-width:688px) {
+    .Feed_Container {
+        flex: 5;
+    }
 }

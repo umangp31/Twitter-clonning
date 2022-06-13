@@ -3,10 +3,10 @@
     border-bottom: 1px solid var(--border-color);
     height: max-content;
     color: aliceblue;
-    padding: 0 15px;
+    /* padding: 0 15px; */
 }
 
-.Yourtweet_Header {
+/* .Yourtweet_Header {
     position: fixed;
     top: 0;
     margin-left: -0.95%;
@@ -17,8 +17,7 @@
     background-color: transparent;
     backdrop-filter: blur(5px);
    
-}
-
+} */
 .Yourtweet_HomeText {
     font-size: 20px;
     font-weight: 650;
@@ -30,9 +29,10 @@
 
 .Write_Tweet {
     /* outline: 1px solid red; */
-    margin-top: 8vh;
+    margin-top: 2vh;
     display: flex;
     flex-direction: row;
+    padding: 0 10px;
 }
 
 .YourTweet_Avatar {
@@ -88,7 +88,7 @@
     padding: 10px 45px;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     /* border-top: 1px solid var(--border-color); */
 }
