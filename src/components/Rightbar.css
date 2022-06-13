@@ -6,18 +6,22 @@
     border-left:1px solid var(--border-color);
     color: white;
     padding:3px 35px;
-    overflow: scroll;
+    overflow-y: scroll;
+    /* overflow: scroll; */
 }
 .rightbar_box{
     min-width: 25vw;
     max-width: 25vw;
     background-color:black;
+    
 }
 
 .rightbar_searchbar{
     /* flex: 0.063; */
-    position: sticky;
+    position: fixed;
     padding:5px 0;
+    /* background-color:#16181c; */
+
     /* outline: 1px solid red; */
 }
 
@@ -45,6 +49,7 @@
     display: flex;
     flex-direction: column;
     margin: 12px 0;
+    margin-top: 80px;
     background-color: #16181c;
     border-radius: 20px;    
     height: max-content;
