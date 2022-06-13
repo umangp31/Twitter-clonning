@@ -1,0 +1,44 @@
+
+.container{
+    flex: 0.58;
+    border-left: 1px solid var(--border-color);
+    min-height: 130vh;
+    max-height: 130vh ;
+    overflow-y: scroll;
+}
+
+.bookmarkBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    position: relative;
+    top: 8vh;
+}
+
+.bookmarkImg{
+    max-width: 21.5vw;
+    max-height: 21.5vh;
+    object-fit: cover;
+}
+
+.bookmarkBG{
+    display: flex;
+    justify-content: center;
+}
+
+.bookmarkContent{
+    width: 50%;
+}
+
+.bookmarkContent h2{
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 820;
+}
+
+.bookmarkContent p{
+    color: grey;
+    font-size: 0.9rem;
+}
