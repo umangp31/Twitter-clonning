@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import "./Explore.css";
+import Tweets from "./Tweets";
+import What_happening_card from "./What_happening_card";
 function Explore() {
     useEffect(() => {
         document.title = "Home / Explore"
@@ -40,6 +42,20 @@ function Explore() {
                     <div className='explore_tab_options' onClick={handleActiveTab}>Entertainment <span className="line"></span></div>
                 </div>
             </div>
+            <div className="explore_banner">
+                <h5>
+                    Visit grow.google/certificates</h5>
+                <h2>#GoogleCareerCertificates</h2>
+            </div>
+            <What_happening_card />
+            <What_happening_card />
+            <What_happening_card />
+            <What_happening_card />
+            <Tweets />
+            <Tweets />
+            <Tweets />
+            <Tweets />
+
 
         </div>
     )
