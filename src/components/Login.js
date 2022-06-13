@@ -3,6 +3,7 @@ import Applelogo from "../Assests/apple_logo.svg";
 import Googlelogo from "../Assests/google_logo.svg";
 import Home from './Home';
 import "./login.css";
+
 export default function Login() {
     // const [{ }, dispatch] = useStateValue();
     const [isLoggedIn, setIsLoggedIn] = useState(false)

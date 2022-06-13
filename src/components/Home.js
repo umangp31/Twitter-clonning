@@ -9,6 +9,8 @@ import Messages from './Messages';
 import Profile_Page from "./Profile_page";
 import RightBar from './RightBar';
 import Sidebar from './Sidebar';
+import Bookmarks from './Bookmarks';
+
 const Home = () => {
     useEffect(() => {
         document.title = "Home / Twitter"
@@ -26,7 +28,8 @@ const Home = () => {
                     <Route path='/explore' element={<Explore />} />
                     <Route path='/communities' element={<Profile_Page />} />
                     <Route path='/notifications' element={<Profile_Page />} />
-                    <Route path='/bookmarks' element={<Profile_Page />} />
+                    <Route path='/bookmarks' element={<Bookmarks />} />
+                    
                 </Routes>
                 <RightBar />
             </div>

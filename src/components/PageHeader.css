@@ -1,0 +1,30 @@
+.profile_page_title {
+    padding: 8px 8px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+  }
+  
+  .heder_user_info {
+    padding: 0 4%;
+  }
+  
+  .title_no_of_tweets {
+    color: grey;
+    font-weight: 400;
+    font-size: 13px;
+  }
+  
+  .title_user_name {
+    font-weight: 700;
+    font-size: 20px;
+  }
