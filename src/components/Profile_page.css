@@ -240,7 +240,7 @@
 
 .edit-profile-modal {
   position: absolute;
-  background-color: white;
+  background-color: black;
   width: 40vw;
   top: 5%;
   left: 30%;
@@ -249,14 +249,19 @@
   border-radius: 15px;
   max-height: 90vh;
   overflow-y: scroll;
-  overflow: -moz-scrollbars-vertical !important; 
+  overflow: -moz-scrollbars-vertical !important;
+  box-shadow: 0px 0px 15px 5px var(--border-color);
+
 }
 
 .edit-profile-header {
   display: flex;
   align-items: center;
-  position: static;
-
+  position: sticky;
+  color: aliceblue;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  top: 0;
   /* justify-content: space-around; */
 }
 
@@ -268,19 +273,22 @@
   /* width: 30vw; */
 }
 
-.edit-profile-header svg{
+.edit-profile-header svg {
   height: 2%;
   width: 3%;
-  
+  fill: aliceblue;
 }
 
-.edit-profile-header button{
-  background-color: black;
-  color: white;
+.edit-profile-header button {
+  background-color: aliceblue;
+  color: black;
+  font-weight: 700;
   height: 4vh;
   padding: 5px 10px;
   border-radius: 15px;
   font-weight: 500;
+  outline: none;
+  border: none;
 }
 
 .edit-profile-modal .profile_bg_image {
@@ -293,7 +301,7 @@
   /* border-radius: 10px; */
   height: 18vh;
   width: 8vw;
-  border: 6px solid white;
+  border: 6px solid black;
 }
 
 .edit-profile-modal .profile_user_img img {
@@ -303,9 +311,9 @@
 
 /* .edit-profile-modal .edit-profile-body label{
   /* position: absolute; */
-  /* display: block;
+/* display: block;
   margin: 0 15px;
-} */ 
+} */
 
 .edit-profile-modal .edit-profile-body input {
   margin: 0 15px;
@@ -313,7 +321,13 @@
   width: 37vw;
   margin-bottom: 30px;
   border-radius: 5px;
-  border: 0.1px solid black;
+  color: aliceblue;
+  background-color: black;
+  border: 0.1px solid var(--border-color);
+}
+
+.edit-profile-modal .edit-profile-body input:focus {
+  outline: none;
 }
 
 .edit-profile-modal .edit-profile-body .special {
@@ -344,4 +358,23 @@
     padding: 20px 0;
     font-size: 13px;
   }
+
+  .edit-profile-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .edit-profile-modal .profile_user_img {
+    width: 30vw;
+    height: 15vh;
+  }
+
+  .edit-profile-modal .edit-profile-body input {
+    width: 90%;
+  }
+
 }
