@@ -1,12 +1,10 @@
-import React from "react";
 import "./Bookmarks.css";
 import PageHeader from "./PageHeader";
-
 const Bookmarks = (props) => {
   return (
     <div className="container">
       <div className="bookmarkTitle">
-        <PageHeader/>
+        <PageHeader />
       </div>
       <div className="bookmarkBox">
         <div className="bookmarkBG">

@@ -1,13 +1,17 @@
-
-.container{
+.container {
     flex: 0.58;
     border-left: 1px solid var(--border-color);
     min-height: 130vh;
-    max-height: 130vh ;
+    max-height: 130vh;
     overflow-y: scroll;
 }
 
-.bookmarkBox{
+.bookmarkTitle {
+    position: sticky;
+    top: 0;
+}
+
+.bookmarkBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,28 +21,48 @@
     top: 8vh;
 }
 
-.bookmarkImg{
+.bookmarkImg {
     max-width: 21.5vw;
     max-height: 21.5vh;
     object-fit: cover;
 }
 
-.bookmarkBG{
+.bookmarkBG {
     display: flex;
     justify-content: center;
 }
 
-.bookmarkContent{
+.bookmarkContent {
     width: 50%;
 }
 
-.bookmarkContent h2{
+.bookmarkContent h2 {
     color: white;
     font-size: 1.8rem;
     font-weight: 820;
 }
 
-.bookmarkContent p{
+.bookmarkContent p {
     color: grey;
     font-size: 0.9rem;
+}
+
+@media (max-width:688px) {
+    .container {
+
+        flex: 1;
+    }
+
+    .bookmarkImg {
+        max-width: 50vw;
+    }
+
+    .bookmarkContent {
+        text-align: center;
+        max-width: 80%;
+    }
+
+    .bookmarkContent p {
+        text-align: justify;
+    }
 }

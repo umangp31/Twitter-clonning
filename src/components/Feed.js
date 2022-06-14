@@ -1,7 +1,11 @@
+import { useState } from "react"
 import "./Feed.css"
+import Loader from "./Loader"
 import Tweets from './Tweets'
 import YourTweet from './YourTweet'
 const Feed = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    setTimeout(() => setIsLoading(false), 2000)
     return (
         <div className='Feed_Container'>
             <div className="Yourtweet_Header">
@@ -16,13 +20,19 @@ const Feed = () => {
                 </div>
             </div>
             <YourTweet />
-            <Tweets replyCount='0' />
-            <Tweets replyCount='0' />
-            <Tweets replyCount='0' />
-            <Tweets replyCount='0' />
-            <Tweets replyCount='0' />
-            <Tweets replyCount='1' />
-            <Tweets replyCount='0' />
+            {
+                isLoading ? <Loader /> : <div>
+                    <Tweets replyCount='0' />
+                    <Tweets replyCount='0' />
+                    <Tweets replyCount='0' />
+                    <Tweets replyCount='0' />
+                    <Tweets replyCount='0' />
+                    <Tweets replyCount='1' />
+                    <Tweets replyCount='0' />
+                </div>
+            }
+
+
         </div>
     )
 }
