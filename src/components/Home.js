@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import {
     BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
+import Bookmarks from './Bookmarks';
 import Explore from "./Explore";
 import Feed from './Feed';
 import "./Home.css";
@@ -9,7 +10,6 @@ import Messages from './Messages';
 import Profile_Page from "./Profile_page";
 import RightBar from './RightBar';
 import Sidebar from './Sidebar';
-import Bookmarks from './Bookmarks';
 
 const Home = () => {
     useEffect(() => {
@@ -29,7 +29,6 @@ const Home = () => {
                     <Route path='/communities' element={<Profile_Page />} />
                     <Route path='/notifications' element={<Profile_Page />} />
                     <Route path='/bookmarks' element={<Bookmarks />} />
-                    
                 </Routes>
                 <RightBar />
             </div>

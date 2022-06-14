@@ -80,6 +80,7 @@
     transition: all 0.2s ease-in-out;
     font-weight: 600;
     color: gray;
+    border-radius: 3px;
 }
 
 .explore_tab_options:hover {
@@ -88,6 +89,7 @@
 
 .active_tab {
     color: aliceblue;
+    border-bottom: 4px solid var(--twitter_blue);
 }
 
 .active_line {
