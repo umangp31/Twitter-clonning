@@ -1,11 +1,9 @@
 // import { AutoAwesome } from ''
 import { useState } from 'react';
+import { USERIMG } from '../utills/User';
 import "./YourTweet.css";
 
 const YourTweet = () => {
-    // const [{ user }, dispatch] = useStateValue();
-    // console.log(user.photoURL);
-    // const Pic=user.photoURL;
     const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();
@@ -18,7 +16,7 @@ const YourTweet = () => {
         <div className='Yourtweet_Container' >
             <div className="Write_Tweet">
                 <div className="YourTweet_Avatar">
-                    <img src="https://avatar.oxro.io/avatar.svg?name=VIVEK" alt='' />
+                    <img src={USERIMG} alt='' />
                 </div>
                 <div className='YourTweet_Form'>
                     <input type="text" className='YourTweet_TweetText'

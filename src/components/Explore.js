@@ -5,22 +5,17 @@ import What_happening_card from "./What_happening_card";
 function Explore() {
     const tab_list = document.getElementsByClassName("explore_tab_options");
     useEffect(() => {
-        document.title = "Home / Explore"
+        document.title = "Explore / Twitter"
     }, [])
     for (let i = 0; i < tab_list.length; i++) {
         tab_list[i].style.borderBottom = "0";
     }
     const handleActiveTab = (e) => {
         tab_list[1].style.borderBottom = "4px solid var(--twitter_blue)"
-        // const active_line_list = document.getElementsByClassName("line");
         const current_element = e.target;
-        const line = document.createElement("span");
-        line.className = "line";
-        line.classList.add("active_line")
         for (let i = 0; i < tab_list.length; i++) {
             if (tab_list[i].classList.contains("active_tab")) {
                 tab_list[i].classList.remove("active_tab");
-
             }
         }
         for (let i = 0; i < tab_list.length; i++) {

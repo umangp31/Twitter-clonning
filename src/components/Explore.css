@@ -80,7 +80,8 @@
     transition: all 0.2s ease-in-out;
     font-weight: 600;
     color: gray;
-    border-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 .explore_tab_options:hover {

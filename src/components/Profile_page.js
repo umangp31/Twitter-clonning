@@ -1,18 +1,35 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Popup from "./EditProfilePopup";
 import "./Profile_page.css";
 import Tweets from "./Tweets";
-import Popup from "./EditProfilePopup";
 
 const Profile_page = () => {
   useEffect(() => {
     document.title = "Bill Gates (@thebillbhai)"
 
   }, [])
-  
+  const tab_list = document.getElementsByClassName("profile_page_contents_title");
   const [editclicked, setEditClicked] = useState(false);
   const handleBack = () => {
     window.history.back()
+  }
+  for (let i = 0; i < tab_list.length; i++) {
+    tab_list[i].style.borderBottom = "0";
+  }
+  const handleActiveTab = (e) => {
+    tab_list[1].style.borderBottom = "4px solid var(--twitter_blue)"
+    // const active_line_list = document.getElementsByClassName("line");
+    const current_element = e.target;
+    for (let i = 0; i < tab_list.length; i++) {
+      if (tab_list[i].classList.contains("active_tab")) {
+        tab_list[i].classList.remove("active_tab");
+      }
+    }
+    for (let i = 0; i < tab_list.length; i++) {
+      tab_list[i].style.borderBottom = "0";
+    }
+    current_element.classList.add("active_tab");
+    current_element.style.borderBottom = "4px solid var(--twitter_blue)"
   }
   return (
     <div className="profile_page">
@@ -59,10 +76,10 @@ const Profile_page = () => {
               <h6 className="profile_followers"><span className="profile_followers_count">97.6M</span>Followers</h6>
             </div>
             <div className="profile_page_contents">
-              <h6 className="profile_page_contents_title">Tweets</h6>
-              <h6 className="profile_page_contents_title">Tweets & replies</h6>
-              <h6 className="profile_page_contents_title">Media</h6>
-              <h6 className="profile_page_contents_title">Likes</h6>
+              <h6 className="profile_page_contents_title active_tab" onClick={handleActiveTab}>Tweets</h6>
+              <h6 className="profile_page_contents_title" onClick={handleActiveTab}>Tweets & replies</h6>
+              <h6 className="profile_page_contents_title" onClick={handleActiveTab}>Media</h6>
+              <h6 className="profile_page_contents_title" onClick={handleActiveTab}>Likes</h6>
             </div>
             <div className="profile_page_feed_tweets">
               <Tweets></Tweets>
@@ -72,7 +89,7 @@ const Profile_page = () => {
           </div>
         </div>
       </div>
-      <Popup show={editclicked} onClickOutside={() => {setEditClicked(false)}}/>
+      <Popup show={editclicked} onClickOutside={() => { setEditClicked(false) }} />
       {/* {editclicked ? <Popup show={editclicked} onClickOutside={() => {setEditClicked(false)}}/>: (<span></span>)
       } */}
     </div>

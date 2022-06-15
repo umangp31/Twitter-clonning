@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Applelogo from "../Assests/apple_logo.svg";
 import Googlelogo from "../Assests/google_logo.svg";
 import Home from './Home';

@@ -4,7 +4,7 @@
   background-color: black;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
-  overflow-y: scroll !important;
+  overflow-y: scroll;
   color: white;
   display: flex;
   flex-direction: column;
@@ -109,20 +109,16 @@
 }
 
 .edit_profile {
-  /* position: relative; */
   min-width: max-content;
   padding: 10px 20px;
   background-color: transparent;
   color: white;
-  /* float: right; */
   max-width: 5vw;
   border-radius: 50px;
-  /* left: 30vw; */
   margin-top: 9%;
   margin-right: 3%;
-  border-color: var(--border-color);
   outline: none;
-  border: 1px solid;
+  border: 1px solid aliceblue;
   transition: all 0.2s ease-in-out;
 }
 
@@ -131,27 +127,17 @@
 }
 
 .profile_bg_image {
-  /* flex: 1; */
   height: 25vh;
-  /* min-height: 25vh; */
-  /* max-height: 25vh; */
-  /* object-fit: contain; */
-  /* outline: 1px solid grey; */
 }
 
 .profile_bg_image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* object-fit: contain; */
 }
 
 .profile_bio {
-  /* position: relative; */
-  /* min-height: 10vh; */
   padding: 2px 3%;
-  /* background-color: rebeccapurple; */
-  /* top: -8vh; */
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
@@ -172,11 +158,7 @@
 }
 
 .profile_follow {
-  /* background-color: red; */
-  /* position: relative; */
-  /* min-height: 10vh; */
   padding: 2px 3%;
-  /* top: -8vh; */
   display: inline-flex;
   font-size: 1.3rem;
   line-height: 1.5;
@@ -206,8 +188,6 @@
 
 .profile_page_contents {
   margin-top: 10px;
-  /* padding: 20px; */
-  /* background-color: gold; */
   display: flex;
 
   justify-content: space-between;
@@ -218,15 +198,23 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  height: 6vh;
   flex: 0.25;
   font-size: 14px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: grey;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .profile_page_feed_tweets {
   /* outline: 1px solid red; */
   /* flex: 0.37; */
   scroll-behavior: smooth;
+}
+
+.active_tab {
+  color: aliceblue;
 }
 
 .profile_bio_name {
@@ -251,7 +239,7 @@
   overflow-y: scroll;
   overflow: -moz-scrollbars-vertical !important;
   box-shadow: 0px 0px 15px 5px var(--border-color);
-
+  transition: all 0.2s ease-in-out;
 }
 
 .edit-profile-header {

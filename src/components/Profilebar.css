@@ -63,7 +63,6 @@ svg {
     background-color: aliceblue;
     min-width: 18vw;
     bottom: 10%;
-    padding: 5px 15px;
     margin-left: -1%;
     border-radius: 15px;
     background-color: black;
@@ -74,7 +73,7 @@ svg {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-
+    z-index: 2;
 }
 
 .profilebar_modal h3 {
@@ -87,11 +86,11 @@ svg {
 }
 
 .Profilebar-container {
-    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     /* outline: 1px solid red; */
+    padding: 15px;
     min-width: 100%;
     border-bottom: 1px solid var(--border-color);
 }
@@ -105,12 +104,24 @@ svg {
 .Profilebar-container .text-area {
     margin: 0 5px;
 }
+
+.modal_options {
+    padding: 10px;
+}
+
+.modal_options:hover {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--border-color);
+}
+
 @media (max-width:1250px) {
-    .Profilebar-Container{
+    .Profilebar-Container {
         max-width: max-content;
         padding: 4px 6px;
     }
-    .text-area h4,p{
+
+    .text-area h4, p {
         font-size: 13px;
     }
 }
@@ -121,7 +132,8 @@ svg {
         bottom: 0;
         display: none;
     }
-    .MoreSVG{
+
+    .MoreSVG {
         display: none;
     }
 }
