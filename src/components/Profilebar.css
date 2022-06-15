@@ -127,9 +127,14 @@ svg {
 }
 
 @media (max-width:988px) {
+    .Profilebar-Container {
+        display: flex;
+        justify-content: center;
+    }
+    .Profilebar-Container:hover{
+        background-color: transparent;
+    }
     .text-area {
-        position: absolute;
-        bottom: 0;
         display: none;
     }
 

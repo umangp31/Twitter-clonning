@@ -341,6 +341,32 @@
     flex: 1;
   }
 
+  .profile_user_info {
+    /* background-color: aquamarine; */
+    margin-bottom: 0.2rem;
+    padding: 10px;
+  }
+
+  .profile_user_img {
+    width: 30%;
+    height: 15%;
+    border: none;
+    margin-left: 1%;
+  }
+
+  .profile_user_img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid black;
+  }
+
+
+
+
+
+
+
   .profile_page_contents_title {
     text-align: center;
     padding: 20px 0;

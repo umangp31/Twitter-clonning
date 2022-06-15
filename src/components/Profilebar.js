@@ -21,7 +21,7 @@ function Profilebar() {
           <p>{USERNAME}</p>
         </div>
         {/* <div className='profilebar_options'> */}
-        <svg className='MoreSVG' onClick={() => isModalOpen ? setIsModalOpen(false) : setIsModalOpen(true)} viewBox="0 0 24 24" fill='white' aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg>
+        <svg onClick={() => isModalOpen ? setIsModalOpen(false) : setIsModalOpen(true)} viewBox="0 0 24 24" fill='white' aria-hidden="true" class="r-1nao33i r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr MoreSVG"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg>
         {/* </div> */}
       </div>
       {
