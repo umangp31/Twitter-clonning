@@ -1,0 +1,151 @@
+.Notifications_Container {
+    position: static;
+    flex: 0.50;
+    background-color: black;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    overflow-y: scroll !important;
+}
+
+.Notifications_header {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+}
+
+.Notification_title {
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Notifications_header h3 {
+    color: aliceblue;
+}
+
+.SettingsIcon {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.SettingsIcon svg {
+    fill: white;
+    min-width: 22px;
+    min-height: 22px;
+}
+
+.Notifications_tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.Notifications_tab_options {
+    flex: 0.5;
+    min-height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    color: gray;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.Notifications_tab_options:hover {
+    background-color: var(--border-color);
+}
+
+.active_tab {
+    color: aliceblue;
+    border-bottom: 4px solid var(--twitter_blue);
+}
+
+.Notification {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border-top: 1px solid var(--border-color); */
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+    padding: 10px;
+}
+
+.Notification:hover {
+    background-color: var(--border-color);
+}
+
+.Notification_Type {
+    flex: 0.1;
+}
+
+.Notification_Type svg {
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.Notification_desc {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.Notification_UserAvatar {
+    margin: 4px 0;
+}
+
+.Notification_UserAvatar img {
+    max-width: 35px;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+
+.Notification_text {
+    color: aliceblue;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.Notification_displayName {
+    font-weight: 750;
+    margin-right: 5px;
+
+}
+
+.followed {
+    fill: var(--twitter_blue);
+}
+
+.likedNotification {
+    fill: #f91880;
+    color: #f91880;
+}
+
+.Notification_text_on_which_liked {
+    color: gray;
+    font-weight: 350;
+}
+@media(max-width:988px) {
+    .Notifications_Container {
+        flex: 0.8;
+    }
+
+    .Notifications_tab_options {
+        font-size: 15px;
+    }
+}
+@media(max-width:688px) {
+    .Notifications_Container {
+        flex: 1;
+    }
+
+    .Notifications_tab_options {
+        font-size: 15px;
+    }
+}

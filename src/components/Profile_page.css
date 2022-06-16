@@ -313,7 +313,9 @@
   background-color: black;
   border: 0.1px solid var(--border-color);
 }
-
+.edit-profile-modal .edit-profile-body input:focus{
+  border: 2px solid var(--twitter_blue);
+}
 .edit-profile-modal .edit-profile-body input:focus {
   outline: none;
 }
@@ -342,7 +344,6 @@
   }
 
   .profile_user_info {
-    /* background-color: aquamarine; */
     margin-bottom: 0.2rem;
     padding: 10px;
   }
@@ -360,12 +361,6 @@
     border-radius: 50%;
     border: 5px solid black;
   }
-
-
-
-
-
-
 
   .profile_page_contents_title {
     text-align: center;
