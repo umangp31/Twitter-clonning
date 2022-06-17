@@ -82,7 +82,9 @@
 }
 
 .Notification_Type {
-    flex: 0.1;
+    flex: 0.12;
+    align-self: flex-start;
+    margin-top: 2px;
 }
 
 .Notification_Type svg {
@@ -94,6 +96,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    /* margin-left: 1%; */
 }
 
 .Notification_UserAvatar {
@@ -131,6 +134,71 @@
     color: gray;
     font-weight: 350;
 }
+
+.Notifications_UserInfo {
+    display: flex;
+    color: aliceblue;
+}
+
+.Notifications_Name {
+    /* co */
+    color: aliceblue;
+    font-weight: 650;
+}
+
+.Notifications_UserName {
+    color: grey;
+    font-weight: 350;
+    margin: 0 2px;
+
+}
+
+.Notification_replYtext, .Notifications_ElacepedTimeFromTweet {
+    color: grey;
+    font-weight: 350;
+}
+
+.Notification_replyingtoName {
+    color: var(--twitter_blue);
+    font-weight: 650;
+    margin: 0 2px;
+
+}
+
+
+.Notification_replytext_on_which_replyed {
+    color: aliceblue;
+    font-weight: 340;
+}
+
+
+.NotificationTweet_TweetOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+    padding-block: 10px;
+    margin-block: 1%;
+    margin-left: -3%;
+}
+
+.NotificationTweet_TweetOption {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width:988px) {
     .Notifications_Container {
         flex: 0.8;
@@ -140,6 +208,7 @@
         font-size: 15px;
     }
 }
+
 @media(max-width:688px) {
     .Notifications_Container {
         flex: 1;
@@ -148,4 +217,25 @@
     .Notifications_tab_options {
         font-size: 15px;
     }
+
+    .Notification_Type {
+        flex: 0.15;
+    }
+
+    .Notification_desc {
+        margin: 0;
+        /* margin-left: -5%; */
+    }
+
+    .NotificationTweet_TweetOptions {
+        padding: 0;
+        margin-block-start: 1%;
+        margin-left: -5%;
+        padding-right: 20px;
+    }
+
+    .Notification_replytext_on_which_replyed {
+        margin-block: 2%;
+    }
+
 }

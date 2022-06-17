@@ -3,6 +3,33 @@ import Loader from "./Loader";
 import "./Notifications.css";
 import NotificationType from "./NotificationType";
 function Notifications() {
+    const [mentionTweet, setMentionTweet] = useState([{
+        type: "Mention",
+        replyerName: "Bill Gates",
+        commentText: "Using Win 11"
+    },
+    {
+        type: "Mention",
+        replyerName: "Sahil Kakwani",
+        commentText: "I Am a  Pro Coder 😎: I use ZuStand Over Redux and Context API"
+    },
+    {
+        type: "Mention",
+        replyerName: "Vivek Suthar",
+        commentText: "On a Half way of Twitter Web 3.0 Clone ,Just Written Smart Contract,Now Going to deployed to Etherum Mainnet,Kon kon madad karega ETH buy karne me reply karo"
+    },
+    {
+        type: "Mention",
+        replyerName: "Umang Patel",
+        commentText: "80% Work DOne in Twitter Front-End Clone,NOW Waiting for Sahil and Vivek to Start Backend Work,YA Exams are also there"
+    },
+    {
+        type: "Mention",
+        replyerName: "Jeff Bezoz",
+        commentText: "I love How amazon Pay Rewards me"
+    },
+
+    ])
     const [isLoading, setIsLoading] = useState(true);
     const [isAllScreen, setisAllScreen] = useState(true)
     const tab_list = document.getElementsByClassName("Notifications_tab_options");
@@ -40,16 +67,33 @@ function Notifications() {
                     ) :
                     (
                         <div>
-                            <NotificationType type="Liked" likerName="Elon Musk" commentText="Spacex is another level space company" />
-                            <NotificationType type="Followed" follwedName="Bill Gates" />
-                            <NotificationType type="Followed" follwedName="Warren Buffet" />
-                            <NotificationType type="Liked" likerName="Warren Buffet" commentText="Crypto is Future" />
-                            <NotificationType type="Followed" follwedName="Jack Dorsery" />
-                            <NotificationType type="Liked" likerName="Umang Patel" commentText="Just Completed Twitter Clone" />
-                            <NotificationType type="Liked" likerName="Jeff Bezoz" commentText="Alexa Can you sell Amazon for 1 cent?" />
-                            <NotificationType type="Followed" follwedName="Mukesh Ambani" />
-                            <NotificationType type="Liked" likerName="Bill gates" commentText="Good Bye Internet Explorer" />
-                            <NotificationType type="Followed" follwedName="Mark Zukerbarg" />
+                            {
+                                isAllScreen ?
+                                    (
+                                        <>
+                                            <NotificationType type="Liked" likerName="Elon Musk" commentText="Spacex is another level space company" />
+                                            <NotificationType type="Followed" follwedName="Bill Gates" />
+                                            <NotificationType type="Followed" follwedName="Warren Buffet" />
+                                            <NotificationType type="Liked" likerName="Warren Buffet" commentText="Crypto is Future" />
+                                            <NotificationType type="Followed" follwedName="Jack Dorsery" />
+                                            <NotificationType type="Liked" likerName="Umang Patel" commentText="Just Completed Twitter Clone" />
+                                            <NotificationType type="Liked" likerName="Jeff Bezoz" commentText="Alexa Can you sell Amazon for 1 cent?" />
+                                            <NotificationType type="Followed" follwedName="Mukesh Ambani" />
+                                            <NotificationType type="Liked" likerName="Bill gates" commentText="Good Bye Internet Explorer" />
+                                            <NotificationType type="Followed" follwedName="Mark Zukerbarg" />
+                                        </>
+                                    )
+                                    :
+                                    (
+                                        <>
+                                            {
+                                                mentionTweet.map((tweet) =>
+                                                    <NotificationType type={tweet.type} replyerName={tweet.replyerName} commentText={tweet.commentText} />
+                                                )
+                                            }
+                                        </>
+                                    )
+                            }
                         </div>
                     )
             }
