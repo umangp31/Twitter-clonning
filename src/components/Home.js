@@ -7,6 +7,7 @@ import Explore from "./Explore";
 import Feed from './Feed';
 import "./Home.css";
 import Messages from './Messages';
+import Notifications from './Notifications';
 import Profile_Page from "./Profile_page";
 import RightBar from './RightBar';
 import Sidebar from './Sidebar';
@@ -27,7 +28,7 @@ const Home = () => {
                     <Route path='/messages' element={<Messages />} />
                     <Route path='/explore' element={<Explore />} />
                     <Route path='/communities' element={<Profile_Page />} />
-                    <Route path='/notifications' element={<Profile_Page />} />
+                    <Route path='/notifications' element={<Notifications />} />
                     <Route path='/bookmarks' element={<Bookmarks />} />
                 </Routes>
                 <RightBar />

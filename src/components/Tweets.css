@@ -31,7 +31,10 @@
 .like:hover {
     fill: #f91880;
 }
-
+.liked{
+    fill: #f91880;
+    stroke: #f91880;
+}
 .Tweet_UserAvatar img {
     max-width: 40px;
     border-radius: 50%;
