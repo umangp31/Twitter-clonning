@@ -1,8 +1,24 @@
 .MoreContainer{
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    top: 0;
-    min-height: 40vh;
-    min-width: 30vw;
-    background-color: #fff;
-    color: black;
+    bottom: 30.5vh;
+    min-height:max-content;
+    min-width: 14vw;
+    background-color: black;
+    color:white;
+    border: 2px solid var(--border-color);
+    box-shadow: 0px 0px 10px 2px var(--border-color);
+}
+
+.Content{
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 3;
+    padding:8px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+
 }
