@@ -1,0 +1,39 @@
+.Mobile-profile-container {
+    margin-top: 25px;
+}
+.Mobile-profile-container .profile-pic {
+    display: flex;
+    justify-content: space-between;
+}
+.Mobile-profile-container .profile-pic svg{
+    margin-top: 10px;
+}
+.Mobile-profile-container .profile-pic img{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.Mobile-profile-container .text-area-container {
+    font-size: 20px;
+    margin-top:2px;
+}
+
+.Mobile-profile-container .text-area-container p{
+    margin-top: 2px;
+}
+
+.text-area-container .follow {
+    display: flex;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.text-area-container .follow p {
+    margin-right: 10px;
+}
+
+.text-area-container .follow span{
+    margin-right: 3px;
+    font-weight: bolder;
+}
