@@ -63,7 +63,7 @@
 }
 
 .active_tab {
-    color: aliceblue;
+    color: red;
     border-bottom: 4px solid var(--twitter_blue);
 }
 

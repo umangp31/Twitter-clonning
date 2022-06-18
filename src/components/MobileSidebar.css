@@ -13,11 +13,38 @@
         justify-content: flex-start;
         transition: all 0.18s ease-in-out;
         transition-delay: 0.1s;
-        z-index: 100;
+        /* z-index: 100; */
     }
 
     .MobileSideBar_COntainer {
         background-color: black;
+        padding: 5px 15px;
         flex: 0.75;
+        z-index: 2;
+    }
+
+    .MobileSideBar_COntainer .header {
+        
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .MobileSideBar_COntainer .header svg {
+        margin-top: 5px;
+    }
+
+    .menu-list .link-wrapper-mobile {
+        margin-left: -15px;
+        
+    }
+    .menu-list .link-wrapper-mobile li {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .menu-list .link-wrapper-mobile a {
+        display: flex;
+        color: white;
+        text-decoration: none;
     }
 }
