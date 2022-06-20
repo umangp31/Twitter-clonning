@@ -3,7 +3,7 @@
     /* flex-direction: column; */
     position: fixed;
     bottom: 30.5vh;
-    min-height:70.5vh;
+    /* min-height:70.5vh; */
     min-width: 14vw;
     background-color: black;
     color:white;
@@ -25,7 +25,7 @@
 .MoreContainer li{
     display:flex;
     /* flex: 1;  */
-    height: 50px;
+    height: 70px;   
     /* padding:5px 0; */
     /* margin-top: 5px; */
     text-decoration: none;
