@@ -2,7 +2,6 @@
     position: fixed;
     top: 0;
     bottom: 30.5vh;
-    /* min-height:70.5vh; */
     min-height: max-content;
     min-width: 14vw;
     background-color: black;
@@ -13,7 +12,8 @@
 }
 
 .MoreContainer ul {
-    height: max-content;
+    height:69vh;
+    /* height: max-content; */
     text-decoration: none;
     display: flex;
     flex-wrap: nowrap;
@@ -26,12 +26,11 @@
 .MoreContainer li {
     display: flex;
     /* flex: 1;  */
-    height: 70px;   
     /* padding:5px 0; */
     /* margin-top: 5px; */
-    height: 50px;
+    height: 900px;
     padding: 5px 0;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     text-decoration: none;
     color: whitesmoke;
     /* justify-content:flex-start; */
