@@ -6,7 +6,7 @@ import Tweets from './Tweets'
 import YourTweet from './YourTweet'
 const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     setTimeout(() => setIsLoading(false), 2000)
     return (
         <div className='Feed_Container'>
