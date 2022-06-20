@@ -1,6 +1,5 @@
-import React from 'react';
-import './MobileProfileBar.css'
 import { DISPLAYNAME, USERIMG, USERNAME } from "../utills/User";
+import './MobileProfileBar.css';
 function MobileProfileBar() {
   return (
     <div className='Mobile-profile-container'>

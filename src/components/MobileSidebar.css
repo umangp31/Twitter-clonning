@@ -5,7 +5,7 @@
 @media (max-width:688px) {
     .MobileSidebar_BackDrop {
         position: fixed;
-        min-height: 100vh;
+        height: 100vh;
         width: 100%;
         background-color: rgba(96, 148, 187, 0.378);
         top: 0;
@@ -19,14 +19,25 @@
     .MobileSideBar_COntainer {
         background-color: black;
         padding: 5px 15px;
+        overflow-y: scroll !important;
+        overflow-y: scroll;
         flex: 0.75;
         z-index: 2;
     }
 
+    .Divider {
+        min-height: 0.1rem;
+        width: 110%;
+        margin-top: .5rem;
+        margin-left: -15px;
+        background-color: var(--border-color);
+    }
+
     .MobileSideBar_COntainer .header {
-        
         display: flex;
         justify-content: space-between;
+        position: sticky;
+        top: 0;
     }
 
     .MobileSideBar_COntainer .header svg {
@@ -35,11 +46,22 @@
 
     .menu-list .link-wrapper-mobile {
         margin-left: -15px;
-        
+
     }
+
     .menu-list .link-wrapper-mobile li {
         display: flex;
+        align-items: center;
         margin-top: 30px;
+    }
+
+    .menu-list .link-wrapper-mobile li a svg {
+        max-width: 20px;
+    }
+
+    .menu_list_option {
+        font-size: 15px;
+        font-weight: 420;
     }
 
     .menu-list .link-wrapper-mobile a {
