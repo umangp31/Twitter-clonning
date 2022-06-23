@@ -62,7 +62,7 @@ svg {
     position: absolute;
     background-color: aliceblue;
     min-width: 18vw;
-    bottom: 10%;
+    bottom: 12%;
     margin-left: -1%;
     border-radius: 15px;
     background-color: black;
@@ -76,6 +76,7 @@ svg {
     z-index: 2;
 }
 
+
 .profilebar_modal h3 {
     font-weight: 300;
     font-size: 16px;
@@ -83,6 +84,20 @@ svg {
 
 .profilebar_modal .line {
     width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    fill: black;
+    margin-left: -3%;
+    stroke: var(--border-color);
+    stroke-width: 2px;
+    z-index: 10;
+    transform: rotate(180deg);
+    bottom: -9.99998%;
+    right: 50%;
+    width: 20px;
+    height: 25px;
 }
 
 .Profilebar-container {
@@ -131,9 +146,11 @@ svg {
         display: flex;
         justify-content: center;
     }
-    .Profilebar-Container:hover{
+
+    .Profilebar-Container:hover {
         background-color: transparent;
     }
+
     .text-area {
         display: none;
     }

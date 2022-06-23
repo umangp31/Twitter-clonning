@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { USERIMG } from '../utills/User';
 import "./YourTweet.css";
 
-const YourTweet = () => {
+const YourTweet = ({ tweets }) => {
     const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();
@@ -42,7 +42,7 @@ const YourTweet = () => {
                 <button
                     disabled={!Tweettext}
                     className='YourTweet_PostTweetButton'
-                    onClick={() => alert(Tweettext)}
+                    onClick={() => { alert(Tweettext); setTweettext("") }}
                 >Tweet</button>
             </div>
         </div>

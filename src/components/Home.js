@@ -11,6 +11,7 @@ import Notifications from './Notifications';
 import Profile_Page from "./Profile_page";
 import RightBar from './RightBar';
 import Sidebar from './Sidebar';
+import TweetPage from './TweetPage';
 
 const Home = () => {
     useEffect(() => {
@@ -30,6 +31,7 @@ const Home = () => {
                     <Route path='/communities' element={<Profile_Page />} />
                     <Route path='/notifications' element={<Notifications />} />
                     <Route path='/bookmarks' element={<Bookmarks />} />
+                    <Route path='/TweetPage/:tweetId' element={<TweetPage />} />
                 </Routes>
                 <RightBar />
             </div>

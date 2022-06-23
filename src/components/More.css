@@ -3,16 +3,16 @@
     top: 0;
     bottom: 30.5vh;
     min-height: max-content;
-    min-width: 14vw;
+    min-width: 15vw;
     background-color: black;
     color: white;
     border: 2px solid var(--border-color);
     border-radius: 4px;
-    box-shadow: 0px 0px 10px 2px var(--border-color);
+    box-shadow: 0px 0px 10px 4px var(--border-color);
 }
 
 .MoreContainer ul {
-    height:69vh;
+    height: 69vh;
     /* height: max-content; */
     text-decoration: none;
     display: flex;
@@ -41,6 +41,10 @@
     margin-top: 0;
 }
 
+.MoreContainer li:nth-child(7) {
+    border-bottom: 2px solid var(--border-color);
+}
+
 .MoreContainer li:hover {
     background-color: var(--border-color);
 }
@@ -55,7 +59,7 @@
     /* font-size: 1rem; */
     font-weight: 400;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14.5px;
     /* display: flex;
     flex-direction: column;
     justify-content: space-around;

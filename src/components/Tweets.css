@@ -31,10 +31,12 @@
 .like:hover {
     fill: #f91880;
 }
-.liked{
+
+.liked {
     fill: #f91880;
     stroke: #f91880;
 }
+
 .Tweet_UserAvatar img {
     max-width: 40px;
     border-radius: 50%;
@@ -71,6 +73,10 @@
 .Tweet_TweetCOntent {
     /* outline: 1px solid snow; */
     padding: 0 2%;
+    text-align: auto;
+    letter-spacing: 0.02rem;
+    line-height: 1.34rem;
+    font-weight: 360;
 }
 
 .Tweet_TweetOptions {

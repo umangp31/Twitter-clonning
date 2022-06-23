@@ -1,0 +1,10 @@
+.TweetPage_Container {
+    flex: 0.50;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-left: 1px solid var(--border-color);
+    color: white;
+    padding: 3px 35px;
+    overflow-y: scroll;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-
+import { USERIMG } from '../utills/User';
 function EditProfilePopup(props) {
   const ref = useRef(null);
   const { onClickOutside } = props;
@@ -34,7 +34,7 @@ function EditProfilePopup(props) {
       </div>
       <div className="profile_user_img">
         <img
-          src="https://cdn.lorem.space/images/face/.cache/150x150/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+          src={USERIMG}
           alt=""
         />
       </div>
