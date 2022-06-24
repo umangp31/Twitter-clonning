@@ -18,6 +18,7 @@ const Feed = () => {
         likeCount: 2,
         replyCount: 0,
         retweetCount: 2,
+        imgLink: null,
     },
     {
         id: 2,
@@ -28,6 +29,7 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
+        imgLink: "https://ipfs.filebase.io/ipfs/QmUWGivcTvcBRC8gu71WZtNaNjhWvrsDK3Ru1o4zUU3MZy"
     },
     {
         id: 3,
@@ -38,6 +40,7 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
+        imgLink: null
     },
     {
         id: 4,
@@ -48,6 +51,18 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
+        imgLink: "https://ipfs.filebase.io/ipfs/bafybeihyvhgbcov2nmvbnveunoodokme5eb42uekrqowxdennt2qyeculm",
+    },
+    {
+        id: 5,
+        displayName: "Elon Musk",
+        userName: "@elonmusk",
+        tweetPostedTime: Date.now(),
+        tweetContent: "Vro, We are buying Dogecoin ",
+        likeCount: 1,
+        replyCount: 0,
+        retweetCount: 2,
+        imgLink: null
     }
     ])
     setTimeout(() => setIsLoading(false), 200)
@@ -67,9 +82,9 @@ const Feed = () => {
                 isLoading ? <Loader /> : <>
                     {
                         tweets.map((tweet) =>
-                            <Link to={`/TweetPage/${tweet.id}`}>
+                            <Link to={`/TweetPage/${tweet.id}`} key={tweet.id}>
                                 <Tweets
-                                    key={tweet.id}
+                                    // key={tweet.id}
                                     displayName={tweet.displayName}
                                     userName={tweet.userName}
                                     tweetContent={tweet.tweetContent}
@@ -77,6 +92,7 @@ const Feed = () => {
                                     replyCount={tweet.replyCount}
                                     retweetCount={tweet.retweetCount}
                                     tweetPostedTime={tweet.tweetPostedTime}
+                                    imgLink={tweet.imgLink}
                                 />
                             </Link>
                         )

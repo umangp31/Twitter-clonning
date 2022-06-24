@@ -7,13 +7,15 @@ const YourTweet = ({ tweets }) => {
     const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();
+        window.innerHeight = "100vh";
+        window.innerWidth = "100vw"
         const TewwtReplyAccess = document.getElementsByClassName("YourTweet_TweetReplyAcces")[0];
         const AttachmentOptions = document.querySelector(".YourTweet_TweetAttachment");
         AttachmentOptions.style.borderTop = "1px solid var(--border-color)";
         TewwtReplyAccess.style.display = "block";
     }
     return (
-        <div className='Yourtweet_Container' >
+        <div className='Yourtweet_Container mobile' >
             <div className="Write_Tweet">
                 <div className="YourTweet_Avatar">
                     <img src={USERIMG} alt='' />
@@ -29,7 +31,6 @@ const YourTweet = ({ tweets }) => {
                         <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
                     </div>
                 </div>
-
             </div>
             <div className="YourTweet_TweetAttachment">
                 {/* <div className="YourTweet_TweetAttachmentOptions"> */}

@@ -13,7 +13,8 @@ body {
 
 :root {
   /* --border-color: rgba(35, 33, 33); */
-  --border-color: #1b1d20;
+  /* --border-color: #1b1d20; */
+  --border-color: #212326;
   --twitter_blue: rgb(29 155 240);
   --hover_color:  rgba(255, 255, 255, 0.89);
 }

@@ -16,7 +16,7 @@
     flex: 0.2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding-top: 2%;
 }
@@ -55,7 +55,7 @@
 .Tweet_Name {
     margin-left: 2%;
     color: white;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .Tweet_UserName {
@@ -77,6 +77,15 @@
     letter-spacing: 0.02rem;
     line-height: 1.34rem;
     font-weight: 360;
+}
+
+.Tweet_TweetContentImg {
+    margin-top: 1rem;
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    border-radius: 1px solid var(--border-color);
+    object-fit: contain;
 }
 
 .Tweet_TweetOptions {
@@ -114,4 +123,27 @@
     border-radius: 5px;
     flex: 1;
     margin: 2px 0;
+}
+
+.ReplyTweet {
+    margin-top: -2.5rem;
+    border-top: 0px solid transparent;
+}
+
+.BorderBottomNone {
+    border-bottom: 0px solid transparent;
+}
+
+.Margin{
+    margin-block:0.02rem;
+}
+video{
+    /* background-color: #f91880; */
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+}
+@media (max-width:688px) {
+    .ReplyTweet {
+        margin-top: -2rem;
+    }
 }

@@ -23,16 +23,21 @@
     backdrop-filter: blur(5px);
     /* background-color: aliceblue; */
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 @media (max-width:988px) {
     .Feed_Container {
-        flex: 3;
+        flex: 0.80;
     }
 }
+
 @media (max-width:688px) {
     .Feed_Container {
         flex: 5;
+        height: 92vh;
+        width: 100vw;
     }
 }
