@@ -7,8 +7,6 @@ const YourTweet = ({ tweets }) => {
     const [Tweettext, setTweettext] = useState("");
     const showReplyAccess = (e) => {
         e.preventDefault();
-        window.innerHeight = "100vh";
-        window.innerWidth = "100vw"
         const TewwtReplyAccess = document.getElementsByClassName("YourTweet_TweetReplyAcces")[0];
         const AttachmentOptions = document.querySelector(".YourTweet_TweetAttachment");
         AttachmentOptions.style.borderTop = "1px solid var(--border-color)";
