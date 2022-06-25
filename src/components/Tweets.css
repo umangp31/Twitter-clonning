@@ -81,10 +81,10 @@
 
 .Tweet_TweetContentImg {
     margin-top: 1rem;
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     border-radius: 15px;
-    border-radius: 1px solid var(--border-color);
+    border-color: var(--border-color);
     object-fit: contain;
 }
 
@@ -134,14 +134,16 @@
     border-bottom: 0px solid transparent;
 }
 
-.Margin{
-    margin-block:0.02rem;
+.Margin {
+    margin-block: 0.02rem;
 }
-video{
+
+video {
     /* background-color: #f91880; */
     border: 1px solid var(--border-color);
     border-radius: 15px;
 }
+
 @media (max-width:688px) {
     .ReplyTweet {
         margin-top: -2rem;

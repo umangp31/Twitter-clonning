@@ -4,6 +4,7 @@ import { MagicIcon } from "../Assests/Icons";
 import "./Feed.css";
 import Loader from "./Loader";
 import MobileSideBar from "./MobileSideBar";
+import MobileYourTweetButton from "./MobileYourTweetButton";
 import Tweets from './Tweets';
 import YourTweet from './YourTweet';
 const Feed = () => {
@@ -51,18 +52,18 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
-        imgLink: "https://ipfs.filebase.io/ipfs/bafybeihyvhgbcov2nmvbnveunoodokme5eb42uekrqowxdennt2qyeculm",
+        imgLink: null
     },
     {
         id: 5,
         displayName: "Elon Musk",
         userName: "@elonmusk",
         tweetPostedTime: Date.now(),
-        tweetContent: "Vro, We are buying Dogecoin ",
+        tweetContent: "Crypto Markets After the Crash:",
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
-        imgLink: null
+        imgLink: "https://ipfs.io/ipfs/QmUveY3PgfLD9TahrAEH2WieCG1PfU9Ybdq9WbZe8wXwvQ?filename=party_bull.png",
     }
     ])
     setTimeout(() => setIsLoading(false), 200)
@@ -77,6 +78,7 @@ const Feed = () => {
                 </div>
                 <MobileSideBar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
+            <MobileYourTweetButton />
             <YourTweet tweets={tweets} />
             {
                 isLoading ? <Loader /> : <>
