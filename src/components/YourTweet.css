@@ -47,7 +47,7 @@
 
 .YourTweet_Form {
     /* outline: 1px solid snow; */
-    height: 10.vh;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
