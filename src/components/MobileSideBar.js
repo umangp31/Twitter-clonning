@@ -4,7 +4,7 @@ import "./MobileSidebar.css";
 
 function MobileSideBar({ isOpen, setIsOpen }) {
     return (
-        <div className="MobileSidebar_BackDrop" onClick={() => setIsOpen(false)}F style={{ left: isOpen ? "0" : "-100%" }}>
+        <div className="MobileSidebar_BackDrop" onClick={() => setIsOpen(false)} style={{ left: isOpen ? "0" : "-100%" }}>
             <div className="MobileSideBar_COntainer">
                 <div className="header">
                     <h3>Account info</h3>

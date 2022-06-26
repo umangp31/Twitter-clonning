@@ -30,12 +30,7 @@ const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, re
                     <div className='Tweet_UserInfo'>
                         <h4 className='Tweet_Name'>{displayName}</h4>
                         <h4 className='Tweet_UserName'>{userName} •</h4>
-                        <h4 className='Tweet_ElacepedTimeFromTweet'>
-                            {
-                                setInterval(() => {
-                                    updateTime()
-                                }, 1000)
-                            } sec</h4>
+                        <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
                     </div>
                     <div className='Tweet_TweetCOntent'>
                         {tweetContent}

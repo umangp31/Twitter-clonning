@@ -18,14 +18,21 @@
     color: aliceblue;
     display: flex;
     justify-content: space-between;
-    padding: 8px 9px;
+    align-items: center;
+    padding: 5px 9px;
     background-color: transparent;
     backdrop-filter: blur(5px);
     /* background-color: aliceblue; */
 }
 
+
+
 a {
     text-decoration: none;
+}
+
+.Mobile {
+    display: none;
 }
 
 @media (max-width:988px) {
@@ -39,5 +46,29 @@ a {
         flex: 5;
         height: 92vh;
         width: 100vw;
+    }
+
+    .Mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        /* background-color: aliceblue; */
+        min-width: 24%;
+    }
+
+    .Mobile img {
+        max-width: 28px;
+        max-height: 28px;
+    }
+
+    .HearUserNAme {
+        font-size: 16px;
+        font-weight: 650;
+        margin: 4% 0;
+    }
+
+    .dn {
+        display: none;
     }
 }

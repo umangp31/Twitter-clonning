@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { MagicIcon } from "../Assests/Icons";
+import { USERIMG } from '../utills/User';
 import "./Feed.css";
 import Loader from "./Loader";
 import MobileSideBar from "./MobileSideBar";
@@ -70,7 +71,11 @@ const Feed = () => {
     return (
         <div className='Feed_Container'>
             <div className="Yourtweet_Header">
-                <div className='Yourtweet_HomeText' onClick={() => setIsOpen(true)}>
+                <div className='Tweet_UserAvatar Mobile' onClick={() => setIsOpen(true)}>
+                    <img src={USERIMG} alt='USERIMG' />
+                    <span className="HearUserNAme">Home</span>
+                </div>
+                <div className='Yourtweet_HomeText dn' onClick={() => setIsOpen(true)}>
                     Home
                 </div>
                 <div className='YourTweet_MagicIcon'>

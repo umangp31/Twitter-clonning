@@ -1,5 +1,5 @@
 
-const userNamePrefix = ["somewhat", "the", "iam"];
+const userNamePrefix = ["twt", "the", "iam"];
 const preFix = userNamePrefix[Math.floor(Math.random() * 3)];
 const DISPLAYNAME = "Elon Musk";
 const USERNAME = "@" + preFix + DISPLAYNAME.split(" ").join("");

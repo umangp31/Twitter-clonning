@@ -5,13 +5,7 @@ import "./YourTweet.css";
 
 const YourTweet = ({ tweets }) => {
     const [Tweettext, setTweettext] = useState("");
-    const showReplyAccess = (e) => {
-        e.preventDefault();
-        const TewwtReplyAccess = document.getElementsByClassName("YourTweet_TweetReplyAcces")[0];
-        const AttachmentOptions = document.querySelector(".YourTweet_TweetAttachment");
-        AttachmentOptions.style.borderTop = "1px solid var(--border-color)";
-        TewwtReplyAccess.style.display = "block";
-    }
+    const [isFocused, setIsFocused] = useState(false);
     return (
         <div className='Yourtweet_Container mobile' >
             <div className="Write_Tweet">
@@ -19,15 +13,18 @@ const YourTweet = ({ tweets }) => {
                     <img src={USERIMG} alt='' />
                 </div>
                 <div className='YourTweet_Form'>
-                    <input type="text" className='YourTweet_TweetText'
+                    <textarea cols="8" rows="2" draggable="false" className='YourTweet_TweetText'
                         value={Tweettext}
                         onChange={(e) => setTweettext(e.target.value)}
                         placeholder="Whats's Happening"
-                        onFocus={showReplyAccess}
+                        onFocus={()=>setIsFocused(true)}
                     />
-                    <div className="YourTweet_TweetReplyAcces">
-                        <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
-                    </div>
+                    {
+                        isFocused ? (<div className="YourTweet_TweetReplyAcces">
+                            <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
+                        </div>) : (undefined)
+                    }
+
                 </div>
             </div>
             <div className="YourTweet_TweetAttachment">
