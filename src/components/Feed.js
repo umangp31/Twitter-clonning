@@ -64,7 +64,7 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
-        imgLink: "https://ipfs.io/ipfs/QmUveY3PgfLD9TahrAEH2WieCG1PfU9Ybdq9WbZe8wXwvQ?filename=party_bull.png",
+        imgLink: "https://ipfs.io/ipfs/QmcEd1R1Qq7M6G7NnHxDXYdiYtJAn9A2FGjg94Ku75HgUD?filename=gamer_bull.png",
     }
     ])
     setTimeout(() => setIsLoading(false), 200)
