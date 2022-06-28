@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { VideoTag } from 'react-video-tag';
 import { LikeIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
 import "./Tweets.css";
-const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink }) => {
+const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
     // const [{ user }, dispatch] = useStateValue();
     const [TwettLikes, setTwettLikes] = useState(likeCount);
     const [isLiked, setIsLiked] = useState(false);
@@ -38,6 +39,9 @@ const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, re
                         {
                             imgLink ? (<img className='Tweet_TweetContentImg' src={imgLink} alt={imgLink} />) : (null)
                         }
+                        {
+                            videoLink ? (<VideoTag src={videoLink} className="Video" autoPlay loop controls />) : (undefined)
+                        }
                     </div>
                     <div className="Tweet_TweetOptions">
                         <div className="Tweet_TweetOption">
@@ -62,7 +66,7 @@ const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, re
             {
                 replyCount > 0 ? (
                     <div className='Tweet_Container ReplyTweet' >
-                        <div className='Tweet_UserAvatar'>
+                        <div className='Tweet_UserAvatar Reply'>
                             <img src={USERIMG} alt='' />
                             {/* <span className="Tweet_ThreadLine"></span> */}
                         </div>
@@ -81,10 +85,10 @@ const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, re
                                 {tweetContent}
                                 <br />
                                 {
-                                    !imgLink && <img className='Tweet_TweetContentImg' src={imgLink} />
+                                    imgLink && <img className='Tweet_TweetContentImg' src={imgLink} />
                                 }
                             </div>
-                            <div className={replyCount > 0 ? "Tweet_TweetOptions Margin" : "Tweet_TweetOptions"}>
+                            <div className="Tweet_TweetOptions">
                                 <div className="Tweet_TweetOption">
                                     <ReplyIcon />
                                     <div className='Tweet_TweetReplys'>{replyCount}</div>

@@ -1,7 +1,5 @@
-.Messages_Container{
-    position: static;
-    flex: 0.45;
-    background-color: black;
-    outline: 1px solid red;
-    color: aliceblue;
+.Messages_Container {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    color: white
 }

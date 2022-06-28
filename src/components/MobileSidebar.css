@@ -11,11 +11,11 @@
         top: 0;
         display: flex;
         justify-content: flex-start;
-        transition: all 0.18s ease-in-out;
-        transition-delay: 0.1s;
+        transition: all 0.28s ease-in-out;
+        /* transition-delay: 0.1s; */
         /* z-index: 100; */
     }
-
+    
     .MobileSideBar_COntainer {
         background-color: black;
         padding: 5px 15px;

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
     BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
@@ -17,10 +17,11 @@ const Home = () => {
     useEffect(() => {
         document.title = "Home / Twitter"
     }, [])
+    const [isRightbar, setIsRightbar] = useState(true);
     return (
         <Router>
             <div className='Home_Container'>
-                <Sidebar />
+                <Sidebar setIsRightbar={setIsRightbar}/>
                 {/* <Messages/> */}
                 {/* <Feed/> */}
                 <Routes>
@@ -33,7 +34,10 @@ const Home = () => {
                     <Route path='/bookmarks' element={<Bookmarks />} />
                     <Route path='/TweetPage/:tweetId' element={<TweetPage />} />
                 </Routes>
-                <RightBar />
+                {
+                    isRightbar ? (<RightBar />) : (undefined)
+                }
+
             </div>
         </Router>
     )

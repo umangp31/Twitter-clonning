@@ -21,6 +21,7 @@ const Feed = () => {
         replyCount: 0,
         retweetCount: 2,
         imgLink: null,
+        videoLink: null
     },
     {
         id: 2,
@@ -31,7 +32,9 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
-        imgLink: "https://ipfs.filebase.io/ipfs/QmUWGivcTvcBRC8gu71WZtNaNjhWvrsDK3Ru1o4zUU3MZy"
+        imgLink: "https://ipfs.filebase.io/ipfs/QmUWGivcTvcBRC8gu71WZtNaNjhWvrsDK3Ru1o4zUU3MZy",
+        videoLink: null
+
     },
     {
         id: 3,
@@ -42,7 +45,8 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
-        imgLink: null
+        imgLink: null,
+        videoLink: null
     },
     {
         id: 4,
@@ -53,18 +57,20 @@ const Feed = () => {
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
-        imgLink: null
+        imgLink: null,
+        videoLink: "https://images.mintkudos.xyz/token/674.mp4",
     },
     {
         id: 5,
         displayName: "Elon Musk",
         userName: "@elonmusk",
         tweetPostedTime: Date.now(),
-        tweetContent: "Crypto Markets After the Crash:",
+        tweetContent: "Dogecoin is hitting All Time HITS,Vro buy kar le abhi,kya matlab Elon ka Chamcha",
         likeCount: 1,
         replyCount: 0,
         retweetCount: 2,
         imgLink: "https://ipfs.io/ipfs/QmcEd1R1Qq7M6G7NnHxDXYdiYtJAn9A2FGjg94Ku75HgUD?filename=gamer_bull.png",
+        videoLink: null,
     }
     ])
     setTimeout(() => setIsLoading(false), 200)
@@ -100,6 +106,7 @@ const Feed = () => {
                                     retweetCount={tweet.retweetCount}
                                     tweetPostedTime={tweet.tweetPostedTime}
                                     imgLink={tweet.imgLink}
+                                    videoLink={tweet.videoLink}
                                 />
                             </Link>
                         )
