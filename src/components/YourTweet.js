@@ -1,10 +1,17 @@
 // import { AutoAwesome } from ''
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { USERIMG } from '../utills/User';
+import useCreateTweet from './hooks/useCreateTweet';
 import "./YourTweet.css";
+import tweetData from '../data/tweets.json' 
 
 const YourTweet = () => {
+    
     const [Tweettext, setTweettext] = useState("");
+    useEffect(()=>{
+        
+    })
+    const {addTweet} = useCreateTweet(Tweettext);
     const showReplyAccess = (e) => {
         e.preventDefault();
         const TewwtReplyAccess = document.getElementsByClassName("YourTweet_TweetReplyAcces")[0];
@@ -42,7 +49,7 @@ const YourTweet = () => {
                 <button
                     disabled={!Tweettext}
                     className='YourTweet_PostTweetButton'
-                    onClick={() => alert(Tweettext)}
+                    onClick={addTweet}
                 >Tweet</button>
             </div>
         </div>

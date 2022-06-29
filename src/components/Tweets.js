@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { DISPLAYNAME, USERIMG, USERNAME } from '../utills/User';
 import "./Tweets.css";
-const Tweets = ({ replyCount }) => {
+const Tweets = ({ replyCount, tweet }) => {
     // const [{ user }, dispatch] = useStateValue();
     const [TwettLikes, setTwettLikes] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
@@ -33,7 +33,7 @@ const Tweets = ({ replyCount }) => {
                     <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
                 </div>
                 <div className='Tweet_TweetCOntent'>
-                    React 18 Is Just osme
+                    {tweet.text}
                 </div>
                 <div className="Tweet_TweetOptions">
                     <div className="Tweet_TweetOption">

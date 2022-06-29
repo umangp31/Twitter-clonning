@@ -1,12 +1,24 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import "./Feed.css"
+import useStore from '../store/store'
 import Loader from "./Loader"
 import MobileSideBar from "./MobileSideBar"
 import Tweets from './Tweets'
 import YourTweet from './YourTweet'
+// import tweetData from '../data/tweets.json' 
+import useCreateTweet from "./hooks/useCreateTweet"
 const Feed = () => {
+    const state = useStore();
+    const tweetData = state.tweetdata;
+    console.log(tweetData)
+    // const {data} = useCreateTweet()
     const [isLoading, setIsLoading] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
+    useEffect(()=>{
+        // fetch('http://localhost:3001/data')
+        //     .then(res=>res.json())
+        //     .then(json=>{setDatas(json)})
+    })
     setTimeout(() => setIsLoading(false), 2000)
     return (
         <div className='Feed_Container'>
@@ -24,15 +36,20 @@ const Feed = () => {
             </div>
             <YourTweet />
             {
-                isLoading ? <Loader /> : <div>
-                    <Tweets replyCount='0' />
-                    <Tweets replyCount='0' />
-                    <Tweets replyCount='0' />
-                    <Tweets replyCount='0' />
-                    <Tweets replyCount='0' />
-                    <Tweets replyCount='1' />
-                    <Tweets replyCount='0' />
-                </div>
+                isLoading ? <Loader /> : (
+                    tweetData.data && tweetData.data.map((tweet)=>{
+                        return <Tweets tweet={tweet}/>
+                    }))
+                
+                // <div>
+                //     <Tweets replyCount='0' />
+                //     <Tweets replyCount='0' />
+                //     <Tweets replyCount='0' />
+                //     <Tweets replyCount='0' />
+                //     <Tweets replyCount='0' />
+                //     <Tweets replyCount='1' />
+                //     <Tweets replyCount='0' />
+                // </div>
             }
         </div>
     )
