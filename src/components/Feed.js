@@ -43,7 +43,7 @@ const Feed = () => {
         tweetPostedTime: Date.now(),
         tweetContent: "Twitter Clone Project is 🔥🔥🔥,And @iamviveksuthar and @harsh220 is Adding Block-Chain Based Twitter and @somewhatsahil is Working on Backend,as always I am only to build the Cool front-end",
         likeCount: 1,
-        replyCount: 0,
+        replyCount: 2,
         retweetCount: 2,
         imgLink: null,
         videoLink: null
