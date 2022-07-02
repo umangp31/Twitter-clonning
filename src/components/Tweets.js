@@ -3,7 +3,7 @@ import { VideoTag } from 'react-video-tag';
 import { LikeIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
 import "./Tweets.css";
-const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
+const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
     // const [{ user }, dispatch] = useStateValue();
     const [TwettLikes, setTwettLikes] = useState(likeCount);
     const [isLiked, setIsLiked] = useState(false);
@@ -19,7 +19,6 @@ const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, re
         }
     }
     const updateTime = () => Date.now() - tweetPostedTime;
-    console.log();
     return (
         <>
             <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
@@ -43,24 +42,56 @@ const Tweets = ({ displayName, userName, likeCount, replyCount, tweetContent, re
                             videoLink ? (<VideoTag src={videoLink} className="Video" autoPlay loop controls />) : (undefined)
                         }
                     </div>
-                    <div className="Tweet_TweetOptions">
+                    {
+                        mainTweet ? (
+                            <div className="TweetUploadStats">6:00 PM • Jul 1,2022  • Twitter for iOS</div>
+                        ) : (undefined)
+                    }
+                    {
+                        mainTweet ? (
+                            <div className="Tweet_TweetStats">
+                                <span>
+                                    <span>{likeCount}</span>
+                                    Like
+                                </span>
+                                <span>
+                                    <span>{replyCount}</span>
+                                    Reply
+                                </span>
+                                <span>
+                                    <span> {retweetCount}</span>
+                                    Retweet
+                                </span>
+                            </div>
+                        ) : (undefined)
+                    }
+                    <div className={mainTweet ? "Tweet_TweetOptions Border" : "Tweet_TweetOptions"}>
                         <div className="Tweet_TweetOption">
                             <ReplyIcon />
-                            <div className='Tweet_TweetReplys'>{replyCount}</div>
+                            <div className={mainTweet ? "dn" : "Tweet_TweetReplys"}>{replyCount}</div>
                         </div>
                         <div className="Tweet_TweetOption">
                             <RetweetIcon />
-                            <div className='Tweet_TweetRetweets'>{retweetCount}</div>
+                            <div className={mainTweet ? "dn" : "Tweet_TweetRetweets"}>{retweetCount}</div>
                         </div>
                         <div className="Tweet_TweetOption">
                             <LikeIcon onClick={handleTweetLikes} />
-                            <div className="Tweet_TweetLikes">{TwettLikes}</div>
+                            <div className={mainTweet ? "dn" : "Tweet_TweetLikes"}>{TwettLikes}</div>
                         </div>
                         <div className="Tweet_TweetOption">
                             <ShareIcon />
-                            <div className='Tweet_ShareTweet'>16</div>
+                            <div className={mainTweet ? "dn" : "Tweet_ShareTweet"}>16</div>
                         </div>
                     </div>
+                    {
+                        mainTweet ? (
+                            <div className="Tweet_YourReply">
+                                <img src={USERIMG} alt="hi" className="UserAvatar" />
+                                <input type="text" placeholder="Tweet your reply" />
+                                <button>Reply</button>
+                            </div>
+                        ) : (undefined)
+                    }
                 </div>
             </div>
             {

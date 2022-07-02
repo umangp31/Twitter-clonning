@@ -5,6 +5,37 @@
     background-color: black;
     border-left: 1px solid var(--border-color);
     color: white;
-    padding: 3px 35px;
     overflow-y: scroll;
+}
+
+.TweetPage_header {
+    position: sticky;
+    padding: 10px 0;
+    top: 0;
+    min-width: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.TweetPage_header svg {
+    max-width: 30px;
+    fill: aliceblue;
+}
+
+@media (max-width:688px) {
+    .TweetPage_Container {
+        flex: 1;
+    }
+
+    .TweetPage_header {
+        padding: 5px 0;
+    }
+
+    .TweetPage_header svg {
+        max-width: 25px;
+    }
 }

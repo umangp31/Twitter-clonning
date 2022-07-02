@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "displayName": "Vivek Suthar",
+    "userName": "@iamviveksuthar",
+    "tweetPostedTime": 16258713,
+    "tweetContent": "Just Started Implementing Block-chain Based version of Twitter Clone,Front-end is in Progress and Centralized twitter's(back-end server) work is in hands of @somewhatsahil",
+    "likeCount": 1,
+    "replyCount": 0,
+    "retweetCount": 2,
+    "imgLink": null,
+    "videoLink": null
+  },
+  {
+    "id": 1,
+    "displayName": "Sahil kakwani",
+    "userName": "@somewhatsahil",
+    "tweetPostedTime": 16258713,
+    "tweetContent": "MongoDB is on Way,API Routes are Ready and Image Support Config Done,Now interagation remain",
+    "likeCount": 1,
+    "replyCount": 0,
+    "retweetCount": 2,
+    "imgLink": "https://ipfs.filebase.io/ipfs/QmUWGivcTvcBRC8gu71WZtNaNjhWvrsDK3Ru1o4zUU3MZy",
+    "videoLink": null
+  },
+  {
+    "id": 2,
+    "displayName": "Umang Patel",
+    "userName": "@umangp31",
+    "tweetPostedTime": 16258713,
+    "tweetContent": "Twitter Clone Project is 🔥🔥🔥,And @iamviveksuthar and @harsh220 is Adding Block-Chain Based Twitter and @somewhatsahil is Working on Backend,as always I am only to build the Cool front-end",
+    "likeCount": 1,
+    "replyCount": 0,
+    "retweetCount": 2,
+    "imgLink": null,
+    "videoLink": null
+  },
+  {
+    "id": 3,
+    "displayName": "Bill Gates",
+    "userName": "@umangp31",
+    "tweetPostedTime": 16258713,
+    "tweetContent": "NFT's are cool way to spend your money,And If you have Extra money Invest in Etherum and Still left then Invest in BTCF",
+    "likeCount": 1,
+    "replyCount": 0,
+    "retweetCount": 2,
+    "imgLink": null,
+    "videoLink": "https://images.mintkudos.xyz/token/674.mp4"
+  },
+  {
+    "id": 4,
+    "displayName": "Elon Musk",
+    "userName": "@elonmusk",
+    "tweetPostedTime": 16258713,
+    "tweetContent": "Dogecoin is hitting All Time HITS,Vro buy kar le abhi,kya matlab Elon ka Chamcha",
+    "likeCount": 1,
+    "replyCount": 0,
+    "retweetCount": 2,
+    "imgLink": "https://ipfs.io/ipfs/QmcEd1R1Qq7M6G7NnHxDXYdiYtJAn9A2FGjg94Ku75HgUD?filename=gamer_bull.png",
+    "videoLink": null
+  }
+]

@@ -85,7 +85,7 @@
 
 .Tweet_TweetContentImg {
     margin-top: 1rem;
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     border-radius: 15px;
     border-color: var(--border-color);
@@ -95,7 +95,7 @@
 .Video {
     margin-top: 1rem;
     height: auto;
-    max-width: 99%;
+    max-width: 90%;
     border-radius: 15px;
     border-color: var(--border-color);
     object-fit: contain;
@@ -104,6 +104,7 @@
 .Tweet_TweetOptions {
     margin-top: 3%;
     padding: 2%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -155,8 +156,94 @@ video {
     border-radius: 15px;
 }
 
+.TweetUploadStats {
+    color: gray;
+    font-size: 12px;
+    padding: 2%;
+}
+
+.Tweet_TweetStats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.Tweet_TweetStats span {
+    flex: 0.1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: gray;
+}
+
+.Tweet_TweetStats span span {
+    color: white;
+    padding: 0 2px;
+}
+
+.Tweet_TweetStats {
+    margin-bottom: -3%;
+    padding: 2%;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.Border {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 2%;
+}
+
+.Tweet_YourReply {
+    /* background-color: aliceblue; */
+    margin-top: 3%;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.Tweet_YourReply input {
+    background-color: transparent;
+    flex: 0.7;
+    border: none;
+    outline: none;
+    padding: 0 3%;
+    color: aliceblue;
+}
+
+.Tweet_YourReply button {
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    width: max-content;
+    padding: 4px 9px;
+    outline: none;
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: 4Ps50;
+    border: none;
+    background-color: var(--twitter_blue);
+    border-radius: 20px;
+}
+
+.UserAvatar {
+    max-width: 40px;
+    border-radius: 50%;
+}
+
 @media (max-width:688px) {
+    .Tweet_TweetOptions {
+        width: 90%;
+    }
+
     .ReplyTweet {
         margin-top: -1.9rem;
+    }
+
+    .Tweet_TweetStats {
+        width: 90%;
     }
 }

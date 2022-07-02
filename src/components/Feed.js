@@ -12,7 +12,7 @@ const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const [tweets, setTweets] = useState([{
-        id: 1,
+        id: 0,
         displayName: "Vivek Suthar",
         userName: "@iamviveksuthar",
         tweetPostedTime: Date.now(),
@@ -24,7 +24,7 @@ const Feed = () => {
         videoLink: null
     },
     {
-        id: 2,
+        id: 1,
         displayName: "Sahil Kakwani",
         userName: "@somewhatsahil",
         tweetPostedTime: Date.now(),
@@ -37,19 +37,19 @@ const Feed = () => {
 
     },
     {
-        id: 3,
+        id: 2,
         displayName: "Umang Patel",
         userName: "@umangp31",
         tweetPostedTime: Date.now(),
         tweetContent: "Twitter Clone Project is 🔥🔥🔥,And @iamviveksuthar and @harsh220 is Adding Block-Chain Based Twitter and @somewhatsahil is Working on Backend,as always I am only to build the Cool front-end",
         likeCount: 1,
-        replyCount: 2,
+        replyCount: 0,
         retweetCount: 2,
         imgLink: null,
         videoLink: null
     },
     {
-        id: 4,
+        id: 3,
         displayName: "Bill Gates",
         userName: "@umangp31",
         tweetPostedTime: Date.now(),
@@ -61,7 +61,7 @@ const Feed = () => {
         videoLink: "https://images.mintkudos.xyz/token/674.mp4",
     },
     {
-        id: 5,
+        id: 4,
         displayName: "Elon Musk",
         userName: "@elonmusk",
         tweetPostedTime: Date.now(),
