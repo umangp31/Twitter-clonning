@@ -21,6 +21,8 @@
     padding-top: 2%;
 }
 
+.Tweet_UserAvatar img {}
+
 .Reply {
     padding-top: 0.6%;
 }
@@ -163,6 +165,8 @@ video {
 }
 
 .Tweet_TweetStats {
+    min-width: 95%;
+    margin-left: -5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -195,6 +199,8 @@ video {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     padding: 10px 2%;
+    min-width: 95%;
+    margin-left: -5%;
 }
 
 .Tweet_YourReply {
@@ -243,7 +249,30 @@ video {
         margin-top: -1.9rem;
     }
 
-    .Tweet_TweetStats {
-        width: 90%;
+    .Border {
+        min-width: 110%;
+        margin-left: -12%;
+
     }
+
+    .TweetUploadStats {
+        min-width: 110%;
+        margin-left: -12%;
+    }
+
+    .Tweet_TweetStats {
+        min-width: 110%;
+        margin-left: -12%;
+    }
+
+    .Tweet_YourReply {
+        min-width: 95%;
+        margin-left: -12%;
+        justify-content: space-between;
+    }
+
+    .Tweet_YourReply input {
+        flex: 1;
+    }
+
 }

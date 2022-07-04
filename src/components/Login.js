@@ -3,12 +3,12 @@ import Applelogo from "../Assests/apple_logo.svg";
 import Googlelogo from "../Assests/google_logo.svg";
 import Home from './Home';
 import "./login.css";
-
 export default function Login() {
     // const [{ }, dispatch] = useStateValue();
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isWalletConnected, setIsWalletConnected] = useState(true);
+    const [currentAccount, setCurrentAccount] = useState("");
+    const [isMetamsk, setIsMetamsk] = useState(true);
     const signIn = () => {
         // auth.signInWithPopup(Googleprovider).then(result =>
         //     dispatch({
@@ -20,10 +20,26 @@ export default function Login() {
         //     .catch(error => alert(error.message));
         setIsLoggedIn(true)
     };
+    const connectWallet = async () => {
+        try {
+            const { ethereum } = window;
+            if (!ethereum) {
+                setIsMetamsk(false);
+            }
+            const accounts = await ethereum.request({
+                method: 'eth_requestAccounts'
+            });
+            setCurrentAccount(accounts[0]);
+            setIsWalletConnected(true);
+            console.log(currentAccount);
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <>
             {
-                isLoggedIn ? (
+                (!isLoggedIn && !isWalletConnected) ? (
                     <>
                         <div className='login_container'>
                             <div className="login_img">
@@ -57,18 +73,22 @@ export default function Login() {
                                         <button className="login_email login_btn">
                                             <span className="btn_content">Sign up with phone or email</span>
                                         </button>
+                                        <button className="login_web3 login_btn">
+                                            <span className="btn_content" onClick={connectWallet} >Connect Your Wallet</span>
+                                        </button>
                                         <p>
                                             By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="login_subBox3">
-                                    <h4>Already have an account?</h4>
+                                    <h4>Already have an account
+                                    </h4>
                                     <button className="login_already login_btn">Sign in</button>
                                 </div>
                             </div>
+                            <footer>Hi</footer>
                         </div>
-                        <footer>Hi</footer>
                     </>
                 ) : (<Home />)
             }

@@ -58,7 +58,7 @@ const Feed = () => {
         replyCount: 0,
         retweetCount: 2,
         imgLink: null,
-        videoLink: "https://images.mintkudos.xyz/token/674.mp4",
+        videoLink: "https://images.mintkudos.xyz/token/1006.mp4",
     },
     {
         id: 4,
