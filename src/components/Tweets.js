@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { VideoTag } from 'react-video-tag';
-import { LikeIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
+import { LikeIcon, MoreIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
 import "./Tweets.css";
 const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
@@ -28,9 +28,12 @@ const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweet
                 </div>
                 <div className='Tweet_Main'>
                     <div className='Tweet_UserInfo'>
-                        <h4 className='Tweet_Name'>{displayName}</h4>
-                        <h4 className='Tweet_UserName'>{userName} •</h4>
-                        <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
+                        <div className='Tweet_PostedInfo'>
+                            <div className='Tweet_Name'>{displayName}</div>
+                            <div className='Tweet_UserName'>{userName} •</div>
+                            <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
+                        </div>
+                        <MoreIcon />
                     </div>
                     <div className='Tweet_TweetCOntent'>
                         {tweetContent}

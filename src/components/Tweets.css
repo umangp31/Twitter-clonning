@@ -50,12 +50,26 @@
 
 .Tweet_UserInfo {
     display: flex;
+    flex-direction: row;
     min-width: 100%;
     min-height: 4vh;
     align-items: center;
     /* padding: 2px; */
     max-width: max-content;
     /* outline: 1px solid red; */
+}
+
+.Tweet_UserInfo svg {
+    max-width: 25px;
+    fill: grey;
+}
+
+.Tweet_PostedInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .Tweet_Name {
