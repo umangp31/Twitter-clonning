@@ -85,11 +85,11 @@
     /* border-top: 1px solid var(--border-color); */
 }
 
-.YourTweet_TweetAttachment svg {
-    max-width: 22px;
-    max-height: 22px;
+.YourTweet_TweetAttachment .iconbutton svg {
+    width: 18px;
     margin: 0 10px;
     color: rgb(120, 86, 255);
+    fill: var(--twitter_blue);
     transition: all 0.1s ease-in-out;
 }
 
