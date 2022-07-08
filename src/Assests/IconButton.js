@@ -13,7 +13,7 @@ const IconButton = ({ children, hoverColor }) => {
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: "50%",
-                minWidth: "max-content",
+                minWidth: "min(40px,max-content)",
                 minHeight: "max-content",
                 transition: "all 0.2s ease-in-out",
                 backgroundColor: `var(--${hovercolor})`,
