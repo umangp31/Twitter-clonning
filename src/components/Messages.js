@@ -1,11 +1,16 @@
 // import React from 'react'
 import "./Messages.css"
 import PageHeader from "./PageHeader"
+import MessageRightBar from "./MessageRightBar" 
+import MessagePanel from "./MessagePanel"
+
 function Messages() {
   return (
     <>
       <div className='Messages_Container'>
-        Yaha messages aayeg
+        
+        <MessageRightBar/>
+        <MessagePanel/>
       </div>
     </>
   )
