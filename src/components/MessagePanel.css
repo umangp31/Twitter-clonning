@@ -1,4 +1,11 @@
-.MessagePannel{
-    flex:0.55;
+.MessagePannel {
+    flex: 0.55;
+    color: aliceblue;
     background-color: blue;
+}
+
+.s {
+    min-height: 100%;
+    background-color: aliceblue;
+    color: black;
 }

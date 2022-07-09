@@ -1,14 +1,19 @@
-import React from 'react'
-import './MessagePanel.css'
-import IconButton from '../Assests/IconButton'
-import { CreateIcon } from '../Assests/Icons'
+import { useParams } from 'react-router-dom';
+import './MessagePanel.css';
 export default function MessagePanel() {
+    const URL = useParams();
     return (
-
         <div className='MessagePannel'>
-            
-            <IconButton hoverColor="border-color"><CreateIcon></CreateIcon></IconButton>
-            hello
+            {
+                URL.id ? (
+                    <div className='ChatRoom'>{URL.id}</div>
+                ) : (
+                    <div className='SelectRoom'>
+                        Select a message
+                        Choose from your existing conversations, start a new one, or just keep swimming.
+                    </div>
+                )
+            }
         </div>
     )
 }

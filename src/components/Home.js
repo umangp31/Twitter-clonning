@@ -6,6 +6,7 @@ import Bookmarks from './Bookmarks';
 import Explore from "./Explore";
 import Feed from './Feed';
 import "./Home.css";
+import MessagePanel from './MessagePanel';
 import Messages from './Messages';
 import Notifications from './Notifications';
 import Profile_Page from "./Profile_page";
@@ -21,13 +22,14 @@ const Home = () => {
     return (
         <Router>
             <div className='Home_Container'>
-                <Sidebar setIsRightbar={setIsRightbar}/>
-                {/* <Messages/> */}
-                {/* <Feed/> */}
+                <Sidebar setIsRightbar={setIsRightbar} />
                 <Routes>
                     <Route path='/' element={<Feed />} />
                     <Route path='/profile' element={<Profile_Page />} />
-                    <Route path='/messages' element={<Messages />} />
+                    <Route path='/messages' element={<Messages />} >
+                        <Route path='/messages' element={<MessagePanel />} />
+                        <Route path=':id' element={<MessagePanel />} />
+                    </Route>
                     <Route path='/explore' element={<Explore />} />
                     <Route path='/communities' element={<Profile_Page />} />
                     <Route path='/notifications' element={<Notifications />} />
