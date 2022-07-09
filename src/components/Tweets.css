@@ -10,6 +10,7 @@
     justify-content: flex-start;
 }
 
+
 .Tweet_UserAvatar {
     /* outline: 1px solid green; */
     max-width: max-content;
@@ -20,6 +21,8 @@
     align-items: center;
     padding-top: 2%;
 }
+
+.Tweet_UserAvatar img {}
 
 .Reply {
     padding-top: 0.6%;
@@ -48,12 +51,26 @@
 
 .Tweet_UserInfo {
     display: flex;
+    flex-direction: row;
     min-width: 100%;
     min-height: 4vh;
     align-items: center;
     /* padding: 2px; */
     max-width: max-content;
     /* outline: 1px solid red; */
+}
+
+.Tweet_UserInfo svg {
+    max-width: 25px;
+    fill: gray;
+}
+
+.Tweet_PostedInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .Tweet_Name {
@@ -119,15 +136,14 @@
     align-items: center;
 }
 
-.Tweet_TweetOption svg {
-    /* max-width:15px; */
+.Tweet_TweetOption .iconbutton svg {
+    fill: grey;
     margin: 0 0.4rem;
     min-height: 1.1rem;
-    /* max-height: 18px; */
 }
 
 .Tweet_TweetReplys, .Tweet_TweetRetweets, .Tweet_TweetLikes, .Tweet_ShareTweet {
-    color: gray;
+    color: grey;
     font-size: 13px;
 }
 
@@ -163,6 +179,8 @@ video {
 }
 
 .Tweet_TweetStats {
+    min-width: 95%;
+    margin-left: -5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -195,6 +213,8 @@ video {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     padding: 10px 2%;
+    min-width: 95%;
+    margin-left: -5%;
 }
 
 .Tweet_YourReply {
@@ -243,7 +263,30 @@ video {
         margin-top: -1.9rem;
     }
 
-    .Tweet_TweetStats {
-        width: 90%;
+    .Border {
+        min-width: 110%;
+        margin-left: -12%;
+
     }
+
+    .TweetUploadStats {
+        min-width: 110%;
+        margin-left: -12%;
+    }
+
+    .Tweet_TweetStats {
+        min-width: 110%;
+        margin-left: -12%;
+    }
+
+    .Tweet_YourReply {
+        min-width: 95%;
+        margin-left: -12%;
+        justify-content: space-between;
+    }
+
+    .Tweet_YourReply input {
+        flex: 1;
+    }
+
 }

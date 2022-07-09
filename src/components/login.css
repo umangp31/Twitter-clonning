@@ -34,7 +34,7 @@
     flex-direction: column;
     /* outline: 1px solid red; */
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .login_subBox1 span {
@@ -142,7 +142,14 @@
     color: white;
     font-weight: 500;
 }
-
+.login_web3 {
+    margin: 5px 0;
+    background: #f2709c;
+    background: -webkit-linear-gradient(to left, #ff9472, #f2709c);
+    background: linear-gradient(to left, #ff9472, #f2709c);
+    font-weight: 700;
+    color: aliceblue;
+}
 .login_already {
     margin: 1rem 0;
     background-color: transparent;
@@ -161,9 +168,10 @@ footer {
     bottom: 0;
     min-width: 100vw;
     min-height: 8vh;
-    background-color: black ;
+    background-color: black;
 }
-.login_divider{
+
+.login_divider {
     /* outline: 1px solid red; */
     margin-top: 0;
     max-width: 45%;
@@ -175,7 +183,8 @@ footer {
     justify-content: space-between;
     padding-inline: 1%;
 }
-.login_divider span{
+
+.login_divider span {
     min-height: 1px;
     min-width: 44%;
     background-color: #1b1d20;
@@ -184,12 +193,61 @@ footer {
 
 @media (max-width:688px) {
     .login_container {
-        flex-direction: column-reverse;
-        height: 100vh;
-        width: 100vw;
+        display: flex;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+
+    .login_main {
+        flex: 1;
     }
 
     .login_img {
         display: none;
     }
+
+    .login_btn {
+        max-width: 60%;
+        outline: none;
+        border: none;
+    }
+
+    .login_email {
+        max-width: max-content;
+        border: none;
+
+    }
+
+    .login_divider {
+        max-width: 60%;
+        margin-top: -1.5rem;
+    }
+
+    .login_conditions p {
+        margin-block: 2rem;
+        max-width: 80%;
+        padding: 0;
+    }
+
+    .login_subBox3 {
+        margin: 1rem 0;
+    }
+
+    .login_web3 {
+        margin: 12px 0;
+        background: #f2709c;
+        background: -webkit-linear-gradient(to left, #ff9472, #f2709c);
+        background: linear-gradient(to left, #ff9472, #f2709c);
+        font-weight: 700;
+        color: aliceblue;
+    }
+
+    .login_already {
+        outline: 1px solid var(--border-color);
+    }
+
+    .login_title {
+        font-size: 2rem;
+    }
+
 }

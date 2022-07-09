@@ -16,12 +16,17 @@ body {
   /* --border-color: #1b1d20; */
   --border-color: #212326;
   --twitter_blue: rgb(29 155 240);
-  --hover_color:  rgba(255, 255, 255, 0.89);
+  --twitter_blue_hover: #0a171f;
+  --hover_color: rgba(255, 255, 255, 0.89);
+  --twitter_pink_hover: #f9188133;
+  --twitter_green_hover: #006545af;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
   width: 0px;
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
   width: 0px;
   background-color: transparent;
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { VideoTag } from 'react-video-tag';
-import { LikeIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
+import IconButton from '../Assests/IconButton';
+import { LikeIcon, MoreIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
 import "./Tweets.css";
 const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
@@ -28,9 +29,14 @@ const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweet
                 </div>
                 <div className='Tweet_Main'>
                     <div className='Tweet_UserInfo'>
-                        <h4 className='Tweet_Name'>{displayName}</h4>
-                        <h4 className='Tweet_UserName'>{userName} •</h4>
-                        <h4 className='Tweet_ElacepedTimeFromTweet'> 8m</h4>
+                        <div className='Tweet_PostedInfo'>
+                            <div className='Tweet_Name'>{displayName}</div>
+                            <div className='Tweet_UserName'>{userName} •</div>
+                            <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
+                        </div>
+                        <IconButton hoverColor="twitter_blue_hover">
+                            <MoreIcon />
+                        </IconButton>
                     </div>
                     <div className='Tweet_TweetCOntent'>
                         {tweetContent}
@@ -67,19 +73,27 @@ const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweet
                     }
                     <div className={mainTweet ? "Tweet_TweetOptions Border" : "Tweet_TweetOptions"}>
                         <div className="Tweet_TweetOption">
-                            <ReplyIcon />
+                            <IconButton hoverColor="twitter_blue_hover">
+                                <ReplyIcon />
+                            </IconButton>
                             <div className={mainTweet ? "dn" : "Tweet_TweetReplys"}>{replyCount}</div>
                         </div>
                         <div className="Tweet_TweetOption">
-                            <RetweetIcon />
+                            <IconButton hoverColor="twitter_green_hover">
+                                <RetweetIcon />
+                            </IconButton>
                             <div className={mainTweet ? "dn" : "Tweet_TweetRetweets"}>{retweetCount}</div>
                         </div>
                         <div className="Tweet_TweetOption">
-                            <LikeIcon onClick={handleTweetLikes} />
+                            <IconButton hoverColor="twitter_pink_hover">
+                                <LikeIcon onClick={handleTweetLikes} />
+                            </IconButton>
                             <div className={mainTweet ? "dn" : "Tweet_TweetLikes"}>{TwettLikes}</div>
                         </div>
                         <div className="Tweet_TweetOption">
-                            <ShareIcon />
+                            <IconButton hoverColor="twitter_blue_hover">
+                                <ShareIcon />
+                            </IconButton>
                             <div className={mainTweet ? "dn" : "Tweet_ShareTweet"}>16</div>
                         </div>
                     </div>
