@@ -1,7 +1,8 @@
 .MessagePannel {
     flex: 0.55;
     color: aliceblue;
-    background-color: blue;
+    background-color: black;
+    border: 1px solid var(--border-color);
 }
 
 .s {

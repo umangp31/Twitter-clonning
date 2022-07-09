@@ -1,6 +1,6 @@
 .Messages_Container {
     flex: 1;
-    background-color: red;
+    /* background-color: red; */
     border: 1px solid var(--border-color);
     color: white;
     display: flex;
