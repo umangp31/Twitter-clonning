@@ -93,7 +93,21 @@
     transition: all 0.1s ease-in-out;
 }
 
+.iconbutton input {
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+    visibility: 0;
+}
+
+.UploadImage {
+    /* margin: auto; */
+    max-width: 80%;
+    border-radius: 15px;
+}
+
 .YourTweet_PostTweetButton {
+    cursor: pointer;
     display: flex;
     align-self: flex-end;
     justify-self: flex-end;

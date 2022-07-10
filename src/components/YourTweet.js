@@ -3,11 +3,45 @@ import { useState } from 'react';
 import IconButton from '../Assests/IconButton';
 import { CreatePollIcon, DatePickerIcon, EmojisIcon, GIFUploadIcon, ImageUploadIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
+import { storageBucket } from "./firebase";
 import "./YourTweet.css";
-
-const YourTweet = ({ tweets }) => {
+const YourTweet = () => {
     const [Tweettext, setTweettext] = useState("");
     const [isFocused, setIsFocused] = useState(false);
+    const [imageURL, setImageURL] = useState("");
+    const [progress, setProgress] = useState(0);
+    const [image, setImage] = useState(undefined);
+    const [imagePreviewURL, setImagePreviewURL] = useState("");
+    const handleChange = e => {
+        e.preventDefault();
+        console.log(e.target);
+        console.log(e.target.files[0]);
+        if (e.target.files[0]) {
+            setImagePreviewURL(URL.createObjectURL(e.target.files[0]));
+            setImage(e.target.files[0])
+            console.log(imagePreviewURL);
+        }
+    }
+    function uploadToStorageBucket(e) {
+        e.preventDefault();
+        const uploadTask = storageBucket.ref(`images/${image.name}`).put(image);
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                setProgress(progress);
+            },
+            (error) => {
+                console.log(error.message);
+            },
+            () => {
+                setImage(null);
+                storageBucket.ref("images").child(image.name).getDownloadURL().then(url => {
+                    setImageURL(url);
+                })
+            }
+        )
+    }
     return (
         <div className='Yourtweet_Container mobile' >
             <div className="Write_Tweet">
@@ -21,16 +55,22 @@ const YourTweet = ({ tweets }) => {
                         placeholder="Whats's Happening"
                         onFocus={() => setIsFocused(true)}
                     />
+                    <progress value={progress}></progress>
                     {
                         isFocused ? (<div className="YourTweet_TweetReplyAcces">
                             <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
                         </div>) : (undefined)
                     }
-
+                    {
+                        image ? (
+                            <img className='UploadImage' src={imagePreviewURL} alt="hi" />
+                        ) : (null)
+                    }
                 </div>
             </div>
             <div className="YourTweet_TweetAttachment">
-                <IconButton hoverColor="twitter_blue_hover">
+                <IconButton hoverColor="twitter_blue_hover" >
+                    <input type="file" onChange={handleChange} />
                     <ImageUploadIcon />
                 </IconButton>
                 <IconButton hoverColor="twitter_blue_hover">
@@ -48,7 +88,7 @@ const YourTweet = ({ tweets }) => {
                 <button
                     disabled={!Tweettext}
                     className='YourTweet_PostTweetButton'
-                    onClick={() => { alert(Tweettext); setTweettext("") }}
+                    onClick={uploadToStorageBucket}
                 >Tweet</button>
             </div>
         </div>

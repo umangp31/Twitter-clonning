@@ -1,7 +1,7 @@
 import fs from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
+import 'firebase/compat/storage';
 const firebaseConfig = {
     apiKey: "AIzaSyBioDIGR2vhDDOcWly0cUTDKhwplEmf4-A",
     authDomain: "twitter-clone-cad28.firebaseapp.com",
@@ -12,6 +12,7 @@ const firebaseConfig = {
 };
 const firebaseapp = fs.initializeApp(firebaseConfig);
 const auth = firebaseapp.auth();
+const storageBucket = fs.storage();
 var Googleprovider = new fs.auth.GoogleAuthProvider();
-export { Googleprovider };
+export { Googleprovider,storageBucket };
 export default auth;
