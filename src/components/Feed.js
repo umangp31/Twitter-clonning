@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { ethers } from "ethers";
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { MagicIcon } from "../Assests/Icons";
+import abi from "../utills/abi.json";
 import { USERIMG } from '../utills/User';
 import "./Feed.css";
 import Loader from "./Loader";
@@ -11,6 +13,8 @@ import YourTweet from './YourTweet';
 const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
+    const [currentAccount, setCurrentAccount] = useState("");
+    const [isMetamsk, setIsMetamsk] = useState(true);
     const [tweets, setTweets] = useState([{
         id: 0,
         displayName: "Vivek Suthar",
@@ -73,6 +77,70 @@ const Feed = () => {
         videoLink: null,
     }
     ])
+
+    const connectWallet = async () => {
+        try {
+            const { ethereum } = window;
+
+            if (!ethereum) {
+                setIsMetamsk(false);
+                // console.log("please install MetaMask");
+            }
+
+            const accounts = await ethereum.request({
+                method: 'eth_requestAccounts'
+            });
+
+            setCurrentAccount(accounts[0]);
+            // console.log(currentAccount);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        connectWallet();
+        getOwner();
+        getAllTweets()
+    }, [])
+    const TwitterContractAddress = "0x896E958ADA4596BC62CBcB0eC1D8170C17C0354F";
+    const ABI = abi.abi;
+    const getOwner = async () => {
+        try {
+            const { ethereum } = window;
+            if (ethereum) {
+                const provider = new ethers.providers.Web3Provider(ethereum, "any");
+                const signer = provider.getSigner();
+                const TwitterContract = new ethers.Contract(
+                    TwitterContractAddress,
+                    ABI,
+                    signer
+                );
+                const owner = await TwitterContract.getOwner();
+                console.log("owner ", owner);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    const getAllTweets = async () => {
+        try {
+            const { ethereum } = window;
+
+            if (ethereum) {
+                const provider = new ethers.providers.Web3Provider(ethereum, "any");
+                const signer = provider.getSigner();
+                const TwitterContract = new ethers.Contract(
+                    TwitterContractAddress,
+                    ABI,
+                    signer
+                );
+                const allTweets = await TwitterContract.getTweets();
+                console.log("tweets", allTweets);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
     setTimeout(() => setIsLoading(false), 200)
     return (
         <div className='Feed_Container'>

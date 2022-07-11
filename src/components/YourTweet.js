@@ -11,6 +11,7 @@ const YourTweet = () => {
     const [imageURL, setImageURL] = useState("");
     const [progress, setProgress] = useState(0);
     const [image, setImage] = useState(undefined);
+    const [isUploadStarted, setIsUploadStarted] = useState(false);
     const [imagePreviewURL, setImagePreviewURL] = useState("");
     const handleChange = e => {
         e.preventDefault();
@@ -21,9 +22,10 @@ const YourTweet = () => {
             setImage(e.target.files[0])
             console.log(imagePreviewURL);
         }
-    }
+    }           
     function uploadToStorageBucket(e) {
         e.preventDefault();
+        setIsUploadStarted(true);
         const uploadTask = storageBucket.ref(`images/${image.name}`).put(image);
         uploadTask.on(
             "state_changed",
@@ -35,15 +37,19 @@ const YourTweet = () => {
                 console.log(error.message);
             },
             () => {
-                setImage(null);
                 storageBucket.ref("images").child(image.name).getDownloadURL().then(url => {
                     setImageURL(url);
                 })
+                setImage(null);
             }
         )
+        setIsUploadStarted(false);
     }
     return (
         <div className='Yourtweet_Container mobile' >
+            {
+                isUploadStarted ? (<progress className='progress' value={progress}></progress>) : (undefined)
+            }
             <div className="Write_Tweet">
                 <div className="YourTweet_Avatar">
                     <img src={USERIMG} alt='' />
@@ -55,7 +61,6 @@ const YourTweet = () => {
                         placeholder="Whats's Happening"
                         onFocus={() => setIsFocused(true)}
                     />
-                    <progress value={progress}></progress>
                     {
                         isFocused ? (<div className="YourTweet_TweetReplyAcces">
                             <i class="fa-solid fa-earth-asia"></i> Everyone Can reply

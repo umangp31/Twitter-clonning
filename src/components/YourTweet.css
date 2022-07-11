@@ -131,6 +131,22 @@
     display: none;
 }
 
+.progress {
+    width: 100%;
+    height: 5px;
+    accent-color: var(--twitter_blue);
+    border-radius: 0;
+    transition: all .1s ease-in-out;
+}
+
+.progress::-moz-progress-bar {
+    color: aqua;
+}
+
+.progress::-webkit-progress-inner-element {
+    background-color: brown;
+}
+
 @media (max-width:688px) {
     .MobileModal {
         display: block;
