@@ -1,9 +1,9 @@
-import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { MagicIcon } from "../Assests/Icons";
-import abi from "../utills/abi.json";
 import { USERIMG } from '../utills/User';
+import getAllTweets from "../Web3/getAllTweets";
+import getOwner from "../Web3/getOwner";
 import "./Feed.css";
 import Loader from "./Loader";
 import MobileSideBar from "./MobileSideBar";
@@ -102,45 +102,8 @@ const Feed = () => {
         getOwner();
         getAllTweets()
     }, [])
-    const TwitterContractAddress = "0x896E958ADA4596BC62CBcB0eC1D8170C17C0354F";
-    const ABI = abi.abi;
-    const getOwner = async () => {
-        try {
-            const { ethereum } = window;
-            if (ethereum) {
-                const provider = new ethers.providers.Web3Provider(ethereum, "any");
-                const signer = provider.getSigner();
-                const TwitterContract = new ethers.Contract(
-                    TwitterContractAddress,
-                    ABI,
-                    signer
-                );
-                const owner = await TwitterContract.getOwner();
-                console.log("owner ", owner);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
-    const getAllTweets = async () => {
-        try {
-            const { ethereum } = window;
 
-            if (ethereum) {
-                const provider = new ethers.providers.Web3Provider(ethereum, "any");
-                const signer = provider.getSigner();
-                const TwitterContract = new ethers.Contract(
-                    TwitterContractAddress,
-                    ABI,
-                    signer
-                );
-                const allTweets = await TwitterContract.getTweets();
-                console.log("tweets", allTweets);
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
+
     setTimeout(() => setIsLoading(false), 200)
     return (
         <div className='Feed_Container'>
