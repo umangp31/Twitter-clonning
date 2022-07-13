@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-const IconButton = ({ children, hoverColor }) => {
+const IconButton = ({ children, hoverColor,controller }) => {
     const [hovercolor, setHovercolor] = useState("transperant");
     return (
         <span
             className="iconbutton"
             onMouseOver={() => setHovercolor(hoverColor)}
             onMouseLeave={() => setHovercolor("transperant")}
+            onClick={controller}
             style={{
                 display: "flex",
                 flexDirection: "column",

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import { MagicIcon } from "../Assests/Icons";
 import { USERIMG } from '../utills/User';
 import getAllTweets from "../Web3/getAllTweets";
@@ -8,6 +7,7 @@ import "./Feed.css";
 import Loader from "./Loader";
 import MobileSideBar from "./MobileSideBar";
 import MobileYourTweetButton from "./MobileYourTweetButton";
+import { useStateValue } from "./StateProvider";
 import Tweets from './Tweets';
 import YourTweet from './YourTweet';
 const Feed = () => {
@@ -103,7 +103,6 @@ const Feed = () => {
         getAllTweets()
     }, [])
 
-
     setTimeout(() => setIsLoading(false), 200)
     return (
         <div className='Feed_Container'>
@@ -126,20 +125,19 @@ const Feed = () => {
                 isLoading ? <Loader /> : <>
                     {
                         tweets.map((tweet) =>
-                            <Link to={`/TweetPage/${tweet.id}`} key={tweet.id}>
-                                <Tweets
-                                    // key={tweet.id}
-                                    displayName={tweet.displayName}
-                                    userName={tweet.userName}
-                                    tweetContent={tweet.tweetContent}
-                                    likeCount={tweet.likeCount}
-                                    replyCount={tweet.replyCount}
-                                    retweetCount={tweet.retweetCount}
-                                    tweetPostedTime={tweet.tweetPostedTime}
-                                    imgLink={tweet.imgLink}
-                                    videoLink={tweet.videoLink}
-                                />
-                            </Link>
+                            <Tweets
+                                key={tweet.id}
+                                id={tweet.id}
+                                displayName={tweet.displayName}
+                                userName={tweet.userName}
+                                tweetContent={tweet.tweetContent}
+                                likeCount={tweet.likeCount}
+                                replyCount={tweet.replyCount}
+                                retweetCount={tweet.retweetCount}
+                                tweetPostedTime={tweet.tweetPostedTime}
+                                imgLink={tweet.imgLink}
+                                videoLink={tweet.videoLink}
+                            />
                         )
                     }
                 </>

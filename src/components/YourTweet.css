@@ -77,12 +77,13 @@
 
 .YourTweet_TweetAttachment {
     /* outline: 1px solid red; */
-    padding: 10px 45px;
+    padding: 10px 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* border-top: 1px solid var(--border-color); */
+    border-top: 1px solid var(--border-color);
+
 }
 
 .YourTweet_TweetAttachment .iconbutton svg {

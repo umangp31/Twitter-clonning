@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { VideoTag } from 'react-video-tag';
 import IconButton from '../Assests/IconButton';
 import { LikeIcon, MoreIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
 import "./Tweets.css";
-const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
+const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
     // const [{ user }, dispatch] = useStateValue();
     const [TwettLikes, setTwettLikes] = useState(likeCount);
     const [isLiked, setIsLiked] = useState(false);
+    const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
     const handleTweetLikes = (e) => {
         e.preventDefault();
         if (!isLiked) {
@@ -20,6 +22,13 @@ const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweet
         }
     }
     const updateTime = () => Date.now() - tweetPostedTime;
+    const showMenu = (e) => {
+        e.preventDefault();
+        alert('hi')
+        console.log(e);
+        console.log("hi");
+    }
+    console.log(id);
     return (
         <>
             <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
@@ -34,20 +43,22 @@ const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweet
                             <div className='Tweet_UserName'>{userName} •</div>
                             <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
                         </div>
-                        <IconButton hoverColor="twitter_blue_hover">
-                            <MoreIcon />
+                        <IconButton hoverColor="twitter_blue_hover" controller={showMenu} >
+                            <MoreIcon onClick={showMenu} />
                         </IconButton>
                     </div>
-                    <div className='Tweet_TweetCOntent'>
-                        {tweetContent}
-                        <br />
-                        {
-                            imgLink ? (<img className='Tweet_TweetContentImg' src={imgLink} alt={imgLink} />) : (null)
-                        }
-                        {
-                            videoLink ? (<VideoTag src={videoLink} className="Video" autoPlay loop controls />) : (undefined)
-                        }
-                    </div>
+                    <Link to={`/TweetPage/${id}`} key={id}>
+                        <div className='Tweet_TweetCOntent'>
+                            {tweetContent}
+                            <br />
+                            {
+                                imgLink ? (<img className='Tweet_TweetContentImg' src={imgLink} alt={imgLink} />) : (null)
+                            }
+                            {
+                                videoLink ? (<VideoTag src={videoLink} className="Video" autoPlay loop controls />) : (undefined)
+                            }
+                        </div>
+                    </Link>
                     {
                         mainTweet ? (
                             <div className="TweetUploadStats">6:00 PM • Jul 1,2022  • Twitter for iOS</div>
@@ -73,7 +84,7 @@ const Tweets = ({ mainTweet, displayName, userName, likeCount, replyCount, tweet
                     }
                     <div className={mainTweet ? "Tweet_TweetOptions Border" : "Tweet_TweetOptions"}>
                         <div className="Tweet_TweetOption">
-                            <IconButton hoverColor="twitter_blue_hover">
+                            <IconButton hoverColor="twitter_blue_hover" >
                                 <ReplyIcon />
                             </IconButton>
                             <div className={mainTweet ? "dn" : "Tweet_TweetReplys"}>{replyCount}</div>
