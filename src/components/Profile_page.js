@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Popup from "./EditProfilePopup";
 import "./Profile_page.css";
 import Tweets from "./Tweets";
-
 const Profile_page = () => {
   useEffect(() => {
     document.title = "Bill Gates (@thebillbhai)"
@@ -72,7 +72,8 @@ const Profile_page = () => {
               </div>
             </div>
             <div className="profile_follow">
-              <h6 className="profile_following"> <span className="profile_following_count">112</span>Following</h6>
+              <Link to={`/follow`}>
+                <h6 className="profile_following"> <span className="profile_following_count">112</span>Following</h6></Link>
               <h6 className="profile_followers"><span className="profile_followers_count">97.6M</span>Followers</h6>
             </div>
             <div className="profile_page_contents">

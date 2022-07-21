@@ -9,6 +9,7 @@ import "./Home.css";
 import MessagePanel from './MessagePanel';
 import Messages from './Messages';
 import Notifications from './Notifications';
+import FollowStats from './pages/FollowStats';
 import Profile_Page from "./Profile_page";
 import RightBar from './RightBar';
 import Sidebar from './Sidebar';
@@ -31,10 +32,11 @@ const Home = () => {
                         <Route path=':id' element={<MessagePanel />} />
                     </Route>
                     <Route path='/explore' element={<Explore />} />
-                    <Route path='/communities' element={<Profile_Page />} />
+                    {/* <Route path='/communities' element={<Profile_Page />} /> */}
                     <Route path='/notifications' element={<Notifications />} />
                     <Route path='/bookmarks' element={<Bookmarks />} />
                     <Route path='/TweetPage/:tweetId' element={<TweetPage />} />
+                    <Route path='/follow' element={<FollowStats />} />
                 </Routes>
                 {
                     isRightbar ? (<RightBar />) : (undefined)

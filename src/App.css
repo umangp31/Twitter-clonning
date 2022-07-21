@@ -15,6 +15,7 @@ body {
   /* --border-color: rgba(35, 33, 33); */
   /* --border-color: #1b1d20; */
   --border-color: #212326;
+  --border_color_light: rgba(255, 255, 255, 0.042);
   --twitter_blue: rgb(29 155 240);
   --twitter_blue_hover: #0a171f;
   --hover_color: rgba(255, 255, 255, 0.89);
