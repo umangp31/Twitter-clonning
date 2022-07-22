@@ -4,9 +4,12 @@ import { VideoTag } from 'react-video-tag';
 import IconButton from '../Assests/IconButton';
 import { LikeIcon, MoreIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
+import TweetDataService from "../services/tweets"
 import "./Tweets.css";
+import { useEffect } from 'react';
 const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
     // const [{ user }, dispatch] = useStateValue();
+    const [tweets, setTweets] = useState([]);
     const [TwettLikes, setTwettLikes] = useState(likeCount);
     const [isLiked, setIsLiked] = useState(false);
     const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
@@ -28,18 +31,34 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
         console.log(e);
         console.log("hi");
     }
+    const retrieveTweets = ()=>{
+        TweetDataService.getAll()
+          .then(response => {
+            console.log(response.data.tweetList);
+            setTweets(response.data.tweetList);
+            
+          })
+          .catch(e => {
+            console.log(e);
+          });
+    }
+    useEffect(()=>{
+        retrieveTweets();
+    },[])
     console.log(id);
     return (
         <>
-            <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
+            {
+                tweets && tweets.map((t)=>{
+                    return <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
                 <div className='Tweet_UserAvatar'>
-                    <img src={USERIMG} alt='USERIMG' />
+                    <img src={t.imgLink?t.imgLink:USERIMG} alt='USERIMG' />
                     <span className={replyCount > 0 ? "Tweet_ThreadLine" : ""}></span>
                 </div>
                 <div className='Tweet_Main'>
                     <div className='Tweet_UserInfo'>
                         <div className='Tweet_PostedInfo'>
-                            <div className='Tweet_Name'>{displayName}</div>
+                            <div className='Tweet_Name'>{t.name}</div>
                             <div className='Tweet_UserName'>{userName} •</div>
                             <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
                         </div>
@@ -49,7 +68,7 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
                     </div>
                     <Link to={`/TweetPage/${id}`} key={id}>
                         <div className='Tweet_TweetCOntent'>
-                            {tweetContent}
+                            {t.text}
                             <br />
                             {
                                 imgLink ? (<img className='Tweet_TweetContentImg' src={imgLink} alt={imgLink} />) : (null)
@@ -119,6 +138,8 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
                     }
                 </div>
             </div>
+                })
+            }
             {
                 replyCount > 0 ? (
                     <div className='Tweet_Container ReplyTweet' >

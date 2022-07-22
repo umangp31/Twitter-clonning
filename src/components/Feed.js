@@ -27,55 +27,55 @@ const Feed = () => {
         imgLink: null,
         videoLink: null
     },
-    {
-        id: 1,
-        displayName: "Sahil Kakwani",
-        userName: "@somewhatsahil",
-        tweetPostedTime: Date.now(),
-        tweetContent: "MongoDB is on Way,API Routes are Ready and Image Support Config Done,Now interagation remain",
-        likeCount: 1,
-        replyCount: 0,
-        retweetCount: 2,
-        imgLink: "https://ipfs.filebase.io/ipfs/QmUWGivcTvcBRC8gu71WZtNaNjhWvrsDK3Ru1o4zUU3MZy",
-        videoLink: null
+    // {
+    //     id: 1,
+    //     displayName: "Sahil Kakwani",
+    //     userName: "@somewhatsahil",
+    //     tweetPostedTime: Date.now(),
+    //     tweetContent: "MongoDB is on Way,API Routes are Ready and Image Support Config Done,Now interagation remain",
+    //     likeCount: 1,
+    //     replyCount: 0,
+    //     retweetCount: 2,
+    //     imgLink: "https://ipfs.filebase.io/ipfs/QmUWGivcTvcBRC8gu71WZtNaNjhWvrsDK3Ru1o4zUU3MZy",
+    //     videoLink: null
 
-    },
-    {
-        id: 2,
-        displayName: "Umang Patel",
-        userName: "@umangp31",
-        tweetPostedTime: Date.now(),
-        tweetContent: "Twitter Clone Project is 🔥🔥🔥,And @iamviveksuthar and @harsh220 is Adding Block-Chain Based Twitter and @somewhatsahil is Working on Backend,as always I am only to build the Cool front-end",
-        likeCount: 1,
-        replyCount: 0,
-        retweetCount: 2,
-        imgLink: null,
-        videoLink: null
-    },
-    {
-        id: 3,
-        displayName: "Bill Gates",
-        userName: "@umangp31",
-        tweetPostedTime: Date.now(),
-        tweetContent: "NFT's are cool way to spend your money,And If you have Extra money Invest in Etherum and Still left then Invest in BTCF",
-        likeCount: 1,
-        replyCount: 0,
-        retweetCount: 2,
-        imgLink: null,
-        videoLink: "https://images.mintkudos.xyz/token/1006.mp4",
-    },
-    {
-        id: 4,
-        displayName: "Elon Musk",
-        userName: "@elonmusk",
-        tweetPostedTime: Date.now(),
-        tweetContent: "Dogecoin is hitting All Time HITS,Vro buy kar le abhi,kya matlab Elon ka Chamcha",
-        likeCount: 1,
-        replyCount: 0,
-        retweetCount: 2,
-        imgLink: "https://ipfs.io/ipfs/QmcEd1R1Qq7M6G7NnHxDXYdiYtJAn9A2FGjg94Ku75HgUD?filename=gamer_bull.png",
-        videoLink: null,
-    }
+    // },
+    // {
+    //     id: 2,
+    //     displayName: "Umang Patel",
+    //     userName: "@umangp31",
+    //     tweetPostedTime: Date.now(),
+    //     tweetContent: "Twitter Clone Project is 🔥🔥🔥,And @iamviveksuthar and @harsh220 is Adding Block-Chain Based Twitter and @somewhatsahil is Working on Backend,as always I am only to build the Cool front-end",
+    //     likeCount: 1,
+    //     replyCount: 0,
+    //     retweetCount: 2,
+    //     imgLink: null,
+    //     videoLink: null
+    // },
+    // {
+    //     id: 3,
+    //     displayName: "Bill Gates",
+    //     userName: "@umangp31",
+    //     tweetPostedTime: Date.now(),
+    //     tweetContent: "NFT's are cool way to spend your money,And If you have Extra money Invest in Etherum and Still left then Invest in BTCF",
+    //     likeCount: 1,
+    //     replyCount: 0,
+    //     retweetCount: 2,
+    //     imgLink: null,
+    //     videoLink: "https://images.mintkudos.xyz/token/1006.mp4",
+    // },
+    // {
+    //     id: 4,
+    //     displayName: "Elon Musk",
+    //     userName: "@elonmusk",
+    //     tweetPostedTime: Date.now(),
+    //     tweetContent: "Dogecoin is hitting All Time HITS,Vro buy kar le abhi,kya matlab Elon ka Chamcha",
+    //     likeCount: 1,
+    //     replyCount: 0,
+    //     retweetCount: 2,
+    //     imgLink: "https://ipfs.io/ipfs/QmcEd1R1Qq7M6G7NnHxDXYdiYtJAn9A2FGjg94Ku75HgUD?filename=gamer_bull.png",
+    //     videoLink: null,
+    // }
     ])
 
     const connectWallet = async () => {
