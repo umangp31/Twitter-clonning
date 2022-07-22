@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "ethers": "^5.6.9",
     "firebase": "^9.8.2",
+    "ipfs-http-client": "^57.0.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",

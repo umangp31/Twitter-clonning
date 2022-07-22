@@ -28,7 +28,6 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
         console.log(e);
         console.log("hi");
     }
-    console.log(id);
     return (
         <>
             <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
