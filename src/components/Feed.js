@@ -1,13 +1,12 @@
+import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { MagicIcon } from "../Assests/Icons";
 import { USERIMG } from '../utills/User';
 import getAllTweets from "../Web3/getAllTweets";
-import getOwner from "../Web3/getOwner";
 import "./Feed.css";
 import Loader from "./Loader";
 import MobileSideBar from "./MobileSideBar";
 import MobileYourTweetButton from "./MobileYourTweetButton";
-import { useStateValue } from "./StateProvider";
 import Tweets from './Tweets';
 import YourTweet from './YourTweet';
 const Feed = () => {
@@ -81,26 +80,42 @@ const Feed = () => {
     const connectWallet = async () => {
         try {
             const { ethereum } = window;
-
             if (!ethereum) {
                 setIsMetamsk(false);
-                // console.log("please install MetaMask");
             }
-
             const accounts = await ethereum.request({
                 method: 'eth_requestAccounts'
             });
-
+            const provider = new ethers.providers.Web3Provider(ethereum, "any");
+            const signer = provider.getSigner();
+            console.log("Account:", await signer.getAddress());
+            signer.getChainId().then(async (res) => {
+                console.log(res);
+                if (res !== 5) {
+                    const goerli = await ethereum.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: '0x5' }]
+                    })
+                    const accounts = await ethereum.request({
+                        method: 'eth_requestAccounts',
+                    });
+                    setCurrentAccount(accounts[0])
+                    console.log(currentAccount);
+                }
+            })
             setCurrentAccount(accounts[0]);
-            // console.log(currentAccount);
         } catch (error) {
             console.log(error);
         }
     }
+    function showTweets(res) {
+        console.log(res);
+    }
     useEffect(() => {
         connectWallet();
-        getOwner();
-        getAllTweets()
+        getAllTweets().then(res => {
+            showTweets(res)
+        });
     }, [])
 
     setTimeout(() => setIsLoading(false), 200)

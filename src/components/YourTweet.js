@@ -1,10 +1,12 @@
 // import { AutoAwesome } from ''
+import { create } from "ipfs-http-client";
 import { useState } from 'react';
 import IconButton from '../Assests/IconButton';
 import { CreatePollIcon, DatePickerIcon, EmojisIcon, GIFUploadIcon, ImageUploadIcon } from '../Assests/Icons';
 import { USERIMG } from '../utills/User';
 import { storageBucket } from "./firebase";
 import "./YourTweet.css";
+
 const YourTweet = () => {
     const [Tweettext, setTweettext] = useState("");
     const [isFocused, setIsFocused] = useState(false);
@@ -13,6 +15,7 @@ const YourTweet = () => {
     const [image, setImage] = useState(undefined);
     const [isUploadStarted, setIsUploadStarted] = useState(false);
     const [imagePreviewURL, setImagePreviewURL] = useState("");
+    const IPFS = create('https://ipfs.infura.io:5001/api/v0');
     const handleChange = e => {
         e.preventDefault();
         console.log(e.target);
@@ -22,7 +25,7 @@ const YourTweet = () => {
             setImage(e.target.files[0])
             console.log(imagePreviewURL);
         }
-    }           
+    }
     function uploadToStorageBucket(e) {
         e.preventDefault();
         setIsUploadStarted(true);
@@ -45,6 +48,16 @@ const YourTweet = () => {
         )
         setIsUploadStarted(false);
     }
+    async function uploadToIPFS() {
+        try {
+            const ImageUpload = await IPFS.add(image);
+            console.log("Image UploadedF");
+            const imageLink = `https://ipfs.infura.io/ipfs/${ImageUpload.path}`;
+            setImageURL(imageLink);
+        } catch (err) {
+        }
+    }
+
     return (
         <div className='Yourtweet_Container mobile' >
             {

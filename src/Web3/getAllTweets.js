@@ -15,7 +15,7 @@ const getAllTweets = async () => {
                 signer
             );
             const allTweets = await TwitterContract.getTweets();
-            console.log("tweets", allTweets);
+            return allTweets
         }
     } catch (error) {
         console.log(error);
