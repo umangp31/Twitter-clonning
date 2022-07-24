@@ -1,12 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { VideoTag } from 'react-video-tag';
 import IconButton from '../Assests/IconButton';
 import { LikeIcon, MoreIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assests/Icons';
+import TweetDataService from "../services/tweets";
 import { USERIMG } from '../utills/User';
-import TweetDataService from "../services/tweets"
 import "./Tweets.css";
-import { useEffect } from 'react';
 const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
     // const [{ user }, dispatch] = useStateValue();
     const [tweets, setTweets] = useState([]);
@@ -31,113 +30,112 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
         console.log(e);
         console.log("hi");
     }
-    const retrieveTweets = ()=>{
+    const retrieveTweets = () => {
         TweetDataService.getAll()
-          .then(response => {
-            console.log(response.data.tweetList);
-            setTweets(response.data.tweetList);
-            
-          })
-          .catch(e => {
-            console.log(e);
-          });
+            .then(response => {
+                // console.log(response.data.tweetList);
+                setTweets(response.data.tweetList);
+            })
+            .catch(e => {
+                console.log(e);
+            });
     }
-    useEffect(()=>{
+    useEffect(() => {
         retrieveTweets();
-    },[])
-    console.log(id);
+    }, [])
+    // console.log(id);
     return (
         <>
             {
-                tweets && tweets.map((t)=>{
+                tweets && tweets.map((t) => {
                     return <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
-                <div className='Tweet_UserAvatar'>
-                    <img src={t.imgLink?t.imgLink:USERIMG} alt='USERIMG' />
-                    <span className={replyCount > 0 ? "Tweet_ThreadLine" : ""}></span>
-                </div>
-                <div className='Tweet_Main'>
-                    <div className='Tweet_UserInfo'>
-                        <div className='Tweet_PostedInfo'>
-                            <div className='Tweet_Name'>{t.name}</div>
-                            <div className='Tweet_UserName'>{userName} •</div>
-                            <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
+                        <div className='Tweet_UserAvatar'>
+                            <img src={t.imgLink ? t.imgLink : USERIMG} alt='USERIMG' />
+                            <span className={replyCount > 0 ? "Tweet_ThreadLine" : ""}></span>
                         </div>
-                        <IconButton hoverColor="twitter_blue_hover" controller={showMenu} >
-                            <MoreIcon onClick={showMenu} />
-                        </IconButton>
-                    </div>
-                    <Link to={`/TweetPage/${id}`} key={id}>
-                        <div className='Tweet_TweetCOntent'>
-                            {t.text}
-                            <br />
+                        <div className='Tweet_Main'>
+                            <div className='Tweet_UserInfo'>
+                                <div className='Tweet_PostedInfo'>
+                                    <div className='Tweet_Name'>{t.name}</div>
+                                    <div className='Tweet_UserName'>{userName} •</div>
+                                    <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
+                                </div>
+                                <IconButton hoverColor="twitter_blue_hover" controller={showMenu} >
+                                    <MoreIcon onClick={showMenu} />
+                                </IconButton>
+                            </div>
+                            <Link to={`/TweetPage/${id}`} key={id}>
+                                <div className='Tweet_TweetCOntent'>
+                                    {t.text}
+                                    <br />
+                                    {
+                                        imgLink ? (<img className='Tweet_TweetContentImg' src={imgLink} alt={imgLink} />) : (null)
+                                    }
+                                    {
+                                        videoLink ? (<VideoTag src={videoLink} className="Video" autoPlay loop controls />) : (undefined)
+                                    }
+                                </div>
+                            </Link>
                             {
-                                imgLink ? (<img className='Tweet_TweetContentImg' src={imgLink} alt={imgLink} />) : (null)
+                                mainTweet ? (
+                                    <div className="TweetUploadStats">6:00 PM • Jul 1,2022  • Twitter for iOS</div>
+                                ) : (undefined)
                             }
                             {
-                                videoLink ? (<VideoTag src={videoLink} className="Video" autoPlay loop controls />) : (undefined)
+                                mainTweet ? (
+                                    <div className="Tweet_TweetStats">
+                                        <span>
+                                            <span>{likeCount}</span>
+                                            Like
+                                        </span>
+                                        <span>
+                                            <span>{replyCount}</span>
+                                            Reply
+                                        </span>
+                                        <span>
+                                            <span> {retweetCount}</span>
+                                            Retweet
+                                        </span>
+                                    </div>
+                                ) : (undefined)
+                            }
+                            <div className={mainTweet ? "Tweet_TweetOptions Border" : "Tweet_TweetOptions"}>
+                                <div className="Tweet_TweetOption">
+                                    <IconButton hoverColor="twitter_blue_hover" >
+                                        <ReplyIcon />
+                                    </IconButton>
+                                    <div className={mainTweet ? "dn" : "Tweet_TweetReplys"}>{replyCount}</div>
+                                </div>
+                                <div className="Tweet_TweetOption">
+                                    <IconButton hoverColor="twitter_green_hover">
+                                        <RetweetIcon />
+                                    </IconButton>
+                                    <div className={mainTweet ? "dn" : "Tweet_TweetRetweets"}>{retweetCount}</div>
+                                </div>
+                                <div className="Tweet_TweetOption">
+                                    <IconButton hoverColor="twitter_pink_hover">
+                                        <LikeIcon onClick={handleTweetLikes} />
+                                    </IconButton>
+                                    <div className={mainTweet ? "dn" : "Tweet_TweetLikes"}>{TwettLikes}</div>
+                                </div>
+                                <div className="Tweet_TweetOption">
+                                    <IconButton hoverColor="twitter_blue_hover">
+                                        <ShareIcon />
+                                    </IconButton>
+                                    <div className={mainTweet ? "dn" : "Tweet_ShareTweet"}>16</div>
+                                </div>
+                            </div>
+                            {
+                                mainTweet ? (
+                                    <div className="Tweet_YourReply">
+                                        <img src={USERIMG} alt="hi" className="UserAvatar" />
+                                        <input type="text" placeholder="Tweet your reply" />
+                                        <button>Reply</button>
+                                    </div>
+                                ) : (undefined)
                             }
                         </div>
-                    </Link>
-                    {
-                        mainTweet ? (
-                            <div className="TweetUploadStats">6:00 PM • Jul 1,2022  • Twitter for iOS</div>
-                        ) : (undefined)
-                    }
-                    {
-                        mainTweet ? (
-                            <div className="Tweet_TweetStats">
-                                <span>
-                                    <span>{likeCount}</span>
-                                    Like
-                                </span>
-                                <span>
-                                    <span>{replyCount}</span>
-                                    Reply
-                                </span>
-                                <span>
-                                    <span> {retweetCount}</span>
-                                    Retweet
-                                </span>
-                            </div>
-                        ) : (undefined)
-                    }
-                    <div className={mainTweet ? "Tweet_TweetOptions Border" : "Tweet_TweetOptions"}>
-                        <div className="Tweet_TweetOption">
-                            <IconButton hoverColor="twitter_blue_hover" >
-                                <ReplyIcon />
-                            </IconButton>
-                            <div className={mainTweet ? "dn" : "Tweet_TweetReplys"}>{replyCount}</div>
-                        </div>
-                        <div className="Tweet_TweetOption">
-                            <IconButton hoverColor="twitter_green_hover">
-                                <RetweetIcon />
-                            </IconButton>
-                            <div className={mainTweet ? "dn" : "Tweet_TweetRetweets"}>{retweetCount}</div>
-                        </div>
-                        <div className="Tweet_TweetOption">
-                            <IconButton hoverColor="twitter_pink_hover">
-                                <LikeIcon onClick={handleTweetLikes} />
-                            </IconButton>
-                            <div className={mainTweet ? "dn" : "Tweet_TweetLikes"}>{TwettLikes}</div>
-                        </div>
-                        <div className="Tweet_TweetOption">
-                            <IconButton hoverColor="twitter_blue_hover">
-                                <ShareIcon />
-                            </IconButton>
-                            <div className={mainTweet ? "dn" : "Tweet_ShareTweet"}>16</div>
-                        </div>
                     </div>
-                    {
-                        mainTweet ? (
-                            <div className="Tweet_YourReply">
-                                <img src={USERIMG} alt="hi" className="UserAvatar" />
-                                <input type="text" placeholder="Tweet your reply" />
-                                <button>Reply</button>
-                            </div>
-                        ) : (undefined)
-                    }
-                </div>
-            </div>
                 })
             }
             {
