@@ -111,11 +111,20 @@ const Feed = () => {
     function showTweets(res) {
         console.log(res);
     }
+    async function fetchAllTweets() {
+        const allTweets = await fetch("http://localhost:5000/api/tweet");
+        console.log("got response now converting to JSON");
+        const alltwetsInJSON = await allTweets.json();
+        console.log("JSON");
+        console.log(alltwetsInJSON.tweetList);
+
+    }
     useEffect(() => {
         connectWallet();
         getAllTweets().then(res => {
             showTweets(res)
         });
+        fetchAllTweets()
     }, [])
 
     setTimeout(() => setIsLoading(false), 200)

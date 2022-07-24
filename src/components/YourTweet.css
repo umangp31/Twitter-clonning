@@ -101,6 +101,25 @@
     visibility: 0;
 }
 
+.YourTweet_TweetAttachment span {
+    color: var(--twitter_blue);
+    font-weight: 300;
+}
+
+.progress {
+    max-width: 250px;
+    min-height: 2px;
+    background-color: var(--hover_color_light);
+    accent-color: red;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.value {
+    height: 100%;
+    background-color: var(--twitter_blue);
+}
+
 .UploadImage {
     /* margin: auto; */
     max-width: 80%;

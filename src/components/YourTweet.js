@@ -70,6 +70,7 @@ const YourTweet = () => {
                 <div className='YourTweet_Form'>
                     <textarea cols="8" rows="2" draggable="false" className='YourTweet_TweetText'
                         value={Tweettext}
+                        disabled={Tweettext.length > 250}
                         onChange={(e) => setTweettext(e.target.value)}
                         placeholder="Whats's Happening"
                         onFocus={() => setIsFocused(true)}
@@ -85,6 +86,13 @@ const YourTweet = () => {
                         ) : (null)
                     }
                 </div>
+            </div>
+            <div className="progress">
+
+                <div className="value" style={{
+                    width: `${Tweettext.length}px`,
+                    maxWidth: "250px"
+                }}></div>
             </div>
             <div className="YourTweet_TweetAttachment">
                 <IconButton hoverColor="twitter_blue_hover" >
@@ -103,6 +111,9 @@ const YourTweet = () => {
                 <IconButton hoverColor="twitter_blue_hover">
                     <DatePickerIcon />
                 </IconButton>
+                <span>
+                    {Tweettext.length}/250
+                </span>
                 <button
                     disabled={!Tweettext}
                     className='YourTweet_PostTweetButton'
