@@ -25,6 +25,10 @@
     /* background-color: aliceblue; */
 }
 
+.Tweet_UserAvatarHead img {
+    border-radius: 50%;
+}
+
 
 
 a {

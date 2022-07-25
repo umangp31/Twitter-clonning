@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { MagicIcon } from "../Assests/Icons";
 import { USERIMG } from '../utills/User';
 import "./Feed.css";
-import Loader from "./Loader";
 import MobileSideBar from "./MobileSideBar";
 import MobileYourTweetButton from "./MobileYourTweetButton";
 import Tweets from './Tweets';
@@ -59,12 +58,11 @@ const Feed = () => {
     useEffect(() => {
         connectWallet();
     }, [])
-
     setTimeout(() => setIsLoading(false), 200)
     return (
         <div className='Feed_Container'>
             <div className="Yourtweet_Header">
-                <div className='Tweet_UserAvatar Mobile' onClick={() => setIsOpen(true)}>
+                <div className='Tweet_UserAvatarHead Mobile' onClick={() => setIsOpen(true)}>
                     <img src={USERIMG} alt='USERIMG' />
                     <span className="HearUserNAme">Home</span>
                 </div>
@@ -78,27 +76,7 @@ const Feed = () => {
             </div>
             <MobileYourTweetButton />
             <YourTweet tweets={tweets} />
-            {
-                isLoading ? <Loader /> : <>
-                    {
-                        tweets.map((tweet) =>
-                            <Tweets
-                                key={tweet.id}
-                                id={tweet.id}
-                                displayName={tweet.displayName}
-                                userName={tweet.userName}
-                                tweetContent={tweet.tweetContent}
-                                likeCount={tweet.likeCount}
-                                replyCount={tweet.replyCount}
-                                retweetCount={tweet.retweetCount}
-                                tweetPostedTime={tweet.tweetPostedTime}
-                                imgLink={tweet.imgLink}
-                                videoLink={tweet.videoLink}
-                            />
-                        )
-                    }
-                </>
-            }
+            <Tweets />
         </div >
     )
 }

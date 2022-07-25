@@ -4,7 +4,7 @@
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     color: aliceblue;
-    padding: 15px;
+    padding: 5px 15px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -13,8 +13,8 @@
 
 .Tweet_UserAvatar {
     /* outline: 1px solid green; */
-    max-width: max-content;
-    flex: 0.2;
+    /* max-width: max-content; */
+    flex: 0.1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,7 +22,13 @@
     padding-top: 2%;
 }
 
-.Tweet_UserAvatar img {}
+.Tweet_UserAvatar img {
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+    object-position: top;
+}
 
 .Reply {
     padding-top: 0.6%;
@@ -139,7 +145,7 @@
 .Tweet_TweetOption .iconbutton svg {
     fill: grey;
     margin: 0 0.4rem;
-    min-height: 1.1rem;
+    min-height: 1.0rem;
 }
 
 .Tweet_TweetReplys, .Tweet_TweetRetweets, .Tweet_TweetLikes, .Tweet_ShareTweet {
@@ -255,8 +261,27 @@ video {
 }
 
 @media (max-width:688px) {
+    .Tweet_UserAvatar img {
+        margin-top: 5%;
+        min-width: 40px;
+        /* max-width: 35px; */
+        max-height: 40px;
+        object-fit: cover;
+    }
+
+    .Tweet_Main {
+        /* background-color: #f91880; */
+        margin-inline-start: 5px;
+    }
+
     .Tweet_TweetOptions {
+        /* background-color: #f91880; */
         width: 90%;
+        padding: 0;
+    }
+
+    .Tweet_TweetOptions .Tweet_TweetOption .iconbutton svg {
+        max-width: 19px;
     }
 
     .ReplyTweet {

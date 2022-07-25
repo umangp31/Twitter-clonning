@@ -167,6 +167,17 @@
     background-color: brown;
 }
 
+.tweetSent {
+    position: fixed;
+    bottom: 8%;
+    background-color: var(--twitter_blue);
+    color: aliceblue;
+    border-radius: 2px;
+    font-size: 18px;
+    padding: 10px;
+    left: 40%;
+}
+
 @media (max-width:688px) {
     .MobileModal {
         display: block;
@@ -219,5 +230,10 @@
         border-radius: 50px;
         font-size: 12px;
         color: var(--twitter_blue);
+    }
+
+    .tweetSent {
+        left: 25%;
+        bottom: 10%;
     }
 }
