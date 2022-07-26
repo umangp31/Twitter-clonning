@@ -1,4 +1,5 @@
 // import { AutoAwesome } from ''
+import axios from "axios";
 import { create } from "ipfs-http-client";
 import { useState } from 'react';
 import IconButton from '../Assests/IconButton';
@@ -6,7 +7,6 @@ import { CreatePollIcon, DatePickerIcon, EmojisIcon, GIFUploadIcon, ImageUploadI
 import { USERIMG } from '../utills/User';
 import { storageBucket } from "./firebase";
 import "./YourTweet.css";
-
 const YourTweet = () => {
     const [Tweettext, setTweettext] = useState("");
     const [isFocused, setIsFocused] = useState(false);
@@ -15,6 +15,7 @@ const YourTweet = () => {
     const [image, setImage] = useState(undefined);
     const [isUploadStarted, setIsUploadStarted] = useState(false);
     const [imagePreviewURL, setImagePreviewURL] = useState("");
+    const [isTweetSentOK, setIsTweetSentOK] = useState(false);
     const IPFS = create('https://ipfs.infura.io:5001/api/v0');
     const handleChange = e => {
         e.preventDefault();
@@ -54,73 +55,98 @@ const YourTweet = () => {
             console.log("Image UploadedF");
             const imageLink = `https://ipfs.infura.io/ipfs/${ImageUpload.path}`;
             setImageURL(imageLink);
-        } catch (err) {
-        }
+        } catch (err) { }
+    }
+
+    function postTweet() {
+        let baseURL = "https://twitter-backend-suv.herokuapp.com/api/tweet";
+        axios.post(baseURL, {
+            text: Tweettext,
+            username: "Vivek Suthar",
+            imgLink: imageURL,
+            user_id: "10"
+        })
+            .then((res) => {
+                console.log(res.status);
+                if (res.status === 200) {
+                    setIsTweetSentOK(true);
+                    setTweettext("")
+                    setTimeout(() => {
+                        setIsTweetSentOK(false)
+                    }, 4000);
+                }
+            })
     }
 
     return (
-        <div className='Yourtweet_Container mobile' >
+        <>
+            <div className='Yourtweet_Container mobile' >
+                {
+                    isUploadStarted ? (<progress className='progress' value={progress}></progress>) : (undefined)
+                }
+                <div className="Write_Tweet">
+                    <div className="YourTweet_Avatar">
+                        <img src={USERIMG} alt='' />
+                    </div>
+                    <div className='YourTweet_Form'>
+                        <textarea cols="8" rows="2" draggable="false" className='YourTweet_TweetText'
+                            value={Tweettext}
+                            disabled={Tweettext.length > 250}
+                            onChange={(e) => setTweettext(e.target.value)}
+                            placeholder="Whats's Happening"
+                            onFocus={() => setIsFocused(true)}
+                        />
+                        {
+                            isFocused ? (<div className="YourTweet_TweetReplyAcces">
+                                <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
+                            </div>) : (undefined)
+                        }
+                        {
+                            image ? (
+                                <img className='UploadImage' src={imagePreviewURL} alt="hi" />
+                            ) : (null)
+                        }
+                    </div>
+                </div>
+                <div className="progress">
+                    <div className="value" style={{
+                        width: `${Tweettext.length}px`,
+                        maxWidth: "250px"
+                    }}></div>
+                </div>
+                <div className="YourTweet_TweetAttachment">
+                    <IconButton hoverColor="twitter_blue_hover" >
+                        <input type="file" onChange={handleChange} />
+                        <ImageUploadIcon />
+                    </IconButton>
+                    <IconButton hoverColor="twitter_blue_hover">
+                        <GIFUploadIcon />
+                    </IconButton>
+                    <IconButton hoverColor="twitter_blue_hover">
+                        <CreatePollIcon />
+                    </IconButton>
+                    <IconButton hoverColor="twitter_blue_hover">
+                        <EmojisIcon />
+                    </IconButton>
+                    <IconButton hoverColor="twitter_blue_hover">
+                        <DatePickerIcon />
+                    </IconButton>
+                    <span>
+                        {Tweettext.length}/250
+                    </span>
+                    <button
+                        disabled={!Tweettext}
+                        className='YourTweet_PostTweetButton'
+                        onClick={postTweet}
+                    >Tweet</button>
+                </div>
+            </div>
             {
-                isUploadStarted ? (<progress className='progress' value={progress}></progress>) : (undefined)
+                isTweetSentOK ? (
+                    <div className="tweetSent">Your Tweet was sent</div>
+                ) : (undefined)
             }
-            <div className="Write_Tweet">
-                <div className="YourTweet_Avatar">
-                    <img src={USERIMG} alt='' />
-                </div>
-                <div className='YourTweet_Form'>
-                    <textarea cols="8" rows="2" draggable="false" className='YourTweet_TweetText'
-                        value={Tweettext}
-                        disabled={Tweettext.length > 250}
-                        onChange={(e) => setTweettext(e.target.value)}
-                        placeholder="Whats's Happening"
-                        onFocus={() => setIsFocused(true)}
-                    />
-                    {
-                        isFocused ? (<div className="YourTweet_TweetReplyAcces">
-                            <i class="fa-solid fa-earth-asia"></i> Everyone Can reply
-                        </div>) : (undefined)
-                    }
-                    {
-                        image ? (
-                            <img className='UploadImage' src={imagePreviewURL} alt="hi" />
-                        ) : (null)
-                    }
-                </div>
-            </div>
-            <div className="progress">
-
-                <div className="value" style={{
-                    width: `${Tweettext.length}px`,
-                    maxWidth: "250px"
-                }}></div>
-            </div>
-            <div className="YourTweet_TweetAttachment">
-                <IconButton hoverColor="twitter_blue_hover" >
-                    <input type="file" onChange={handleChange} />
-                    <ImageUploadIcon />
-                </IconButton>
-                <IconButton hoverColor="twitter_blue_hover">
-                    <GIFUploadIcon />
-                </IconButton>
-                <IconButton hoverColor="twitter_blue_hover">
-                    <CreatePollIcon />
-                </IconButton>
-                <IconButton hoverColor="twitter_blue_hover">
-                    <EmojisIcon />
-                </IconButton>
-                <IconButton hoverColor="twitter_blue_hover">
-                    <DatePickerIcon />
-                </IconButton>
-                <span>
-                    {Tweettext.length}/250
-                </span>
-                <button
-                    disabled={!Tweettext}
-                    className='YourTweet_PostTweetButton'
-                    onClick={uploadToStorageBucket}
-                >Tweet</button>
-            </div>
-        </div>
+        </>
     )
 }
 

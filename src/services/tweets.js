@@ -4,6 +4,10 @@ class TweetDataService{
     getAll(){
         return http.get();
     }
+    postTweet(body) {
+        console.log("post tweet");
+        return http.post();
+    }
 }
 
 

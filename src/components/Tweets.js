@@ -12,6 +12,7 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
     const [TwettLikes, setTwettLikes] = useState(likeCount);
     const [isLiked, setIsLiked] = useState(false);
     const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
+    const [latestTweets, setLatestTweets] = useState([])
     const handleTweetLikes = (e) => {
         e.preventDefault();
         if (!isLiked) {
@@ -30,11 +31,14 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
         console.log(e);
         console.log("hi");
     }
+    let newArray;
     const retrieveTweets = () => {
         TweetDataService.getAll()
             .then(response => {
                 // console.log(response.data.tweetList);
                 setTweets(response.data.tweetList);
+                newArray = [...tweets].reverse()
+                console.log(newArray);
             })
             .catch(e => {
                 console.log(e);
@@ -47,7 +51,7 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
     return (
         <>
             {
-                tweets && tweets.map((t) => {
+                tweets && tweets.map((t, index) => {
                     return <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
                         <div className='Tweet_UserAvatar'>
                             <img src={t.imgLink ? t.imgLink : USERIMG} alt='USERIMG' />
@@ -57,14 +61,14 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
                             <div className='Tweet_UserInfo'>
                                 <div className='Tweet_PostedInfo'>
                                     <div className='Tweet_Name'>{t.name}</div>
-                                    <div className='Tweet_UserName'>{userName} •</div>
+                                    <div className='Tweet_UserName'>{"@" + t.name.split(" ").join("").toLowerCase()} •</div>
                                     <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
                                 </div>
                                 <IconButton hoverColor="twitter_blue_hover" controller={showMenu} >
                                     <MoreIcon onClick={showMenu} />
                                 </IconButton>
                             </div>
-                            <Link to={`/TweetPage/${id}`} key={id}>
+                            <Link to={`/TweetPage/${index}`} key={id}>
                                 <div className='Tweet_TweetCOntent'>
                                     {t.text}
                                     <br />

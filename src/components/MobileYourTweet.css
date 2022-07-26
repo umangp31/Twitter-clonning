@@ -2,6 +2,35 @@
     display: none;
 }
 
+.YourTweet_TweetAttachmentMobile {
+    display: flex;
+    justify-content: center;
+    margin-block: 1%;
+}
+
+.YourTweet_TweetAttachmentMobile svg {
+    max-width: 20px;
+}
+
+.YourTweet_TweetReplyAcces {
+    display: flex;
+    align-items: center;
+}
+
+.YourTweet_TweetReplyAcces span {
+    margin-inline: 1rem;
+    justify-self: flex-end;
+    font-size: 14px;
+}
+
+.Alert {
+    color: red;
+}
+
+.progress {
+    margin-block: 10px;
+}
+
 @media (max-width:688px) {
     .YourTweetBtn {
         position: fixed;
