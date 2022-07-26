@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import './MessagePanel.css';
+import PageHeader from './PageHeader';
 export default function MessagePanel() {
     const URL = useParams();
     return (
@@ -9,8 +10,9 @@ export default function MessagePanel() {
                     <div className='ChatRoom'>{URL.id}</div>
                 ) : (
                     <div className='SelectRoom'>
-                        Select a message
-                        Choose from your existing conversations, start a new one, or just keep swimming.
+                        {/* Select a message
+                        Choose from your existing conversations, start a new one, or just keep swimming. */}
+                        <PageHeader/>
                     </div>
                 )
             }

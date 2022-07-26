@@ -3,6 +3,7 @@ import "./MessageRightbar.css";
 import { Settings, NewMessage } from "../Assests/Icons";
 import IconButton from "../Assests/IconButton";
 import { USERIMG } from "../utills/User";
+import MessageCard from "./MessageCard";
 
 export default function MessageRightBar() {
   return (
@@ -20,7 +21,6 @@ export default function MessageRightBar() {
           </IconButton>
         </div>
       </div>
-
       <div className="SearchDM">
         <span>
           <input
@@ -32,30 +32,9 @@ export default function MessageRightBar() {
       </div>
 
       <div className="Chats">
-        <div className="MsgPanel">
-          <div className="ChatProfile">
-            <img src={USERIMG} alt="USERIMG" />
-          </div>
-          <div className="ChatMsg">
-            <Link to="/messages/Sahil">SahilCODER</Link>
-          </div>
-        </div>
-        <div className="MsgPanel">
-          <div className="ChatProfile">
-            <img src={USERIMG} alt="USERIMG" />
-          </div>
-          <div className="ChatMsg">
-            <Link to="/messages/Umang">UmangJSMASTER</Link>
-          </div>
-        </div>
-        <div className="MsgPanel">
-          <div className="ChatProfile">
-            <img src={USERIMG} alt="USERIMG" />
-          </div>
-          <div className="ChatMsg">
-            <Link to="/messages/harsh">HarshSER</Link>
-          </div>
-        </div>
+        <MessageCard />
+        <MessageCard />
+        <MessageCard />
       </div>
     </div>
   );

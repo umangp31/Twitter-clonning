@@ -49,23 +49,5 @@
     flex: 0.09;
     display: flex;
     flex-direction: column;
-}
-
-.MsgPanel{
-    display: flex;
-    max-height: 11.5%;
-}
-
-.MsgPanel:hover{
-    background-color: var(--border-color);
-    transition:0.19s ease-in-out;
-}
-
-.ChatProfile img{
-    /* justify-content: center; */
-    max-height: 80%;
-    border-radius: 50px;
-}
-
-.ChatMsg{
+    box-sizing: border-box;
 }
