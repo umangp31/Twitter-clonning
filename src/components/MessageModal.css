@@ -1,0 +1,37 @@
+.messageModal {
+    position: fixed;
+    bottom: 0;
+    right: 1.2rem;
+    min-height: 10vh;
+    width: 28%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px -1px 8px 5px var(--border-color);
+    color: aliceblue;
+    transition: all 0.3s ease-in-out;
+}
+
+.messageModal_header {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* background-color: aliceblue; */
+}
+
+.messageModal_header span {
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.messageModal_header .icons {
+    margin-inline: 5%;
+}
+
+.messageModal_header .icons .iconbutton svg {
+    max-width: 35px;
+    min-width: 35px;
+}
