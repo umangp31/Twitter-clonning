@@ -35,10 +35,8 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
     const retrieveTweets = () => {
         TweetDataService.getAll()
             .then(response => {
-                // console.log(response.data.tweetList);
+                console.log(response.data.tweetList);
                 setTweets(response.data.tweetList);
-                newArray = [...tweets].reverse()
-                console.log(newArray);
             })
             .catch(e => {
                 console.log(e);
