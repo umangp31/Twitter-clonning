@@ -1,0 +1,31 @@
+
+.MsgPanel{
+    display: flex;
+    max-height: 11.5%;
+    box-sizing: border-box;
+    float: left;
+    gap: 10px;
+}
+
+.MsgPanel:hover{
+    background-color: var(--border-color);
+    transition:0.19s ease-in-out;
+}
+
+.ChatProfile{
+    display:flex;
+    align-items: center;
+    margin-left:13px;
+}
+
+.ChatProfile img{
+    max-height: 70%;
+    border-radius: 50px;
+    /* align-items: center; */
+}
+
+.ChatMsg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
