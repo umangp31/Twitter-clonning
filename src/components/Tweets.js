@@ -64,7 +64,7 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
                                 <div className='Tweet_PostedInfo'>
                                     <div className='Tweet_Name'>{t.name}</div>
                                     <div className='Tweet_UserName'>{"@" + t.name.split(" ").join("").toLowerCase()} •</div>
-                                    <div className='Tweet_ElacepedTimeFromTweet'>{parseInt(t.date.split('-')[2])+Months[parseInt(t.date.split('-')[1]-1)]}
+                                    <div className='Tweet_ElacepedTimeFromTweet'>{parseInt(t.date.split('-')[2])+" "+Months[parseInt(t.date.split('-')[1]-1)]}
                                     </div>
                                 </div>
                                 <IconButton hoverColor="twitter_blue_hover" controller={showMenu} >
