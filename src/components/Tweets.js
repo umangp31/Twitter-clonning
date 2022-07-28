@@ -36,7 +36,9 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
         TweetDataService.getAll()
             .then(response => {
                 console.log(response.data.tweetList);
-                setTweets(response.data.tweetList);
+                setLatestTweets(response.data.tweetList.reverse());
+                console.log(latestTweets);
+                setTweets(...latestTweets);
             })
             .catch(e => {
                 console.log(e);
@@ -45,12 +47,14 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
     useEffect(() => {
         retrieveTweets();
     }, [])
+    const Months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+    console.log();
     // console.log(id);
     return (
         <>
             {
-                tweets && tweets.map((t, index) => {
-                    return <div className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
+                latestTweets && latestTweets.map((t) => {
+                    return <div  key={t.id} className={replyCount > 0 ? "Tweet_Container BorderBottomNone" : "Tweet_Container"}>
                         <div className='Tweet_UserAvatar'>
                             <img src={t.imgLink ? t.imgLink : USERIMG} alt='USERIMG' />
                             <span className={replyCount > 0 ? "Tweet_ThreadLine" : ""}></span>
@@ -60,13 +64,14 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
                                 <div className='Tweet_PostedInfo'>
                                     <div className='Tweet_Name'>{t.name}</div>
                                     <div className='Tweet_UserName'>{"@" + t.name.split(" ").join("").toLowerCase()} •</div>
-                                    <div className='Tweet_ElacepedTimeFromTweet'> 8m</div>
+                                    <div className='Tweet_ElacepedTimeFromTweet'>{parseInt(t.date.split('-')[2])+Months[parseInt(t.date.split('-')[1]-1)]}
+                                    </div>
                                 </div>
                                 <IconButton hoverColor="twitter_blue_hover" controller={showMenu} >
                                     <MoreIcon onClick={showMenu} />
                                 </IconButton>
                             </div>
-                            <Link to={`/TweetPage/${index}`} key={id}>
+                            <Link to={`/TweetPage/${t}`} key={id}>
                                 <div className='Tweet_TweetCOntent'>
                                     {t.text}
                                     <br />
