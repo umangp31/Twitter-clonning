@@ -1,6 +1,7 @@
 import { useState } from "react";
 import IconButton from "../Assests/IconButton";
 import { DownArrowIcon, UpArrowIcon } from "../Assests/Icons";
+import MessageCard from "./MessageCard";
 function MessageModal() {
     const [isMessagesopen, setIsMessagesopen] = useState(false);
     const showModal = () => {
@@ -9,7 +10,7 @@ function MessageModal() {
     return (
         <div className="messageModal"
             style={{
-                minHeight: isMessagesopen ? "75vh" : "10vh"
+                minHeight: isMessagesopen ? "75vh" : "7vh"
             }}
         >
             <div className="messageModal_header">
@@ -19,7 +20,6 @@ function MessageModal() {
                         {
                             isMessagesopen ? (<DownArrowIcon />) : (<UpArrowIcon />)
                         }
-
                     </IconButton>
                 </div>
             </div>

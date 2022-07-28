@@ -13,7 +13,7 @@ export default function MessageCard() {
         <img src={USERIMG} alt="USERIMG" />
       </div>
       <div className="ChatMsg">
-        <Link to="/messages/Umang">SahilCODER</Link>
+        <Link to="/messages/Vivek">SahilCODER</Link>
         <p>Your last msg</p>
       </div>
     </div>
