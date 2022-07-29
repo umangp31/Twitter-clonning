@@ -6,7 +6,7 @@ import { LikeIcon, MoreIcon, ReplyIcon, RetweetIcon, ShareIcon } from '../Assest
 import TweetDataService from "../services/tweets";
 import { USERIMG } from '../utills/User';
 import "./Tweets.css";
-const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
+const Tweets = ({ userTwitted,id, mainTweet, displayName, userName, likeCount, replyCount, tweetContent, retweetCount, tweetPostedTime, imgLink, videoLink }) => {
     // const [{ user }, dispatch] = useStateValue();
     const [tweets, setTweets] = useState([]);
     const [TwettLikes, setTwettLikes] = useState(likeCount);
@@ -47,6 +47,9 @@ const Tweets = ({ id, mainTweet, displayName, userName, likeCount, replyCount, t
     useEffect(() => {
         retrieveTweets();
     }, [])
+    useEffect(()=>{
+        retrieveTweets();
+    },[userTwitted])
     const Months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
     console.log();
     // console.log(id);

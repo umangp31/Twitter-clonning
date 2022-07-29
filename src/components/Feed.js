@@ -12,6 +12,7 @@ const Feed = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentAccount, setCurrentAccount] = useState("");
     const [isMetamsk, setIsMetamsk] = useState(true);
+    const [userTwitted, setUserTwitted] = useState(false);
     const [tweets, setTweets] = useState([{
         id: 0,
         displayName: "Vivek Suthar",
@@ -46,6 +47,7 @@ const Feed = () => {
                     const accounts = await ethereum.request({
                         method: 'eth_requestAccounts',
                     });
+                    provider.getSigner()
                     setCurrentAccount(accounts[0])
                     console.log(currentAccount);
                 }
@@ -74,9 +76,9 @@ const Feed = () => {
                 </div>
                 <MobileSideBar isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
-            <MobileYourTweetButton />
-            <YourTweet tweets={tweets} />
-            <Tweets />
+            <MobileYourTweetButton userTwitted={setUserTwitted}/>
+            <YourTweet tweets={tweets} userTwitted={setUserTwitted}/>
+            <Tweets userTwitted={userTwitted} />
         </div >
     )
 }
