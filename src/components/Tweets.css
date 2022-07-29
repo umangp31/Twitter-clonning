@@ -1,317 +1,343 @@
 .Tweet_Container {
-    background-color: transparent;
-    max-height: max-content;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    color: aliceblue;
-    padding: 5px 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+  background-color: transparent;
+  max-height: max-content;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  color: aliceblue;
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-
 .Tweet_UserAvatar {
-    /* outline: 1px solid green; */
-    /* max-width: max-content; */
-    flex: 0.1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2%;
+  /* outline: 1px solid green; */
+  /* max-width: max-content; */
+  flex: 0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2%;
 }
 
 .Tweet_UserAvatar img {
-    min-width: 50px;
-    max-width: 50px;
-    max-height: 50px;
-    object-fit: cover;
-    object-position: top;
+  min-width: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+  object-position: top;
 }
 
 .Reply {
-    padding-top: 0.6%;
+  padding-top: 0.6%;
 }
 
 .Tweet_Main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    /* outline: 1px solid snow; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* outline: 1px solid snow; */
 }
 
 .like:hover {
-    fill: #f91880;
+  fill: #f91880;
 }
 
 .liked {
-    fill: #f91880;
-    stroke: #f91880;
+  fill: #f91880;
+  stroke: #f91880;
 }
 
 .Tweet_UserAvatar img {
-    max-width: 40px;
-    border-radius: 50%;
+  max-width: 40px;
+  border-radius: 50%;
 }
 
 .Tweet_UserInfo {
-    display: flex;
-    flex-direction: row;
-    min-width: 100%;
-    min-height: 4vh;
-    align-items: center;
-    /* padding: 2px; */
-    max-width: max-content;
-    /* outline: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  min-height: 4vh;
+  align-items: center;
+  /* padding: 2px; */
+  max-width: max-content;
+  /* outline: 1px solid red; */
 }
 
 .Tweet_UserInfo svg {
-    max-width: 25px;
-    fill: gray;
+  max-width: 25px;
+  fill: gray;
 }
 
 .Tweet_PostedInfo {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .Tweet_Name {
-    margin-left: 2%;
-    color: white;
-    font-size: 14px;
+  margin-left: 2%;
+  color: white;
+  font-size: 14px;
 }
 
 .Tweet_UserName {
-    color: gray;
-    font-weight: 300;
-    margin: 0 2%;
-
+  color: gray;
+  font-weight: 300;
+  margin: 0 2%;
 }
 
 .Tweet_ElacepedTimeFromTweet {
-    color: lightgray;
-    font-weight: 300;
+  color: lightgray;
+  font-weight: 300;
 }
 
 .Tweet_TweetCOntent {
-    /* outline: 1px solid snow; */
-    padding: 0 2%;
-    text-align: auto;
-    letter-spacing: 0.02rem;
-    line-height: 1.34rem;
-    font-weight: 360;
+  /* outline: 1px solid snow; */
+  padding: 0 2%;
+  text-align: auto;
+  letter-spacing: 0.02rem;
+  line-height: 1.34rem;
+  font-weight: 360;
 }
 
 .Tweet_TweetContentImg {
-    margin-top: 1rem;
-    max-width: 90%;
-    height: auto;
-    border-radius: 15px;
-    border-color: var(--border-color);
-    object-fit: contain;
+  margin-top: 1rem;
+  max-width: 90%;
+  height: auto;
+  border-radius: 15px;
+  border-color: var(--border-color);
+  object-fit: contain;
 }
 
 .Video {
-    margin-top: 1rem;
-    height: auto;
-    max-width: 90%;
-    border-radius: 15px;
-    border-color: var(--border-color);
-    object-fit: contain;
+  margin-top: 1rem;
+  height: auto;
+  max-width: 90%;
+  border-radius: 15px;
+  border-color: var(--border-color);
+  object-fit: contain;
 }
 
 .Tweet_TweetOptions {
-    margin-top: 3%;
-    padding: 2%;
-    width: 75%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* outline: 1px solid snow; */
-
+  margin-top: 3%;
+  padding: 2%;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* outline: 1px solid snow; */
 }
 
 .Tweet_TweetOption {
-    /* outline: 1px solid red; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* outline: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Tweet_TweetOption .iconbutton svg {
-    fill: grey;
-    margin: 0 0.4rem;
-    min-height: 1.0rem;
+  fill: grey;
+  margin: 0 0.4rem;
+  min-height: 1rem;
 }
 
-.Tweet_TweetReplys, .Tweet_TweetRetweets, .Tweet_TweetLikes, .Tweet_ShareTweet {
-    color: grey;
-    font-size: 13px;
+.Tweet_TweetReplys,
+.Tweet_TweetRetweets,
+.Tweet_TweetLikes,
+.Tweet_ShareTweet {
+  color: grey;
+  font-size: 13px;
 }
 
 .Tweet_ThreadLine {
-    background-color: var(--border-color);
-    /* background-color: #f91880; */
-    min-width: 2px;
-    border-radius: 2px;
-    flex: 1;
-    margin-top: 2px;
+  background-color: var(--border-color);
+  /* background-color: #f91880; */
+  min-width: 2px;
+  border-radius: 2px;
+  flex: 1;
+  margin-top: 2px;
 }
 
 .ReplyTweet {
-    margin-top: -2.0rem;
-    border-top: 0px solid transparent;
-    /* outline: 1px solid #f91880; */
+  margin-top: -2rem;
+  border-top: 0px solid transparent;
+  /* outline: 1px solid #f91880; */
 }
 
 .BorderBottomNone {
-    border-bottom: 0px solid transparent;
+  border-bottom: 0px solid transparent;
 }
 
 video {
-    /* background-color: #f91880; */
-    border: 1px solid var(--border-color);
-    border-radius: 15px;
+  /* background-color: #f91880; */
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
 }
 
 .TweetUploadStats {
-    color: gray;
-    font-size: 12px;
-    padding: 2%;
+  color: gray;
+  font-size: 12px;
+  padding: 2%;
 }
 
 .Tweet_TweetStats {
-    min-width: 95%;
-    margin-left: -5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 13px;
+  min-width: 95%;
+  margin-left: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
 }
 
 .Tweet_TweetStats span {
-    flex: 0.1;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: gray;
+  flex: 0.1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: gray;
 }
 
 .Tweet_TweetStats span span {
-    color: white;
-    padding: 0 2px;
+  color: white;
+  padding: 0 2px;
 }
 
 .Tweet_TweetStats {
-    margin-bottom: -3%;
-    padding: 2%;
-    width: 75%;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid var(--border-color);
+  margin-bottom: -3%;
+  padding: 2%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
 }
 
 .Border {
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 2%;
-    min-width: 95%;
-    margin-left: -5%;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 2%;
+  min-width: 95%;
+  margin-left: -5%;
 }
 
 .Tweet_YourReply {
-    /* background-color: aliceblue; */
-    margin-top: 3%;
-    padding: 2px 0;
-    display: flex;
-    align-items: center;
+  /* background-color: aliceblue; */
+  margin-top: 3%;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
 }
 
 .Tweet_YourReply input {
-    background-color: transparent;
-    flex: 0.7;
-    border: none;
-    outline: none;
-    padding: 0 3%;
-    color: aliceblue;
+  background-color: transparent;
+  flex: 0.7;
+  border: none;
+  outline: none;
+  padding: 0 3%;
+  color: aliceblue;
 }
 
 .Tweet_YourReply button {
-    display: flex;
-    align-self: center;
-    justify-self: flex-end;
-    width: max-content;
-    padding: 4px 9px;
-    outline: none;
-    color: aliceblue;
-    font-size: 14px;
-    font-weight: 4Ps50;
-    border: none;
-    background-color: var(--twitter_blue);
-    border-radius: 20px;
+  display: flex;
+  align-self: center;
+  justify-self: flex-end;
+  width: max-content;
+  padding: 4px 9px;
+  outline: none;
+  color: aliceblue;
+  font-size: 14px;
+  font-weight: 4Ps50;
+  border: none;
+  background-color: var(--twitter_blue);
+  border-radius: 20px;
 }
 
 .UserAvatar {
-    max-width: 40px;
-    border-radius: 50%;
+  max-width: 40px;
+  border-radius: 50%;
+}
+.heart {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  background-image: url("https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 2900%;
+  color: var(--border-color);
+}
+.likedPink{
+  background-position: right;
+}
+.heart:hover {
+  background-position: right;
 }
 
-@media (max-width:688px) {
-    .Tweet_UserAvatar img {
-        margin-top: 5%;
-        min-width: 40px;
-        /* max-width: 35px; */
-        max-height: 40px;
-        object-fit: cover;
-    }
+.is_animating {
+  animation: heart-burst 0.8s steps(28) 1;
+}
 
-    .Tweet_Main {
-        /* background-color: #f91880; */
-        margin-inline-start: 5px;
-    }
+@keyframes heart-burst {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+@media (max-width: 688px) {
+  .Tweet_UserAvatar img {
+    margin-top: 5%;
+    min-width: 40px;
+    /* max-width: 35px; */
+    max-height: 40px;
+    object-fit: cover;
+  }
 
-    .Tweet_TweetOptions {
-        /* background-color: #f91880; */
-        width: 90%;
-        padding: 0;
-    }
+  .Tweet_Main {
+    /* background-color: #f91880; */
+    margin-inline-start: 5px;
+  }
 
-    .Tweet_TweetOptions .Tweet_TweetOption .iconbutton svg {
-        max-width: 19px;
-    }
+  .Tweet_TweetOptions {
+    /* background-color: #f91880; */
+    width: 90%;
+    padding: 0;
+  }
 
-    .ReplyTweet {
-        margin-top: -1.9rem;
-    }
+  .Tweet_TweetOptions .Tweet_TweetOption .iconbutton svg {
+    max-width: 19px;
+  }
 
-    .Border {
-        min-width: 110%;
-        margin-left: -12%;
+  .ReplyTweet {
+    margin-top: -1.9rem;
+  }
 
-    }
+  .Border {
+    min-width: 110%;
+    margin-left: -12%;
+  }
 
-    .TweetUploadStats {
-        min-width: 110%;
-        margin-left: -12%;
-    }
+  .TweetUploadStats {
+    min-width: 110%;
+    margin-left: -12%;
+  }
 
-    .Tweet_TweetStats {
-        min-width: 110%;
-        margin-left: -12%;
-    }
+  .Tweet_TweetStats {
+    min-width: 110%;
+    margin-left: -12%;
+  }
 
-    .Tweet_YourReply {
-        min-width: 95%;
-        margin-left: -12%;
-        justify-content: space-between;
-    }
+  .Tweet_YourReply {
+    min-width: 95%;
+    margin-left: -12%;
+    justify-content: space-between;
+  }
 
-    .Tweet_YourReply input {
-        flex: 1;
-    }
-
+  .Tweet_YourReply input {
+    flex: 1;
+  }
 }

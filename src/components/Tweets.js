@@ -14,15 +14,26 @@ const Tweets = ({ userTwitted,id, mainTweet, displayName, userName, likeCount, r
     const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
     const [latestTweets, setLatestTweets] = useState([])
     const handleTweetLikes = (e) => {
-        e.preventDefault();
+        const heart=document.getElementsByClassName("heart")[0];
+        heart.addEventListener("touchend",()=>{
+            
+            e.target.classList.remove("is_animating")
+
+        })
+        e.preventDefault();  
+        // console.log(e.target);
         if (!isLiked) {
+            e.target.classList.add("is_animating")
+            e.target.classList.add("likedPink")
             setTwettLikes(TwettLikes + 1);
             setIsLiked(true);
         }
         else {
+            e.target.classList.remove("likedPink")
             setTwettLikes(TwettLikes - 1);
             setIsLiked(false)
         }
+        
     }
     const updateTime = () => Date.now() - tweetPostedTime;
     const showMenu = (e) => {
@@ -123,10 +134,11 @@ const Tweets = ({ userTwitted,id, mainTweet, displayName, userName, likeCount, r
                                     <div className={mainTweet ? "dn" : "Tweet_TweetRetweets"}>{retweetCount}</div>
                                 </div>
                                 <div className="Tweet_TweetOption">
-                                    <IconButton hoverColor="twitter_pink_hover">
-                                        <LikeIcon onClick={handleTweetLikes} />
+                                    <IconButton hoverColor="twitter_pink_hover" controller={handleTweetLikes}>
+                                        {/* <LikeIcon onClick={handleTweetLikes} /> */}
+                                        <div class="heart"></div>
                                     </IconButton>
-                                    <div className={mainTweet ? "dn" : "Tweet_TweetLikes"}>{TwettLikes}</div>
+                                    <div className={mainTweet ? "dn" : "Tweet_TweetLikes"}>{}</div>
                                 </div>
                                 <div className="Tweet_TweetOption">
                                     <IconButton hoverColor="twitter_blue_hover">
