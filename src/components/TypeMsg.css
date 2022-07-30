@@ -1,0 +1,15 @@
+.Write{
+    position: absolute;
+    bottom: 0;
+    /* background-color: red; */
+    height: 6vh;
+    /* z-index: 1; */
+    width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+.Write .size{
+    width: 50px;
+    height: 50px;
+    display: flex;
+}

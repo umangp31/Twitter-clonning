@@ -208,5 +208,4 @@ const Tweets = ({ userTwitted,id, mainTweet, displayName, userName, likeCount, r
         </>
     )
 }
-
 export default Tweets

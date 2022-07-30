@@ -1,11 +1,12 @@
 .MessagePannel {
+    position: relative;
     flex: 0.55;
     color: aliceblue;
     background-color: black;
     border: 1px solid var(--border-color);
 }
 
-.s {
+.s{
     min-height: 100%;
     background-color: aliceblue;
     color: black;

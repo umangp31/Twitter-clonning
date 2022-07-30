@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Login />
-      <MessageModal />
+      {/* <MessageModal /> */}
 
       {/* <Home /> */}
       

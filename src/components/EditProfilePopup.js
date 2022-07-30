@@ -52,7 +52,6 @@ function EditProfilePopup(props) {
           <input type="text" placeholder="Location" />
         </div>
         <div className="website">
-          {/* <label htmlFor="">Website</label> */}
           <input type="" placeholder="Website" />
         </div>
 
