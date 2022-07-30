@@ -16,9 +16,7 @@ const Tweets = ({ userTwitted,id, mainTweet, displayName, userName, likeCount, r
     const handleTweetLikes = (e) => {
         const heart=document.getElementsByClassName("heart")[0];
         heart.addEventListener("touchend",()=>{
-            
             e.target.classList.remove("is_animating")
-
         })
         e.preventDefault();  
         // console.log(e.target);
