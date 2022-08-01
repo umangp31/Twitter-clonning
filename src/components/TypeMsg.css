@@ -1,14 +1,41 @@
 .Write{
     position: absolute;
     bottom: 0;
-    height: 6vh;
+    height: 7vh;
     width: 100%;
     border: 1px solid var(--border-color);
     display: flex;
+    justify-content: space-evenly;
 }
 
-.Write .size{
-    width: 50px;
-    height: 50px;
+.size{
+    max-width: 50px;
+    max-height: 50px;
     display: flex;
+
+    padding: 0;
+    margin: 0;
+    margin-right: auto;
+}
+
+.send{
+    max-width: 50px;
+    max-height: 50px;
+    display: flex;
+    /* margin-left: auto; */
+}
+
+.enterMsg{
+    display: flex;
+    align-items: center;
+}
+
+.enterMsg input{
+    border-radius: 50px;
+    height: 5vh;
+    width: 67vh;
+    background-color:black;
+    color: white;
+    padding: 10px;
+    border: 1px solid var(--border-color);
 }

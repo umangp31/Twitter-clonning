@@ -1,16 +1,18 @@
-import './TypeMsg.css'
-import { GIFUploadIcon, ImageUploadIcon } from '../Assests/Icons'
+import "./TypeMsg.css";
+import { GIFUploadIcon, ImageUploadIcon, SendMsg } from "../Assests/Icons";
 export default function TypeMsg() {
   return (
-    <div className='Write'>
-      <div className='size'>
-      <ImageUploadIcon/>
-      <GIFUploadIcon/>
+    <div className="Write">
+      <div className="size">
+        <ImageUploadIcon />
+        <GIFUploadIcon />
       </div>
-      <div>
-        <input type="text" />
+      <div className="enterMsg">
+        <input type="text" placeholder="Start a new message" />
       </div>
-      <input type="search" />
+      <div className="send">
+        <SendMsg />
+      </div>
     </div>
-  )
+  );
 }
