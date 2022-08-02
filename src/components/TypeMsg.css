@@ -1,41 +1,63 @@
-.Write{
-    position: absolute;
-    bottom: 0;
-    height: 7vh;
-    width: 100%;
-    border: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-evenly;
+.Write {
+  position: absolute;
+  bottom: 0;
+  height: 7vh;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.size{
-    max-width: 50px;
-    max-height: 50px;
-    display: flex;
-
-    padding: 0;
-    margin: 0;
-    margin-right: auto;
+.size {
+  display: flex;
+  flex: 0.1;
+  align-items: center;
+}
+.size svg {
+  min-width: 26px;
+}
+.send {
+  max-width: 50px;
+  max-height: 50px;
+  display: flex;
+  /* margin-left: auto; */
 }
 
-.send{
-    max-width: 50px;
-    max-height: 50px;
-    display: flex;
-    /* margin-left: auto; */
+.enterMsg {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  /* background-color: antiquewhite; */
+}
+.enterMsg span {
+  display: flex;
+  border: 1px solid white;
+  flex: 1;
+  border-radius: 50px;
 }
 
-.enterMsg{
-    display: flex;
-    align-items: center;
+.enterMsg span input {
+  border-radius: 50px;
+  flex: 1;
+  height: 5vh;
+  background-color: black;
+  color: white;
+  padding-inline: 15px;
+  font-size: 1.2rem;
+  /* border: 1px solid var(--border-color); */
+  border: none;
 }
-
-.enterMsg input{
-    border-radius: 50px;
-    height: 5vh;
-    width: 67vh;
-    background-color:black;
-    color: white;
-    padding: 10px;
-    border: 1px solid var(--border-color);
+.input {
+  border: none;
+  outline: none;
+}
+.enterMsg span input:focus {
+  border: none;
+}
+.enterMsg svg {
+  max-width: 25px;
+}
+.enterMsg {
+  border: none;
 }
