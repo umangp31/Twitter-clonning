@@ -3,6 +3,7 @@ import axios from "axios";
 import { create } from "ipfs-http-client";
 import { useState } from "react";
 import IconButton from "../Assests/IconButton";
+import TweetDataService from "../services/tweets";
 import {
   CreatePollIcon,
   DatePickerIcon,
@@ -22,6 +23,7 @@ const YourTweet = ({ userTwitted }) => {
   const [isUploadStarted, setIsUploadStarted] = useState(false);
   const [imagePreviewURL, setImagePreviewURL] = useState("");
   const [isTweetSentOK, setIsTweetSentOK] = useState(false);
+  const [id, setId] = useState(1);
   const IPFS = create("https://ipfs.infura.io:5001/api/v0");
   const handleChange = (e) => {
     e.preventDefault();
@@ -71,20 +73,29 @@ const YourTweet = ({ userTwitted }) => {
   }
 
   function postTweet() {
-    let baseURL = "https://twitter-backend-suv.herokuapp.com/api/tweet";
-    axios
-      .post(baseURL, {
+    // let baseURL = "https://twitter-backend-suv.herokuapp.com/api/tweet";
+    
+    const data = {
         text: Tweettext,
         username: "Vivek Suthar",
         imgLink: imageURL,
-        user_id: "10",
-      })
-      .then((res) => {
+        user_id: ""+id,
+        }
+    // axios
+    //   .post(baseURL, {
+    //     text: Tweettext,
+    //     username: "Vivek Suthar",
+    //     imgLink: imageURL,
+    //     user_id: "10",
+    //   })
+    TweetDataService.postTweet(data)
+    .then((res) => {
         console.log(res.status);
         if (res.status === 200) {
           setIsTweetSentOK(true);
           setTweettext("");
           userTwitted((userTwitted) => !userTwitted);
+          setId((prev)=>prev+1);
           setTimeout(() => {
             setIsTweetSentOK(false);
           }, 4000);

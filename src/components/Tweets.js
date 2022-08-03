@@ -83,6 +83,19 @@ const Tweets = ({
         console.log(e);
       });
   };
+  
+  const deleteTweet = (id) =>{
+    console.log(id);
+    TweetDataService.deleteTweet(id)
+      .then((response)=>{
+        console.log("tweet deleted");
+        retrieveTweets();
+      })
+      .catch((e)=>{
+        console.log(e);
+      })
+  }
+
   useEffect(() => {
     retrieveTweets();
   }, []);
@@ -139,9 +152,9 @@ const Tweets = ({
                   </div>
                   <IconButton
                     hoverColor="twitter_blue_hover"
-                    controller={showMenu}
+                    controller={()=>{deleteTweet(t.user_id)}}
                   >
-                    <MoreIcon onClick={showMenu} />
+                    <MoreIcon onClick={()=>{deleteTweet(t.user_id)}}/>
                   </IconButton>
                 </div>
                 <Link to={`/TweetPage/${t}`} key={id}>

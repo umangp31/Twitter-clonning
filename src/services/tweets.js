@@ -6,7 +6,10 @@ class TweetDataService{
     }
     postTweet(body) {
         console.log("post tweet");
-        return http.post();
+        return http.post("/",body);
+    }
+    deleteTweet(id) {
+        return http.delete(`?id=${id}`);
     }
 }
 
