@@ -66,16 +66,20 @@ const Tweets = ({
       });
   };
 
-  const deleteTweet = (id) => {
-    TweetDataService.deleteTweet(id)
-      .then((response) => {
-        // console.log("tweet deleted");
-        // console.log(response);
-        retrieveTweets();
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+  const deleteTweet = async (id) => {
+    console.log(id);
+    // TweetDataService.deleteTweet(id)
+    //   .then((response) => {
+    //     console.log("tweet deleted");
+    //     console.log(response);
+    //     retrieveTweets();
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //   });
+    const res = await TweetDataService.deleteTweet(id);
+    console.log("Tweet deleted");
+    retrieveTweets();
   };
 
   useEffect(() => {
@@ -137,7 +141,9 @@ const Tweets = ({
                     }}
                   >
                     <MoreIcon
-                     
+                      onClick={() => {
+                        deleteTweet(t._id);
+                      }}
                     />
                   </IconButton>
                 </div>
