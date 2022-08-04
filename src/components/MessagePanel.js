@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import './MessagePanel.css';
 import PageHeader from './PageHeader';
+import TweetOptions from './TweetOptions';
 import TypeMsg from './TypeMsg';
 export default function MessagePanel() {
     const URL = useParams();
@@ -16,7 +17,8 @@ export default function MessagePanel() {
                         {/* Select a message
                         Choose from your existing conversations, start a new one, or just keep swimming. */}
                         <PageHeader/>
-                        <TypeMsg/>
+                            <TypeMsg />
+                            <TweetOptions/>
                     </div>
                 )
             }

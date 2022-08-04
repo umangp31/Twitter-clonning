@@ -1,0 +1,16 @@
+body {
+  background: red;
+  max-width: 10vw;
+  max-height: 30vh;
+}
+
+.box {
+  display: flex;
+
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+}
+
+.options {
+  list-style: none;
+}
