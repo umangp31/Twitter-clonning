@@ -56,9 +56,9 @@ const Tweets = ({
   const retrieveTweets = () => {
     TweetDataService.getAll()
       .then((response) => {
-        console.log(response.data.tweetList);
+        // console.log(response.data.tweetList);
         setLatestTweets(response.data.tweetList.reverse());
-        console.log(latestTweets);
+        // console.log(latestTweets);
         setTweets(...latestTweets);
       })
       .catch((e) => {
@@ -79,6 +79,7 @@ const Tweets = ({
     //   });
     const res = await TweetDataService.deleteTweet(id);
     console.log("Tweet deleted");
+    console.log(res);
     retrieveTweets();
   };
 
