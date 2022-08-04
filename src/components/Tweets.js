@@ -33,24 +33,6 @@ const Tweets = ({
   const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
   const [latestTweets, setLatestTweets] = useState([]);
   const handleTweetLikes = (e) => {
-    const heart = document.getElementsByClassName("heart")[0];
-    // heart.classList.
-    // heart.addEventListener("touchend", () => {
-    //   e.target.classList.remove("is_animating");
-    // });
-    // e.preventDefault();
-    // // console.log(e.target);
-    // if (!isLiked) {
-    //   e.target.classList.add("is_animating");
-    //   e.target.classList.add("likedPink");
-    //   setTwettLikes(TwettLikes + 1);
-    //   setIsLiked(true);
-    // } else {
-    // 	e.target.classList.remove("is_animating");
-    //   e.target.classList.remove("likedPink");
-    //   setTwettLikes(TwettLikes - 1);
-    //   setIsLiked(false);
-    // }
     e.target.classList.toggle("is_animating");
     e.target.classList.toggle("likedPink");
     if (e.target.classList.contains("is_animating")) {
@@ -83,6 +65,19 @@ const Tweets = ({
         console.log(e);
       });
   };
+
+  const deleteTweet = (id) => {
+    TweetDataService.deleteTweet(id)
+      .then((response) => {
+        // console.log("tweet deleted");
+        // console.log(response);
+        retrieveTweets();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   useEffect(() => {
     retrieveTweets();
   }, []);
@@ -103,15 +98,13 @@ const Tweets = ({
     "Nov",
     "Dec",
   ];
-  console.log();
-  // console.log(id);
   return (
     <>
       {latestTweets &&
         latestTweets.map((t) => {
           return (
             <div
-              key={t.id}
+              key={t._id}
               className={
                 replyCount > 0
                   ? "Tweet_Container BorderBottomNone"
@@ -139,9 +132,13 @@ const Tweets = ({
                   </div>
                   <IconButton
                     hoverColor="twitter_blue_hover"
-                    controller={showMenu}
+                    controller={() => {
+                      deleteTweet(t._id);
+                    }}
                   >
-                    <MoreIcon onClick={showMenu} />
+                    <MoreIcon
+                     
+                    />
                   </IconButton>
                 </div>
                 <Link to={`/TweetPage/${t}`} key={id}>
