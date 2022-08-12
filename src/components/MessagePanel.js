@@ -18,7 +18,7 @@ export default function MessagePanel() {
                         Choose from your existing conversations, start a new one, or just keep swimming. */}
                         <PageHeader/>
                             <TypeMsg />
-                            <TweetOptions/>
+                            {/* <TweetOptions/> */}
                     </div>
                 )
             }

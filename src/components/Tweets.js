@@ -33,6 +33,7 @@ const Tweets = ({
   const [isLiked, setIsLiked] = useState(false);
   const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
   const [latestTweets, setLatestTweets] = useState([]);
+  const [optionClicked, setOptionClicked] = useState(false);
   const handleTweetLikes = (e) => {
     e.target.classList.toggle("is_animating");
     e.target.classList.toggle("likedPink");
@@ -67,22 +68,7 @@ const Tweets = ({
       });
   };
 
-  const deleteTweet = async (id) => {
-    console.log(id);
-    // TweetDataService.deleteTweet(id)
-    //   .then((response) => {
-    //     console.log("tweet deleted");
-    //     console.log(response);
-    //     retrieveTweets();
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //   });
-    const res = await TweetDataService.deleteTweet(id);
-    console.log("Tweet deleted");
-    console.log(res);
-    retrieveTweets();
-  };
+  
 
   useEffect(() => {
     retrieveTweets();
@@ -118,7 +104,7 @@ const Tweets = ({
               }
             >
               <div classname="TweetOptionWrapper">
-                      <TweetOptions/>
+                      <TweetOptions show={optionClicked} onClickOutside={() => { setOptionClicked(false) }} id={t._id}/>
               </div>
               <div className="Tweet_UserAvatar">
                 <img src={t.imgLink ? t.imgLink : USERIMG} alt="USERIMG" />
@@ -142,13 +128,16 @@ const Tweets = ({
                   <IconButton
                     hoverColor="twitter_blue_hover"
                     controller={() => {
-                      deleteTweet(t._id);
+                      // deleteTweet(t._id);
+                      setOptionClicked(true);
+                      retrieveTweets();
                     }}
                   >
                     <MoreIcon
                       onClick={() => {
   
-                        deleteTweet(t._id);
+                        // deleteTweet(t._id);
+                        setOptionClicked(true);
                       }}
                     />
                   </IconButton>
