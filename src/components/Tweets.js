@@ -11,6 +11,7 @@ import {
 } from "../Assests/Icons";
 import TweetDataService from "../services/tweets";
 import { USERIMG } from "../utills/User";
+import TweetOptions from "./TweetOptions";
 import "./Tweets.css";
 const Tweets = ({
   userTwitted,
@@ -116,6 +117,9 @@ const Tweets = ({
                   : "Tweet_Container"
               }
             >
+              <div classname="TweetOptionWrapper">
+                      <TweetOptions/>
+              </div>
               <div className="Tweet_UserAvatar">
                 <img src={t.imgLink ? t.imgLink : USERIMG} alt="USERIMG" />
                 <span
@@ -143,10 +147,12 @@ const Tweets = ({
                   >
                     <MoreIcon
                       onClick={() => {
+  
                         deleteTweet(t._id);
                       }}
                     />
                   </IconButton>
+                  
                 </div>
                 <Link to={`/TweetPage/${t}`} key={id}>
                   <div className="Tweet_TweetCOntent">

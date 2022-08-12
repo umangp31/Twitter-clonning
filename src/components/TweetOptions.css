@@ -1,7 +1,9 @@
-body {
-  background: red;
-  max-width: 10vw;
-  max-height: 30vh;
+.container{
+  position: absolute;
+  right: 0;
+  background-color: white;
+  color: black;
+  height: fit-content;
 }
 
 .box {

@@ -9,7 +9,7 @@ export default function TweetOptions() {
                   <li>Not intrested in this Tweet</li>
                   <li>Follow @</li>
                   <li>Add/remove</li>
-                  <li>Report tweet</li>
+                  <li>Report tweet</li>     
               </ul>
         </div>
     </div>
