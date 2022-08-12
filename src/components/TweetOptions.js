@@ -6,10 +6,10 @@ export default function TweetOptions() {
           <div className="box">
               <ul className="options">
                   <li>Unfollow Computing programming</li>
-                  <li>Not intrested in this Tweet</li>
-                  <li>Follow @</li>
-                  <li>Add/remove</li>
-                  <li>Report tweet</li>     
+                  {/* <li>Not intrested in this Tweet</li> */}
+                  <li>Edit tweet</li>
+                  <li>Delete tweet</li>
+                  {/* <li>Report tweet</li>*/}
               </ul>
         </div>
     </div>

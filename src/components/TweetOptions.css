@@ -1,18 +1,35 @@
 .container{
   position: absolute;
   right: 0;
-  background-color: white;
-  color: black;
-  height: fit-content;
+  background-color: black;
+  color: white;
+  min-height: fit-content;
+  margin: 0 15px;
+  /* padding: 0 5px; */
+  border-radius: 10px;
+  /* border: white; */
+  border: 2px solid var(--border-color); 
 }
 
 .box {
   display: flex;
-
   flex-direction: column;
-  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+.options li:hover{
+  background-color: var(--border-color);
+  
+  transition:0.1s ease-in-out;
 }
 
 .options {
+  height: auto;
   list-style: none;
+  max-height: fit-content;
+}
+
+.options li{
+  padding: 10px 5px;
+  height: auto;
 }
