@@ -3,24 +3,17 @@ import { useRef } from 'react';
 import TweetDataService from '../services/tweets'
 import "./TweetOptions.css"
 export default function TweetOptions(props) {
-  const ref = useRef(null);
+  const ref=useRef(null);
   const { onClickOutside } = props;
   const id = props.id; 
+  const retrieve = props.retrieve;
   const deleteTweet = async (id) => {
     console.log(id);
-    // TweetDataService.deleteTweet(id)
-    //   .then((response) => {
-    //     console.log("tweet deleted");
-    //     console.log(response);
-    //     retrieveTweets();
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //   });
     const res = await TweetDataService.deleteTweet(id);
     console.log("Tweet deleted");
     console.log(res);
-    // retrieveTweets();
+    retrieve();
+    onClickOutside && onClickOutside();
   };
   useEffect(() => {
     const handleClickOutside = (event) => {

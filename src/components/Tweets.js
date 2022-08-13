@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { VideoTag } from "react-video-tag";
 import IconButton from "../Assests/IconButton";
@@ -34,6 +34,8 @@ const Tweets = ({
   const [isMoreIconClicked, setIsMoreIconClicked] = useState(false);
   const [latestTweets, setLatestTweets] = useState([]);
   const [optionClicked, setOptionClicked] = useState(false);
+  const [tweetId, setTweetId] = useState(null);
+  const ref = useRef();
   const handleTweetLikes = (e) => {
     e.target.classList.toggle("is_animating");
     e.target.classList.toggle("likedPink");
@@ -72,7 +74,8 @@ const Tweets = ({
 
   useEffect(() => {
     retrieveTweets();
-  }, []);
+    console.log(tweetId);
+  }, [tweetId]);
   useEffect(() => {
     retrieveTweets();
   }, [userTwitted]);
@@ -93,7 +96,7 @@ const Tweets = ({
   return (
     <>
       {latestTweets &&
-        latestTweets.map((t) => {
+        latestTweets.map((t,i) => {
           return (
             <div
               key={t._id}
@@ -104,8 +107,9 @@ const Tweets = ({
               }
             >
               <div classname="TweetOptionWrapper">
-                      <TweetOptions show={optionClicked} onClickOutside={() => { setOptionClicked(false) }} id={t._id}/>
+                      {(tweetId===i)?(<TweetOptions retrieve={retrieveTweets} show={optionClicked} onClickOutside={() => { setOptionClicked(false) } } id={t._id}/>):null}
               </div>
+              
               <div className="Tweet_UserAvatar">
                 <img src={t.imgLink ? t.imgLink : USERIMG} alt="USERIMG" />
                 <span
@@ -130,7 +134,8 @@ const Tweets = ({
                     controller={() => {
                       // deleteTweet(t._id);
                       setOptionClicked(true);
-                      retrieveTweets();
+                      setTweetId(i);
+                      // retrieveTweets();
                     }}
                   >
                     <MoreIcon
