@@ -3,6 +3,7 @@
     border-bottom: 1px solid var(--border-color);
     min-height: max-content;
     color: aliceblue;
+    z-index:9 ;
     /* padding: 0 15px; */
 }
 

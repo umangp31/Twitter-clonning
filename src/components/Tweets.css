@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  position:relative;
 }
 
 .Tweet_UserAvatar {

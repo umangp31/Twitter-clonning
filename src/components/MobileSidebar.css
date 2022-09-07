@@ -12,8 +12,8 @@
         display: flex;
         justify-content: flex-start;
         transition: all 0.28s ease-in-out;
-        /* transition-delay: 0.1s; */
-        /* z-index: 100; */
+        transition-delay: 0.1s;
+        z-index: 100;
     }
     
     .MobileSideBar_COntainer {
@@ -23,7 +23,7 @@
         overflow-y: scroll;
         box-shadow: 0px 0px 8px -1px var(--hover_color);
         flex: 0.75;
-        z-index: 2;
+        z-index: 500;
     }
 
     .Divider {
