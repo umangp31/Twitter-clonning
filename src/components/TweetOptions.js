@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useRef } from 'react';
-import TweetDataService from '../services/tweets'
-import "./TweetOptions.css"
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
+import TweetDataService from "../services/tweets";
+import "./TweetOptions.css";
 export default function TweetOptions(props) {
-  const ref=useRef(null);
+  const ref = useRef(null);
   const { onClickOutside } = props;
-  const id = props.id; 
+  const id = props.id;
   const retrieve = props.retrieve;
   const deleteTweet = async (id) => {
     console.log(id);
@@ -21,24 +21,25 @@ export default function TweetOptions(props) {
         onClickOutside && onClickOutside();
       }
     };
-    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener("click", handleClickOutside, true);
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener("click", handleClickOutside, true);
     };
   }, [onClickOutside]);
-  if (!props.show)
-    return null;
+  if (!props.show) return null;
   return (
-      <div ref={ref} className='container'>
-          <div className="box">
-              <ul className="options">
-                  <li>Unfollow Computing programming</li>
-                  {/* <li>Not intrested in this Tweet</li> */}
-                  <li>Edit tweet</li>
-                  <li onClick={()=>deleteTweet(id)}>Delete tweet</li>
-                  {/* <li>Report tweet</li>*/}
-              </ul>
+    <div className="mobileOptions">
+      <div ref={ref} className="container">
+        <div className="box">
+          <ul className="options">
+            <li>Unfollow Computing programming</li>
+            {/* <li>Not intrested in this Tweet</li> */}
+            <li>Edit tweet</li>
+            <li onClick={() => deleteTweet(id)}>Delete tweet</li>
+            {/* <li>Report tweet</li>*/}
+          </ul>
         </div>
+      </div>
     </div>
-  )
+  );
 }

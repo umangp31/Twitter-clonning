@@ -1,26 +1,26 @@
-.container{
+.container {
   position: absolute;
-  right: 0;
+  transform: translateX(24rem);
   background-color: black;
   color: white;
   min-height: fit-content;
   margin: 0 15px;
-  /* padding: 0 5px; */
   border-radius: 10px;
-  /* border: white; */
-  border: 2px solid var(--border-color); 
+  border: 2px solid var(--border-color);
 }
-
+.TweetOptionWrapper {
+  background-color: aliceblue;
+}
 .box {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
 }
 
-.options li:hover{
+.options li:hover {
   background-color: var(--border-color);
-  
-  transition:0.1s ease-in-out;
+
+  transition: 0.1s ease-in-out;
 }
 
 .options {
@@ -29,7 +29,35 @@
   max-height: fit-content;
 }
 
-.options li{
+.options li {
   padding: 10px 5px;
   height: auto;
+}
+
+@media (max-width: 688px) {
+  .mobileOptions{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background-color: var(--border-color);
+    z-index: 5;
+  }
+  .container {
+    position: fixed;
+    transform: translateX(0);
+    min-width: 100%;
+    background-color: aliceblue;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    min-height: 40vh;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    padding: 5px;
+    margin: -5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }

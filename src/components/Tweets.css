@@ -145,9 +145,6 @@
   min-height: 1rem;
 }
 
-.TweetOptionWrapper{
-  
-}
 
 .Tweet_TweetReplys,
 .Tweet_TweetRetweets,
@@ -273,7 +270,7 @@ video {
   background-size: 2900%;
   color: var(--border-color);
 }
-.likedPink{
+.likedPink {
   background-position: right;
 }
 .heart:hover {

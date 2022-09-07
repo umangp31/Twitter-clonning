@@ -70,8 +70,6 @@ const Tweets = ({
       });
   };
 
-  
-
   useEffect(() => {
     retrieveTweets();
     console.log(tweetId);
@@ -96,7 +94,7 @@ const Tweets = ({
   return (
     <>
       {latestTweets &&
-        latestTweets.map((t,i) => {
+        latestTweets.map((t, i) => {
           return (
             <div
               key={t._id}
@@ -107,9 +105,18 @@ const Tweets = ({
               }
             >
               <div classname="TweetOptionWrapper">
-                      {(tweetId===i)?(<TweetOptions retrieve={retrieveTweets} show={optionClicked} onClickOutside={() => { setOptionClicked(false) } } id={t._id}/>):null}
+                {tweetId === i ? (
+                  <TweetOptions
+                    retrieve={retrieveTweets}
+                    show={optionClicked}
+                    onClickOutside={() => {
+                      setOptionClicked(false);
+                    }}
+                    id={t._id}
+                  />
+                ) : null}
               </div>
-              
+
               <div className="Tweet_UserAvatar">
                 <img src={t.imgLink ? t.imgLink : USERIMG} alt="USERIMG" />
                 <span
@@ -140,13 +147,11 @@ const Tweets = ({
                   >
                     <MoreIcon
                       onClick={() => {
-  
                         // deleteTweet(t._id);
                         setOptionClicked(true);
                       }}
                     />
                   </IconButton>
-                  
                 </div>
                 <Link to={`/TweetPage/${t}`} key={id}>
                   <div className="Tweet_TweetCOntent">
